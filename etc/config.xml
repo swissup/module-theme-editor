@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+
+        <!-- Absolute Theme Default Values START -->
+        <absolute_theme>
+            <background>
+                <body_backgroundColor>#FFFFFF</body_backgroundColor>
+                <body_backgroundColor>#FFFFFF</body_backgroundColor>
+                <page_backgroundColor>transparent</page_backgroundColor>
+                <nav_backgroundColor>transparent</nav_backgroundColor>
+            </background>
+        </absolute_theme>
+        <!-- Absolute Theme Default Values END -->
+
+        <!-- Argento Essence Default Values START -->
+        <argento_essence>
+            <background>
+                <body_backgroundColor>#FFFFFF</body_backgroundColor>
+                <page_backgroundColor>transparent</page_backgroundColor>
+                <nav_backgroundColor>transparent</nav_backgroundColor>
+            </background>
+            <css_selector>
+                <body>body</body>
+                <page>.page-wrapper</page>
+                <nav>.sections.nav-sections .section-items.nav-sections-items</nav>
+            </css_selector>
+        </argento_essence>
+        <!-- Argento Essence Default Values END -->
+    </default>
+</config>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="theme_editor" sortOrder="300">
+            <label>Swissup Themes Editor</label>
+        </tab>
+
+        <!-- Absolute Theme Editor START -->
+        <section id="absolute_theme" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Absolute Theme</label>
+            <tab>theme_editor</tab>
+            <resource>Swissup_ThemeEditor::config_absolute_theme</resource>
+
+            <group id="background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Background</label>
+                <field id="body_backgroundColor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                </field>
+            </group>
+        </section>
+        <!-- Absolute Theme Editor END -->
+
+        <!-- Argento Essence Editor START -->
+        <section id="argento_essence" translate="label" type="text" sortOrder="167" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Argento Essence</label>
+            <tab>theme_editor</tab>
+            <resource>Swissup_ThemeEditor::config_argento_essence</resource>
+
+            <group id="background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Background</label>
+                <field id="body_backgroundColor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Body Color</label>
+                </field>
+                <field id="page_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Color</label>
+                </field>
+                <field id="nav_backgroundColor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nav Color</label>
+                </field>
+            </group>
+        </section>
+        <!-- Argento Essence Editor END -->
+    </system>
+</config>
