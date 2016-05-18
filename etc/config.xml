@@ -3,14 +3,14 @@
     <default>
 
         <!-- Absolute Theme Default Values START -->
-        <absolute_theme>
+        <absolute>
             <background>
                 <body_backgroundColor>#FFFFFF</body_backgroundColor>
-                <body_backgroundColor>#FFFFFF</body_backgroundColor>
-                <page_backgroundColor>transparent</page_backgroundColor>
-                <nav_backgroundColor>transparent</nav_backgroundColor>
             </background>
-        </absolute_theme>
+            <css_selector>
+                <body>body</body>
+            </css_selector>
+        </absolute>
         <!-- Absolute Theme Default Values END -->
 
         <!-- Argento Essence Default Values START -->

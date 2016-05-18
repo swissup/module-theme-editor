@@ -6,10 +6,10 @@
         </tab>
 
         <!-- Absolute Theme Editor START -->
-        <section id="absolute_theme" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="absolute" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Absolute Theme</label>
             <tab>theme_editor</tab>
-            <resource>Swissup_ThemeEditor::config_absolute_theme</resource>
+            <resource>Swissup_ThemeEditor::config_absolute</resource>
 
             <group id="background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Background</label>

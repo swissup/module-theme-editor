@@ -7,7 +7,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 class Css
 {
     /** Themes */
-    const ABSOLUTE_THEME  = 'absolute_theme';
+    const ABSOLUTE_THEME  = 'absolute';
     const ARGENTO_ESSENCE = 'argento_essence';
 
     /** Modes */
