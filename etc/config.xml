@@ -3,18 +3,20 @@
     <default>
 
         <!-- Absolute Theme Default Values START -->
-        <absolute>
+        <swissup_absolute>
             <background>
                 <body_backgroundColor>#FFFFFF</body_backgroundColor>
+                <topToolbarContainer_backgroundColor>#FFFFFF</topToolbarContainer_backgroundColor>
             </background>
             <css_selector>
                 <body>body</body>
+                <top-toolbar-container>.top-toolbar-container</top-toolbar-container>
             </css_selector>
-        </absolute>
+        </swissup_absolute>
         <!-- Absolute Theme Default Values END -->
 
         <!-- Argento Essence Default Values START -->
-        <argento_essence>
+        <swissup_argento_essence>
             <background>
                 <body_backgroundColor>#FFFFFF</body_backgroundColor>
                 <page_backgroundColor>transparent</page_backgroundColor>
@@ -25,7 +27,8 @@
                 <page>.page-wrapper</page>
                 <nav>.sections.nav-sections .section-items.nav-sections-items</nav>
             </css_selector>
-        </argento_essence>
+        </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->
+
     </default>
 </config>

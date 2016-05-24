@@ -76,7 +76,7 @@ class Head extends \Magento\Framework\View\Element\Template implements
     public function getBackendCss()
     {
         $themeCode   = $this->getLayout()->getUpdate()->getTheme()->getCode();
-        $theme       = str_replace('-', '_', explode('/', $themeCode)[1]);
+        $theme       = strtolower(str_replace(['/', '-'], '_', $themeCode));
         $storeCode   = $this->_storeManager->getStore()->getCode();
         $websiteCode = $this->_storeManager->getWebsite()->getCode();
         $args = [

@@ -6,14 +6,25 @@
         </tab>
 
         <!-- Absolute Theme Editor START -->
-        <section id="absolute" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="swissup_absolute" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Absolute Theme</label>
             <tab>theme_editor</tab>
-            <resource>Swissup_ThemeEditor::config_absolute</resource>
+            <resource>Swissup_ThemeEditor::config_swissup_absolute</resource>
 
             <group id="background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Background</label>
-                <field id="body_backgroundColor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="body_heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Body</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="body_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                </field>
+                <field id="topToolbarContainer_heading" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top toolbar container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="topToolbarContainer_backgroundColor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Color</label>
                 </field>
             </group>
@@ -21,20 +32,24 @@
         <!-- Absolute Theme Editor END -->
 
         <!-- Argento Essence Editor START -->
-        <section id="argento_essence" translate="label" type="text" sortOrder="167" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="swissup_argento_essence" translate="label" type="text" sortOrder="167" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Argento Essence</label>
             <tab>theme_editor</tab>
             <resource>Swissup_ThemeEditor::config_argento_essence</resource>
 
             <group id="background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Background</label>
-                <field id="body_backgroundColor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="body_heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Body</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="body_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Body Color</label>
                 </field>
-                <field id="page_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="page_backgroundColor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Page Color</label>
                 </field>
-                <field id="nav_backgroundColor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="nav_backgroundColor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Nav Color</label>
                 </field>
             </group>

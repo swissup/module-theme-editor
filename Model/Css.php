@@ -7,8 +7,8 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 class Css
 {
     /** Themes */
-    const ABSOLUTE_THEME  = 'absolute';
-    const ARGENTO_ESSENCE = 'argento_essence';
+    const ABSOLUTE_THEME  = 'swissup_absolute';
+    const ARGENTO_ESSENCE = 'swissup_argento_essence';
 
     /** Modes */
     const MODE_CREATE_AND_SAVE = 'create_save';
@@ -29,33 +29,33 @@ class Css
      */
     protected $configLoader;
     /**
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
-     */
-    protected $scopeConfig;
-    /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $storeManager;
+    /**
+     * @var \Swissup\ThemeEditor\Helper\Helper
+     */
+    protected $helper;
 
     /**
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory
      * @param \Magento\Config\Model\Config\Loader $configLoader
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Swissup\ThemeEditor\Helper\Helper $helper
      */
     public function __construct(
         \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory,
         \Magento\Config\Model\Config\Loader $configLoader,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        \Magento\Store\Model\StoreManagerInterface $storeManager
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Swissup\ThemeEditor\Helper\Helper $helper
     ) {
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();
         $this->configLoader = $configLoader;
-        $this->scopeConfig = $scopeConfig;
         $this->storeManager = $storeManager;
+        $this->helper = $helper;
     }
 
     /**
@@ -170,9 +170,9 @@ class Css
 
         $config = [];
         foreach ($node as $group => $values) {
-            $value = $this->scopeConfig->getValue($group, $scope, $scopeCode);
+            $value = $this->helper->getScopeConfig()->getValue($group, $scope, $scopeCode);
             $groupId = explode('/', $group)[1];
-            $valueId = $this->camel2dashed(explode('/', $values['path'])[2]);
+            $valueId = $this->helper->camel2dashed(explode('/', $values['path'])[2]);
             $config[$groupId][$valueId] = $value;
         }
 
@@ -226,7 +226,7 @@ class Css
             if (empty($config['css_selector'])
                 || !is_array($config['css_selector'])
                 || empty($config['css_selector'][$key])) {
-                $selector = $this->scopeConfig
+                $selector = $this->helper->getScopeConfig()
                     ->getValue($theme . '/css_selector/' .$key);
                 if (empty($selector)) {
                     continue;
@@ -277,17 +277,6 @@ class Css
     protected function _extractBackgroundPosition($value)
     {
         return str_replace(',', ' ', $value);
-    }
-    /**
-     * Convert capital letters to hyphens
-     * Example:
-     * in:  body_backgroundColor
-     * out: body_background-color
-     * @param  String camel case string
-     * @return String string with hyphens
-     */
-    protected function camel2dashed($str) {
-        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', $str));
     }
 
     /**
