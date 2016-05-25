@@ -1,5 +1,5 @@
 <?php
-namespace Swissup\ThemeEditor\Block\System\Config\Form\Field;
+namespace Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field;
 
 class Color extends \Magento\Config\Block\System\Config\Form\Field {
 

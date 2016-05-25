@@ -5,12 +5,80 @@
         <!-- Absolute Theme Default Values START -->
         <swissup_absolute>
             <background>
-                <body_backgroundColor>#FFFFFF</body_backgroundColor>
-                <topToolbarContainer_backgroundColor>#FFFFFF</topToolbarContainer_backgroundColor>
+                <body_background>linear-gradient(to bottom, #004b6e 0%, #00628e 100%)</body_background>
+                <body_backgroundColor>#00628e</body_backgroundColor>
+                <body_backgroundRepeat>repeat-x</body_backgroundRepeat>
+                <footer_background>linear-gradient(to bottom, #0f769d 0%, #00628e 23%, #00628e 100%)</footer_background>
+                <footer_backgroundColor>transparent</footer_backgroundColor>
+                <footer_backgroundRepeat>repeat</footer_backgroundRepeat>
+                <navigation_background>#ffffff none scroll 0 0</navigation_background>
+                <navigation_backgroundColor>#ffffff</navigation_backgroundColor>
+                <navigation_backgroundRepeat>repeat</navigation_backgroundRepeat>
+                <navigationUl_background>linear-gradient(to bottom, #05739a 0%, #005d8d 16%, #004e81 49%, #004274 86%, #003d6c 100%)</navigationUl_background>
+                <navigationUl_backgroundColor>transparent</navigationUl_backgroundColor>
+                <navigationUl_backgroundRepeat>repeat</navigationUl_backgroundRepeat>
+                <navigationActive_background>linear-gradient(to bottom, #005076 0%, #005584 100%)</navigationActive_background>
+                <navigationActive_backgroundColor>#005584</navigationActive_backgroundColor>
+                <navigationActive_backgroundRepeat>repeat-x</navigationActive_backgroundRepeat>
+                <headerContent_background>linear-gradient(to bottom, #c8e3ef 0%, #ffffff 100%)</headerContent_background>
+                <headerContent_backgroundColor>#FFFFFF</headerContent_backgroundColor>
+                <headerContent_backgroundRepeat>repeat-x</headerContent_backgroundRepeat>
+                <headerContent_borderTop>1px solid #ffffff</headerContent_borderTop>
+                <breadcrumbs_background>#fff none</breadcrumbs_background>
+                <breadcrumbs_backgroundColor>#FFFFFF</breadcrumbs_backgroundColor>
+                <breadcrumbs_backgroundRepeat>repeat</breadcrumbs_backgroundRepeat>
+                <pageMain_background>#FFFFFF</pageMain_background>
+                <pageBottom_background>linear-gradient(to bottom, #c8e3ef 0%, #ffffff 20%, #ffffff 100%)</pageBottom_background>
+                <pageBottom_backgroundColor>transparent</pageBottom_backgroundColor>
+                <pageBottom_backgroundRepeat>repeat</pageBottom_backgroundRepeat>
+                <pageBottom_borderTop>1px solid #ffffff</pageBottom_borderTop>
+                <primaryButtons_background>#404040 linear-gradient(to bottom, #707070 0%, #404040 100%)</primaryButtons_background>
+                <primaryButtons_backgroundColor>#404040</primaryButtons_backgroundColor>
+                <primaryButtons_backgroundRepeat>repeat-x</primaryButtons_backgroundRepeat>
+                <primaryButtonsHover_background>#404040 linear-gradient(to bottom, #505050 0%, #404040 100%)</primaryButtonsHover_background>
+                <primaryButtonsHover_backgroundColor>#404040</primaryButtonsHover_backgroundColor>
+                <primaryButtonsHover_backgroundRepeat>repeat-x</primaryButtonsHover_backgroundRepeat>
             </background>
+            <navigation>
+                <navigationTopLinks_color>#c3d5e3</navigationTopLinks_color>
+                <navigationSeparators_borderRight>1px solid #046c96</navigationSeparators_borderRight>
+                <navigationSeparators_boxShadow>1px 0 #103261</navigationSeparators_boxShadow>
+            </navigation>
+            <footer>
+                <footerAdditional_borderTop>1px solid #136793</footerAdditional_borderTop>
+                <footerAdditional_borderBottom>1px solid #136793</footerAdditional_borderBottom>
+                <switcherStore_backgroundColor>#00628e</switcherStore_backgroundColor>
+            </footer>
+            <fonts>
+                <blockTitle_color>#459b06</blockTitle_color>
+                <pageTitle_color>#459b06</pageTitle_color>
+                <productLink_color>#68a8e0</productLink_color>
+                <footerContacts_color>#FFFFFF</footerContacts_color>
+                <footerInformationalHeadings_color>#d5e1e9</footerInformationalHeadings_color>
+                <footerInformationalLinks_color>#d5e1e9</footerInformationalLinks_color>
+            </fonts>
             <css_selector>
                 <body>body</body>
-                <top-toolbar-container>.top-toolbar-container</top-toolbar-container>
+                <footer>.page-footer</footer>
+                <footer-additional>.page-footer .footer-additional</footer-additional>
+                <switcher-store>.page-footer .footer.content .switcher-store</switcher-store>
+                <navigation>.navigation</navigation>
+                <navigation-ul><![CDATA[.navigation > ul]]></navigation-ul>
+                <navigation-top-links><![CDATA[.navigation .level0 > .level-top]]></navigation-top-links>
+                <navigation-separators>.navigation .level0</navigation-separators>
+                <navigation-active>.navigation .level0.active, .navigation .level0.has-active</navigation-active>
+                <header-content>.header.content</header-content>
+                <breadcrumbs>.breadcrumbs</breadcrumbs>
+                <page-main>.page-main</page-main>
+                <page-bottom>.page-bottom</page-bottom>
+                <primary-buttons>.action.primary</primary-buttons>
+                <primary-buttons-hover>.action.primary:hover</primary-buttons-hover>
+                <block-title>.page-main .main .block-title, .page-bottom .block-title strong</block-title>
+                <page-title>.page-title .base</page-title>
+                <product-link>.product-item .product-item-name a</product-link>
+                <footer-contacts>.page-footer .footer-contacts</footer-contacts>
+                <footer-informational-headings><![CDATA[.page-footer .informational > ul > li h4]]></footer-informational-headings>
+                <footer-informational-links><![CDATA[.page-footer .informational > ul > li ul li a]]></footer-informational-links>
             </css_selector>
         </swissup_absolute>
         <!-- Absolute Theme Default Values END -->
