@@ -299,17 +299,24 @@
                     <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
                 </field>
                 <field id="body_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Body Color</label>
+                    <label>Color</label>
                     <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
                 </field>
-                <field id="page_backgroundColor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Page Color</label>
-                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                <field id="body_backgroundImage" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
                 </field>
-                <field id="nav_backgroundColor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Nav Color</label>
-                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                <field id="body_backgroundRepeat" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
                 </field>
+                <field id="body_backgroundPosition" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
             </group>
         </section>
         <!-- Argento Essence Editor END -->

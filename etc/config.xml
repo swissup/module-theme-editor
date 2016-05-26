@@ -86,14 +86,13 @@
         <!-- Argento Essence Default Values START -->
         <swissup_argento_essence>
             <background>
-                <body_backgroundColor>#FFFFFF</body_backgroundColor>
-                <page_backgroundColor>transparent</page_backgroundColor>
-                <nav_backgroundColor>transparent</nav_backgroundColor>
+                <body_backgroundColor>#fff</body_backgroundColor>
+                <body_backgroundImage>none</body_backgroundImage>
+                <body_backgroundRepeat>repeat</body_backgroundRepeat>
+                <body_backgroundPosition>0px,0px</body_backgroundPosition>
             </background>
             <css_selector>
                 <body>body</body>
-                <page>.page-wrapper</page>
-                <nav>.sections.nav-sections .section-items.nav-sections-items</nav>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->
