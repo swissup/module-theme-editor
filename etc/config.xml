@@ -90,9 +90,59 @@
                 <body_backgroundImage>none</body_backgroundImage>
                 <body_backgroundRepeat>repeat</body_backgroundRepeat>
                 <body_backgroundPosition>0px,0px</body_backgroundPosition>
+                <page_backgroundColor>transparent</page_backgroundColor>
+                <page_backgroundImage>none</page_backgroundImage>
+                <page_backgroundRepeat>no-repeat</page_backgroundRepeat>
+                <page_backgroundPosition>0px,0px</page_backgroundPosition>
+                <topToolbarContainer_backgroundColor>#f2f2f2</topToolbarContainer_backgroundColor>
+                <topToolbarContainer_backgroundImage>none</topToolbarContainer_backgroundImage>
+                <topToolbarContainer_backgroundRepeat>repeat</topToolbarContainer_backgroundRepeat>
+                <topToolbarContainer_backgroundPosition>0px,0px</topToolbarContainer_backgroundPosition>
+                <headerContainer_backgroundColor>transparent</headerContainer_backgroundColor>
+                <headerContainer_backgroundImage>none</headerContainer_backgroundImage>
+                <headerContainer_backgroundRepeat>no-repeat</headerContainer_backgroundRepeat>
+                <headerContainer_backgroundPosition>0px,0px</headerContainer_backgroundPosition>
+                <navigationContainer_backgroundColor>#ffffff</navigationContainer_backgroundColor>
+                <navigationContainer_backgroundImage>none</navigationContainer_backgroundImage>
+                <navigationContainer_backgroundRepeat>no-repeat</navigationContainer_backgroundRepeat>
+                <navigationContainer_backgroundPosition>0px,0px</navigationContainer_backgroundPosition>
+                <nav_backgroundColor>transparent</nav_backgroundColor>
+                <nav_backgroundImage>none</nav_backgroundImage>
+                <nav_backgroundRepeat>no-repeat</nav_backgroundRepeat>
+                <nav_backgroundPosition>0px,0px</nav_backgroundPosition>
+                <contentContainer_backgroundColor>transparent</contentContainer_backgroundColor>
+                <contentContainer_backgroundImage>none</contentContainer_backgroundImage>
+                <contentContainer_backgroundRepeat>no-repeat</contentContainer_backgroundRepeat>
+                <contentContainer_backgroundPosition>0px,0px</contentContainer_backgroundPosition>
+                <footer_backgroundColor>#ffffff</footer_backgroundColor>
+                <footer_backgroundImage>none</footer_backgroundImage>
+                <footer_backgroundRepeat>repeat-x</footer_backgroundRepeat>
+                <footer_backgroundPosition>0px,0px</footer_backgroundPosition>
+                <footerTopToolbar_backgroundColor>#f2f2f2</footerTopToolbar_backgroundColor>
+                <footerTopToolbar_backgroundImage>none</footerTopToolbar_backgroundImage>
+                <footerTopToolbar_backgroundRepeat>no-repeat</footerTopToolbar_backgroundRepeat>
+                <footerTopToolbar_backgroundPosition>0px,0px</footerTopToolbar_backgroundPosition>
+                <footerContent_backgroundColor>transparent</footerContent_backgroundColor>
+                <footerContent_backgroundImage>none</footerContent_backgroundImage>
+                <footerContent_backgroundRepeat>no-repeat</footerContent_backgroundRepeat>
+                <footerContent_backgroundPosition>0px,0px</footerContent_backgroundPosition>
+                <footerBottomToolbar_backgroundColor>#7e807e</footerBottomToolbar_backgroundColor>
+                <footerBottomToolbar_backgroundImage>none</footerBottomToolbar_backgroundImage>
+                <footerBottomToolbar_backgroundRepeat>no-repeat</footerBottomToolbar_backgroundRepeat>
+                <footerBottomToolbar_backgroundPosition>0px,0px</footerBottomToolbar_backgroundPosition>
             </background>
             <css_selector>
                 <body>body</body>
+                <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
+                <top-toolbar-container>.page-header .panel.wrapper</top-toolbar-container>
+                <header-container>.page-header .header.content, .page-wrapper .nav-sections .nav-sections-items</header-container>
+                <navigation-container>.page-wrapper .nav-sections .section-items.nav-sections-items</navigation-container>
+                <nav>.page-wrapper .nav-sections .navigation</nav>
+                <content-container>.page-main</content-container>
+                <footer>.page-footer</footer>
+                <footer-top-toolbar>.page-footer .footer-toolbar-top</footer-top-toolbar>
+                <footer-content>.page-footer .footer.content</footer-content>
+                <footer-bottom-toolbar>.page-footer .footer-toolbar-bottom</footer-bottom-toolbar>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->

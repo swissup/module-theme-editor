@@ -317,6 +317,235 @@
                     <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
                 </field>
 
+                <field id="page_heading" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Page content. <span style="color: #f00">Please remove navigation container background before using this option</span>]]></label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="page_backgroundColor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="page_backgroundImage" translate="label" type="image" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="page_backgroundRepeat" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="page_backgroundPosition" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="topToolbarContainer_heading" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top toolbar container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="topToolbarContainer_backgroundColor" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="topToolbarContainer_backgroundImage" translate="label" type="image" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="topToolbarContainer_backgroundRepeat" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="topToolbarContainer_backgroundPosition" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="headerContainer_heading" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="headerContainer_backgroundColor" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="headerContainer_backgroundImage" translate="label" type="image" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="headerContainer_backgroundRepeat" translate="label" type="select" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="headerContainer_backgroundPosition" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="navigationContainer_heading" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Navigation container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="navigationContainer_backgroundColor" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="navigationContainer_backgroundImage" translate="label" type="image" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="navigationContainer_backgroundRepeat" translate="label" type="select" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="navigationContainer_backgroundPosition" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="nav_heading" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Navigation</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="nav_backgroundColor" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="nav_backgroundImage" translate="label" type="image" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="nav_backgroundRepeat" translate="label" type="select" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="nav_backgroundPosition" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="contentContainer_heading" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Content container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="contentContainer_backgroundColor" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="contentContainer_backgroundImage" translate="label" type="image" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="contentContainer_backgroundRepeat" translate="label" type="select" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="contentContainer_backgroundPosition" translate="label" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="footer_heading" translate="label" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Container</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="footer_backgroundColor" translate="label" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="footer_backgroundImage" translate="label" type="image" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="footer_backgroundRepeat" translate="label" type="select" sortOrder="390" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="footer_backgroundPosition" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="footerTopToolbar_heading" translate="label" type="text" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Top Toolbar</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="footerTopToolbar_backgroundColor" translate="label" type="text" sortOrder="420" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="footerTopToolbar_backgroundImage" translate="label" type="image" sortOrder="430" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="footerTopToolbar_backgroundRepeat" translate="label" type="select" sortOrder="440" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="footerTopToolbar_backgroundPosition" translate="label" type="text" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="footerContent_heading" translate="label" type="text" sortOrder="460" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Content</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="footerContent_backgroundColor" translate="label" type="text" sortOrder="470" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="footerContent_backgroundImage" translate="label" type="image" sortOrder="480" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="footerContent_backgroundRepeat" translate="label" type="select" sortOrder="490" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="footerContent_backgroundPosition" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
+
+                <field id="footerBottomToolbar_heading" translate="label" type="text" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Bottom Toolbar</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="footerBottomToolbar_backgroundColor" translate="label" type="text" sortOrder="520" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="footerBottomToolbar_backgroundImage" translate="label" type="image" sortOrder="530" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                    <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+                </field>
+                <field id="footerBottomToolbar_backgroundRepeat" translate="label" type="select" sortOrder="540" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="footerBottomToolbar_backgroundPosition" translate="label" type="text" sortOrder="550" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+                </field>
             </group>
         </section>
         <!-- Argento Essence Editor END -->
