@@ -2,15 +2,15 @@
 namespace Swissup\ThemeEditor\Model\Config\Source;
 
 /**
- * Class background repeat
+ * Class Text Transform
  */
-class BackgroundRepeat implements \Magento\Framework\Option\ArrayInterface
+class TextTransform implements \Magento\Framework\Option\ArrayInterface
 {
     protected $_values = [
-        'no-repeat' => 'no-repeat',
-        'repeat'    => 'repeat',
-        'repeat-x'  => 'repeat-x',
-        'repeat-y'  => 'repeat-y'
+        'none'       => 'none',
+        'uppercase'  => 'uppercase',
+        'capitalize' => 'capitalize',
+        'lowercase'  => 'lowercase'
     ];
     /**
      * To option array

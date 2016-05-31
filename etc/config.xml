@@ -131,6 +131,25 @@
                 <footerBottomToolbar_backgroundRepeat>no-repeat</footerBottomToolbar_backgroundRepeat>
                 <footerBottomToolbar_backgroundPosition>0px,0px</footerBottomToolbar_backgroundPosition>
             </background>
+            <navigation>
+                <topLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</topLevelLink_fontFamily>
+                <topLevelLink_fontSize>1.4rem</topLevelLink_fontSize>
+                <topLevelLink_textTransform>none</topLevelLink_textTransform>
+                <topLevelLink_color>#303030</topLevelLink_color>
+                <topLevelLinkHover_color>#333333</topLevelLinkHover_color>
+                <topLevelLinkActive_color>#333333</topLevelLinkActive_color>
+                <topLevelArrow_fontSize>14px</topLevelArrow_fontSize>
+                <lowLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</lowLevelLink_fontFamily>
+                <lowLevelLink_fontSize>1.4rem</lowLevelLink_fontSize>
+                <lowLevelLink_textTransform>none</lowLevelLink_textTransform>
+                <lowLevelLink_backgroundColor>#ffffff</lowLevelLink_backgroundColor>
+                <lowLevelLinkHover_backgroundColor>#efefef</lowLevelLinkHover_backgroundColor>
+                <lowLevelLinkActive_backgroundColor>#efefef</lowLevelLinkActive_backgroundColor>
+                <lowLevelLink_color>#303030</lowLevelLink_color>
+                <lowLevelLinkHover_color>#303030</lowLevelLinkHover_color>
+                <lowLevelLinkActive_color>#d96708</lowLevelLinkActive_color>
+                <lowLevelArrow_fontSize>14px</lowLevelArrow_fontSize>
+            </navigation>
             <css_selector>
                 <body>body</body>
                 <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
@@ -143,6 +162,14 @@
                 <footer-top-toolbar>.page-footer .footer-toolbar-top</footer-top-toolbar>
                 <footer-content>.page-footer .footer.content</footer-content>
                 <footer-bottom-toolbar>.page-footer .footer-toolbar-bottom</footer-bottom-toolbar>
+                <top-level-link>.nav-sections .navigation a.level-top</top-level-link>
+                <top-level-link-hover><![CDATA[.navigation .level0 > .level-top:hover,.navigation .level0 > .level-top.ui-state-focus]]></top-level-link-hover>
+                <top-level-link-active><![CDATA[.navigation .level0.active > .level-top,.navigation .level0.has-active > .level-top]]></top-level-link-active>
+                <top-level-arrow>.nav-sections .navigation .parent a.level-top:after</top-level-arrow>
+                <low-level-link>.nav-sections .navigation .level0 .submenu a</low-level-link>
+                <low-level-link-hover>.nav-sections .navigation .level0 .submenu a:hover,.navigation .level0 .submenu a.ui-state-focus</low-level-link-hover>
+                <low-level-link-active><![CDATA[.nav-sections .navigation .level0 .submenu .active > a]]></low-level-link-active>
+                <low-level-arrow>.nav-sections .navigation .parent > a:after</low-level-arrow>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->

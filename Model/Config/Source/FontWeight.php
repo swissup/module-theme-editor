@@ -2,15 +2,13 @@
 namespace Swissup\ThemeEditor\Model\Config\Source;
 
 /**
- * Class background repeat
+ * Class Font Weight
  */
-class BackgroundRepeat implements \Magento\Framework\Option\ArrayInterface
+class FontWeight implements \Magento\Framework\Option\ArrayInterface
 {
     protected $_values = [
-        'no-repeat' => 'no-repeat',
-        'repeat'    => 'repeat',
-        'repeat-x'  => 'repeat-x',
-        'repeat-y'  => 'repeat-y'
+        'normal' => 'normal',
+        'bold'   => 'bold'
     ];
     /**
      * To option array
