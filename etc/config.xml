@@ -150,6 +150,19 @@
                 <lowLevelLinkActive_color>#d96708</lowLevelLinkActive_color>
                 <lowLevelArrow_fontSize>14px</lowLevelArrow_fontSize>
             </navigation>
+            <tabs>
+                <tabText_padding>1px 35px 1px 35px</tabText_padding>
+                <tabText_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</tabText_fontFamily>
+                <tabText_fontSize>1.4rem</tabText_fontSize>
+                <tabText_fontWeight>400</tabText_fontWeight>
+                <tabText_textTransform>none</tabText_textTransform>
+                <tabText_color>#666666</tabText_color>
+                <tabTextBorder_borderColor>#cfe2f1</tabTextBorder_borderColor>
+                <tabHover_background>#ffffff</tabHover_background>
+                <tabHover_color>#666666</tabHover_color>
+                <tabActive_background>#ffffff</tabActive_background>
+                <tabActive_color>#d96708</tabActive_color>
+            </tabs>
             <css_selector>
                 <body>body</body>
                 <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
@@ -169,7 +182,11 @@
                 <low-level-link>.nav-sections .navigation .level0 .submenu a</low-level-link>
                 <low-level-link-hover>.nav-sections .navigation .level0 .submenu a:hover,.navigation .level0 .submenu a.ui-state-focus</low-level-link-hover>
                 <low-level-link-active><![CDATA[.nav-sections .navigation .level0 .submenu .active > a]]></low-level-link-active>
-                <low-level-arrow>.nav-sections .navigation .parent > a:after</low-level-arrow>
+                <low-level-arrow><![CDATA[.nav-sections .navigation .parent > a:after]]></low-level-arrow>
+                <tab-text>.product.items .item .switch, .argento-tabs .block-title .switch</tab-text>
+                <tab-text-border><![CDATA[.product.data.items > .item.content, .product.data.items > .item.title > .switch, .argento-tabs > .item.content, .argento-tabs > .item.title > .switch]]></tab-text-border>
+                <tab-hover><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:focus,.product.data.items > .item.title:not(.disabled) > .switch:hover,.argento-tabs > .item.title:not(.disabled) > .switch:focus,.argento-tabs > .item.title:not(.disabled) > .switch:hover]]></tab-hover>
+                <tab-active><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:active,.product.data.items > .item.title.active > .switch,.product.data.items > .item.title.active > .switch:focus,.product.data.items > .item.title.active > .switch:hover, .argento-tabs > .item.title:not(.disabled) > .switch:active,.argento-tabs > .item.title.active > .switch,.argento-tabs > .item.title.active > .switch:focus,.argento-tabs > .item.title.active > .switch:hover]]></tab-active>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->
