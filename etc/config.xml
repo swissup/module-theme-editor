@@ -163,6 +163,21 @@
                 <tabActive_background>#ffffff</tabActive_background>
                 <tabActive_color>#d96708</tabActive_color>
             </tabs>
+            <buttons>
+                <button_backgroundColor>#ff7a0e</button_backgroundColor>
+                <button_backgroundRepeat>repeat-x</button_backgroundRepeat>
+                <button_background>linear-gradient(to bottom, #ff963b 0%, #ff7a0e 100%)</button_background>
+                <button_color>#ffffff</button_color>
+                <buttonHover_background>linear-gradient(to bottom, false 0%, false 100%)</buttonHover_background>
+                <buttonHover_color>#ffffff</buttonHover_color>
+                <buttonHover_backgroundColor>#ff8b26</buttonHover_backgroundColor>
+                <buttonSecondary_background>#a3a3a3</buttonSecondary_background>
+                <buttonSecondary_backgroundColor>#a3a3a3</buttonSecondary_backgroundColor>
+                <buttonSecondary_color>#ffffff</buttonSecondary_color>
+                <buttonSecondaryHover_background>#9e9e9e</buttonSecondaryHover_background>
+                <buttonSecondaryHover_backgroundColor>#9e9e9e</buttonSecondaryHover_backgroundColor>
+                <buttonSecondaryHover_color>#ffffff</buttonSecondaryHover_color>
+            </buttons>
             <css_selector>
                 <body>body</body>
                 <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
@@ -187,6 +202,10 @@
                 <tab-text-border><![CDATA[.product.data.items > .item.content, .product.data.items > .item.title > .switch, .argento-tabs > .item.content, .argento-tabs > .item.title > .switch]]></tab-text-border>
                 <tab-hover><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:focus,.product.data.items > .item.title:not(.disabled) > .switch:hover,.argento-tabs > .item.title:not(.disabled) > .switch:focus,.argento-tabs > .item.title:not(.disabled) > .switch:hover]]></tab-hover>
                 <tab-active><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:active,.product.data.items > .item.title.active > .switch,.product.data.items > .item.title.active > .switch:focus,.product.data.items > .item.title.active > .switch:hover, .argento-tabs > .item.title:not(.disabled) > .switch:active,.argento-tabs > .item.title.active > .switch,.argento-tabs > .item.title.active > .switch:focus,.argento-tabs > .item.title.active > .switch:hover]]></tab-active>
+                <button>.action.primary</button>
+                <button-hover>.action.primary:hover, .action.primary:focus, .action.primary:active</button-hover>
+                <button-secondary><![CDATA[button, .abs-revert-to-action-secondary, .paypal-review .block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.cancel, .block-compare .action.primary, .cart-summary .block .actions-toolbar > .primary .action.primary, .cart-summary .form.giftregistry .fieldset .action.primary, .paypal-review-discount .actions-toolbar .action.primary, .paypal-review-discount .actions-toolbar .action.cancel, .cart-discount .actions-toolbar .action.primary, .cart-discount .actions-toolbar .action.cancel, .review-form .action.submit.primary]]></button-secondary>
+                <button-secondary-hover><![CDATA[button:hover, .abs-revert-secondary-color:hover, .abs-revert-to-action-secondary:hover, .paypal-review .block .actions-toolbar .action.primary:hover,.abs-discount-block .actions-toolbar .action.primary:hover, .abs-discount-block .actions-toolbar .action.cancel:hover, .block-compare .action.primary:hover, .cart-summary .block .actions-toolbar > .primary .action.primary:hover, .cart-summary .form.giftregistry .fieldset .action.primary:hover, .paypal-review-discount .actions-toolbar .action.primary:hover, .paypal-review-discount .actions-toolbar .action.cancel:hover, .cart-discount .actions-toolbar .action.primary:hover, .cart-discount .actions-toolbar .action.cancel:hover, .review-form .action.submit.primary:hover]]></button-secondary-hover>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->

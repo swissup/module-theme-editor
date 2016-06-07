@@ -685,6 +685,67 @@
                     <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
                 </field>
             </group>
+
+            <group id="buttons" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Buttons</label>
+                <field id="button_heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Primary Buttons</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="button_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="button_backgroundRepeat" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Repeat</label>
+                    <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+                </field>
+                <field id="button_background" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background</label>
+                </field>
+                <field id="button_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="buttonHover_backgroundColor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover State Background Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="buttonHover_background" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover State Background</label>
+                </field>
+                <field id="buttonHover_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover State Font Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="buttonSecondaryNoSelector_heading" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Other Buttons</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+                </field>
+                <field id="buttonSecondary_background" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background</label>
+                </field>
+                <field id="buttonSecondary_backgroundColor" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="buttonSecondary_color" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="buttonSecondaryHover_background" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background</label>
+                </field>
+                <field id="buttonSecondaryHover_backgroundColor" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="buttonSecondaryHover_color" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Font Color</label>
+                    <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                </field>
+            </group>
         </section>
         <!-- Argento Essence Editor END -->
     </system>
