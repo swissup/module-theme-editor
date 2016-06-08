@@ -178,6 +178,22 @@
                 <buttonSecondaryHover_backgroundColor>#9e9e9e</buttonSecondaryHover_backgroundColor>
                 <buttonSecondaryHover_color>#ffffff</buttonSecondaryHover_color>
             </buttons>
+            <fonts>
+                <pageTitle_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</pageTitle_fontFamily>
+                <pageTitle_fontSize>40px</pageTitle_fontSize>
+                <pageTitle_fontWeight>300</pageTitle_fontWeight>
+                <pageTitle_color>#333333</pageTitle_color>
+                <blockTitle_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</blockTitle_fontFamily>
+                <blockTitle_fontSize>18px</blockTitle_fontSize>
+                <blockTitle_fontWeight>300</blockTitle_fontWeight>
+                <blockTitle_color>#333333</blockTitle_color>
+
+                <productNameLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</productNameLink_fontFamily>
+                <productNameLink_fontSize>1.4rem</productNameLink_fontSize>
+                <productNameLink_fontWeight>400</productNameLink_fontWeight>
+                <productNameLink_color>#333333</productNameLink_color>
+                <productNameLinkHover_color>#333333</productNameLinkHover_color>
+            </fonts>
             <css_selector>
                 <body>body</body>
                 <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
@@ -206,6 +222,10 @@
                 <button-hover>.action.primary:hover, .action.primary:focus, .action.primary:active</button-hover>
                 <button-secondary><![CDATA[button, .abs-revert-to-action-secondary, .paypal-review .block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.cancel, .block-compare .action.primary, .cart-summary .block .actions-toolbar > .primary .action.primary, .cart-summary .form.giftregistry .fieldset .action.primary, .paypal-review-discount .actions-toolbar .action.primary, .paypal-review-discount .actions-toolbar .action.cancel, .cart-discount .actions-toolbar .action.primary, .cart-discount .actions-toolbar .action.cancel, .review-form .action.submit.primary]]></button-secondary>
                 <button-secondary-hover><![CDATA[button:hover, .abs-revert-secondary-color:hover, .abs-revert-to-action-secondary:hover, .paypal-review .block .actions-toolbar .action.primary:hover,.abs-discount-block .actions-toolbar .action.primary:hover, .abs-discount-block .actions-toolbar .action.cancel:hover, .block-compare .action.primary:hover, .cart-summary .block .actions-toolbar > .primary .action.primary:hover, .cart-summary .form.giftregistry .fieldset .action.primary:hover, .paypal-review-discount .actions-toolbar .action.primary:hover, .paypal-review-discount .actions-toolbar .action.cancel:hover, .cart-discount .actions-toolbar .action.primary:hover, .cart-discount .actions-toolbar .action.cancel:hover, .review-form .action.submit.primary:hover]]></button-secondary-hover>
+                <page-title>h1, h1.page-title</page-title>
+                <block-title>.sidebar .block .block-title span strong, .sidebar .block .block-title span span, .sidebar .block .block-title strong, .sidebar .block .block-title span, .block .block-title strong</block-title>
+                <product-name-link>.products-grid .product-item-name a, .products-list .product-item-name a</product-name-link>
+                <product-name-link-hover>.products-grid .product-item-name a:hover, .products-list .product-item-name a:hover</product-name-link-hover>
             </css_selector>
         </swissup_argento_essence>
         <!-- Argento Essence Default Values END -->
