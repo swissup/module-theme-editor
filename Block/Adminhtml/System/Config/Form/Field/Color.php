@@ -8,7 +8,7 @@ class Color extends \Magento\Config\Block\System\Config\Form\Field {
         $value = $element->getData('value');
 
         $html .= '<script type="text/javascript">
-            require(["jquery"], function ($) {
+            require(["jquery", "jquery/colorpicker/js/colorpicker"], function ($) {
                 $(document).ready(function () {
                     var $el = $("#' . $element->getHtmlId() . '");
                     $el.css("backgroundColor", "'. $value .'");
