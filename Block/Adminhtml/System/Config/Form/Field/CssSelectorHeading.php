@@ -47,9 +47,7 @@ class CssSelectorHeading extends \Magento\Backend\Block\AbstractBlock implements
         $parts = explode('_', $element->getId());
         array_pop($parts);
         $node = $this->helper->camel2dashed(array_pop($parts));
-        array_pop($parts);
-        $section = implode('_', $parts);
-
+        $section = explode('/', $element->getFieldConfig('path'))[0];
         $selector = $this->_scopeConfig->getValue(
             $section . '/css_selector/' . $node,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
