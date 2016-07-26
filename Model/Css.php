@@ -28,6 +28,12 @@ class Css
      * @var \Magento\Config\Model\Config\Loader
      */
     protected $configLoader;
+
+    /**
+     * @var \Magento\Config\Model\Config\Structure
+     */
+    protected $configStructure;
+
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
@@ -37,10 +43,12 @@ class Css
      */
     protected $helper;
 
+
     /**
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory
      * @param \Magento\Config\Model\Config\Loader $configLoader
+     * @param \Magento\Config\Model\Config\Structure $configStructure
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Swissup\ThemeEditor\Helper\Helper $helper
      */
@@ -48,12 +56,14 @@ class Css
         \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory,
         \Magento\Config\Model\Config\Loader $configLoader,
+        \Magento\Config\Model\Config\Structure $configStructure,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Swissup\ThemeEditor\Helper\Helper $helper
     ) {
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();
         $this->configLoader = $configLoader;
+        $this->configStructure = $configStructure;
         $this->storeManager = $storeManager;
         $this->helper = $helper;
     }
@@ -164,9 +174,22 @@ class Css
             ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
             null
         );
-        if (!$node) {
+        $section = $this->configStructure->getElement($theme);
+        if (!$node || !$section) {
             return [];
         }
+
+        // Sync saved config with actually available nodes
+        // This fixes issues, when config option was saved earlier
+        // and now it's renamed and we no longer need it
+        $existingPaths = [];
+        foreach ($section->getChildren() as $group) {
+            foreach ($group->getChildren() as $section) {
+                $existingPaths[$section->getPath()] = $section->getPath();
+            }
+        }
+        // remove non-existing nodes
+        $node = array_intersect_key($node, $existingPaths);
 
         $config = [];
         foreach ($node as $group => $values) {
