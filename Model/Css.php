@@ -174,33 +174,49 @@ class Css
             ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
             null
         );
-        $section = $this->configStructure->getElement($theme);
-        if (!$node || !$section) {
+        $tab = $this->configStructure->getElement($theme);
+        if (!$node || !$tab) {
             return [];
         }
 
         // Sync saved config with actually available nodes
         // This fixes issues, when config option was saved earlier
         // and now it's renamed and we no longer need it
-        $existingPaths = [];
-        foreach ($section->getChildren() as $group) {
-            foreach ($group->getChildren() as $section) {
-                $existingPaths[$section->getPath()] = $section->getPath();
-            }
-        }
+        $existingPaths = $this->collectPaths($tab);
         // remove non-existing nodes
         $node = array_intersect_key($node, $existingPaths);
 
         $config = [];
         foreach ($node as $group => $values) {
             $value = $this->helper->getScopeConfig()->getValue($group, $scope, $scopeCode);
-            $groupId = explode('/', $group)[1];
-            $valueId = $this->helper->camel2dashed(explode('/', $values['path'])[2]);
+            $parts = explode('/', $values['path']);
+            $valueId = $this->helper->camel2dashed(array_pop($parts));
+            $groupId = array_pop($parts);
             $config[$groupId][$valueId] = $value;
         }
 
         return $config;
     }
+
+    /**
+     * Collect all paths from requested $section
+     *
+     * @param  Magento\Config\Model\Config\Structure\ElementInterface $section
+     * @param  array  &$paths
+     * @return array
+     */
+    protected function collectPaths($section, &$paths = [])
+    {
+        foreach ($section->getChildren() as $field) {
+            if ($field instanceof \Magento\Config\Model\Config\Structure\Element\Field) {
+                $paths[$field->getPath()] = $field->getPath();
+            } else {
+                $this->collectPaths($field, $paths);
+            }
+        }
+        return $paths;
+    }
+
     /**
      * @param String $theme
      * @param array $config
