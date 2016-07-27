@@ -47,17 +47,8 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
         $storeId = $request->getParam('store');
         $websiteId = $request->getParam('website');
 
-        $inherited = true;
-        foreach ($request->getParam('groups') as $groupName => $groupValue) {
-            foreach ($groupValue['fields'] as $fieldName => $fieldValue) {
-                if (empty($fieldValue['inherit'])) {
-                    $inherited = false;
-                    break 2;
-                }
-            }
-        }
         // if all options are inherited - delete file
-        if ($inherited) {
+        if ($this->isEverythingInherited($request->getParam('groups'))) {
             $css->removeFile($section, $storeId, $websiteId);
         } else {
             $css->generateAndSave($section, $storeId, $websiteId, CssModel::MODE_CREATE_AND_SAVE);
@@ -71,6 +62,30 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
                 }
             }
         }
+    }
+
+    /**
+     * Check each option for `inherit` flag.
+     * Breaks on the first non-inherited option and returns false.
+     *
+     * @param  array  $group
+     * @return boolean
+     */
+    protected function isEverythingInherited($group)
+    {
+        foreach ($group as $groupName => $groupValue) {
+            if (isset($groupValue['fields'])) {
+                foreach ($groupValue['fields'] as $fieldName => $fieldValue) {
+                    if (empty($fieldValue['inherit'])) {
+                        return false;
+                    }
+                }
+            }
+            if (isset($groupValue['groups'])) {
+                return $this->isEverythingInherited($groupValue['groups']);
+            }
+        }
+        return true;
     }
 
     /**
