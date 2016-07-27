@@ -179,17 +179,16 @@ class Css
             return [];
         }
 
-        // Sync saved config with actually available nodes
-        // This fixes issues, when config option was saved earlier
-        // and now it's renamed and we no longer need it
-        $existingPaths = $this->collectPaths($tab);
-        // remove non-existing nodes
-        $node = array_intersect_key($node, $existingPaths);
-
+        // Loop over actually available nodes in system.xml.
+        // Not over $node values, taken from saved config.
+        // This makes config to be written in correct order into css file.
         $config = [];
-        foreach ($node as $group => $values) {
-            $value = $this->helper->getScopeConfig()->getValue($group, $scope, $scopeCode);
-            $parts = explode('/', $values['path']);
+        foreach ($this->collectPaths($tab) as $path) {
+            if (empty($node[$path])) {
+                continue;
+            }
+            $value = $this->helper->getScopeConfig()->getValue($path, $scope, $scopeCode);
+            $parts = explode('/', $path);
             $valueId = $this->helper->camel2dashed(array_pop($parts));
             $groupId = array_pop($parts);
             $config[$groupId][$valueId] = $value;
