@@ -82,7 +82,9 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
                 }
             }
             if (isset($groupValue['groups'])) {
-                return $this->isEverythingInherited($groupValue['groups']);
+                if (!$this->isEverythingInherited($groupValue['groups'])) {
+                    return false;
+                }
             }
         }
         return true;
