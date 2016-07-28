@@ -85,97 +85,95 @@
 
         <!-- Argento Essence Default Values START -->
         <swissup_argento_essence>
-            <background>
+            <layout>
                 <body_backgroundColor>#fff</body_backgroundColor>
-                <body_backgroundImage>none</body_backgroundImage>
-                <body_backgroundRepeat>repeat</body_backgroundRepeat>
-                <body_backgroundPosition>0px,0px</body_backgroundPosition>
-                <page_backgroundColor>transparent</page_backgroundColor>
-                <page_backgroundImage>none</page_backgroundImage>
-                <page_backgroundRepeat>no-repeat</page_backgroundRepeat>
-                <page_backgroundPosition>0px,0px</page_backgroundPosition>
-                <topToolbarContainer_backgroundColor>#f2f2f2</topToolbarContainer_backgroundColor>
-                <topToolbarContainer_backgroundImage>none</topToolbarContainer_backgroundImage>
-                <topToolbarContainer_backgroundRepeat>repeat</topToolbarContainer_backgroundRepeat>
-                <topToolbarContainer_backgroundPosition>0px,0px</topToolbarContainer_backgroundPosition>
-                <headerContainer_backgroundColor>transparent</headerContainer_backgroundColor>
-                <headerContainer_backgroundImage>none</headerContainer_backgroundImage>
-                <headerContainer_backgroundRepeat>no-repeat</headerContainer_backgroundRepeat>
-                <headerContainer_backgroundPosition>0px,0px</headerContainer_backgroundPosition>
-                <navigationContainer_backgroundColor>#ffffff</navigationContainer_backgroundColor>
-                <navigationContainer_backgroundImage>none</navigationContainer_backgroundImage>
-                <navigationContainer_backgroundRepeat>no-repeat</navigationContainer_backgroundRepeat>
-                <navigationContainer_backgroundPosition>0px,0px</navigationContainer_backgroundPosition>
-                <nav_backgroundColor>transparent</nav_backgroundColor>
-                <nav_backgroundImage>none</nav_backgroundImage>
-                <nav_backgroundRepeat>no-repeat</nav_backgroundRepeat>
-                <nav_backgroundPosition>0px,0px</nav_backgroundPosition>
-                <contentContainer_backgroundColor>transparent</contentContainer_backgroundColor>
-                <contentContainer_backgroundImage>none</contentContainer_backgroundImage>
-                <contentContainer_backgroundRepeat>no-repeat</contentContainer_backgroundRepeat>
-                <contentContainer_backgroundPosition>0px,0px</contentContainer_backgroundPosition>
-                <footer_backgroundColor>#ffffff</footer_backgroundColor>
-                <footer_backgroundImage>none</footer_backgroundImage>
-                <footer_backgroundRepeat>repeat-x</footer_backgroundRepeat>
-                <footer_backgroundPosition>0px,0px</footer_backgroundPosition>
-                <footerTopToolbar_backgroundColor>#f2f2f2</footerTopToolbar_backgroundColor>
-                <footerTopToolbar_backgroundImage>none</footerTopToolbar_backgroundImage>
-                <footerTopToolbar_backgroundRepeat>no-repeat</footerTopToolbar_backgroundRepeat>
-                <footerTopToolbar_backgroundPosition>0px,0px</footerTopToolbar_backgroundPosition>
-                <footerContent_backgroundColor>transparent</footerContent_backgroundColor>
-                <footerContent_backgroundImage>none</footerContent_backgroundImage>
-                <footerContent_backgroundRepeat>no-repeat</footerContent_backgroundRepeat>
-                <footerContent_backgroundPosition>0px,0px</footerContent_backgroundPosition>
-                <footerBottomToolbar_backgroundColor>#7e807e</footerBottomToolbar_backgroundColor>
-                <footerBottomToolbar_backgroundImage>none</footerBottomToolbar_backgroundImage>
-                <footerBottomToolbar_backgroundRepeat>no-repeat</footerBottomToolbar_backgroundRepeat>
-                <footerBottomToolbar_backgroundPosition>0px,0px</footerBottomToolbar_backgroundPosition>
-            </background>
-            <navigation>
-                <topLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</topLevelLink_fontFamily>
-                <topLevelLink_fontSize>1.4rem</topLevelLink_fontSize>
-                <topLevelLink_textTransform>none</topLevelLink_textTransform>
-                <topLevelLink_color>#303030</topLevelLink_color>
-                <topLevelLinkHover_color>#333333</topLevelLinkHover_color>
-                <topLevelLinkActive_color>#333333</topLevelLinkActive_color>
-                <topLevelArrow_fontSize>14px</topLevelArrow_fontSize>
-                <lowLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</lowLevelLink_fontFamily>
-                <lowLevelLink_fontSize>1.4rem</lowLevelLink_fontSize>
-                <lowLevelLink_textTransform>none</lowLevelLink_textTransform>
-                <lowLevelLink_backgroundColor>#ffffff</lowLevelLink_backgroundColor>
-                <lowLevelLinkHover_backgroundColor>#efefef</lowLevelLinkHover_backgroundColor>
-                <lowLevelLinkActive_backgroundColor>#efefef</lowLevelLinkActive_backgroundColor>
-                <lowLevelLink_color>#303030</lowLevelLink_color>
-                <lowLevelLinkHover_color>#303030</lowLevelLinkHover_color>
-                <lowLevelLinkActive_color>#d96708</lowLevelLinkActive_color>
-                <lowLevelArrow_fontSize>14px</lowLevelArrow_fontSize>
-            </navigation>
+                <body_backgroundImage></body_backgroundImage>
+                <body_backgroundRepeat>no-repeat</body_backgroundRepeat>
+                <body_backgroundPosition>0,0</body_backgroundPosition>
+                <page_maxWidth>none</page_maxWidth>
+                <contentContainer_maxWidth>980px</contentContainer_maxWidth>
+            </layout>
+            <header>
+                <topToolbarContainer>
+                    <topToolbarContainer_backgroundColor>#f2f2f2</topToolbarContainer_backgroundColor>
+                    <topToolbarContainer_backgroundImage>noisy_texture.png</topToolbarContainer_backgroundImage>
+                    <topToolbarContainer_backgroundRepeat>repeat</topToolbarContainer_backgroundRepeat>
+                    <topToolbarContainer_backgroundPosition>0,0</topToolbarContainer_backgroundPosition>
+                    <topToolbarText_color>#7e807e</topToolbarText_color>
+                    <topToolbarText_fontSize>14px</topToolbarText_fontSize>
+                </topToolbarContainer>
+                <navigation>
+                    <navigationContainer_backgroundColor>transparent</navigationContainer_backgroundColor>
+                    <navigationContainer_backgroundImage>nav_container.gif</navigationContainer_backgroundImage>
+                    <navigationContainer_backgroundRepeat>no-repeat</navigationContainer_backgroundRepeat>
+                    <navigationContainer_backgroundPosition>50%,100%</navigationContainer_backgroundPosition>
+                    <topLevelLi_borderLeftColor>rgba(0, 0, 0, 0.2)</topLevelLi_borderLeftColor>
+                    <topLevelLi_borderRightColor>rgba(255, 255, 255, 1)</topLevelLi_borderRightColor>
+                    <topLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</topLevelLink_fontFamily>
+                    <topLevelLink_fontSize>1.4rem</topLevelLink_fontSize>
+                    <topLevelLink_textTransform>none</topLevelLink_textTransform>
+                    <topLevelLink_color>#303030</topLevelLink_color>
+                    <topLevelLinkHover_color>#333333</topLevelLinkHover_color>
+                    <topLevelLinkActive_color>#333333</topLevelLinkActive_color>
+                    <topLevelArrow_fontSize>14px</topLevelArrow_fontSize>
+                    <lowLevelLink_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</lowLevelLink_fontFamily>
+                    <lowLevelLink_fontSize>1.4rem</lowLevelLink_fontSize>
+                    <lowLevelLink_textTransform>none</lowLevelLink_textTransform>
+                    <lowLevelLink_backgroundColor>#ffffff</lowLevelLink_backgroundColor>
+                    <lowLevelLinkHover_backgroundColor>#efefef</lowLevelLinkHover_backgroundColor>
+                    <lowLevelLinkActive_backgroundColor>#efefef</lowLevelLinkActive_backgroundColor>
+                    <lowLevelLink_color>#303030</lowLevelLink_color>
+                    <lowLevelLinkHover_color>#303030</lowLevelLinkHover_color>
+                    <lowLevelLinkActive_color>#d96708</lowLevelLinkActive_color>
+                    <lowLevelArrow_fontSize>14px</lowLevelArrow_fontSize>
+                </navigation>
+            </header>
+            <footer>
+                <topToolbarContainer>
+                    <footerTopToolbar_backgroundColor>#f2f2f2</footerTopToolbar_backgroundColor>
+                    <footerTopToolbar_backgroundImage>noisy_texture.png</footerTopToolbar_backgroundImage>
+                    <footerTopToolbar_backgroundRepeat>no-repeat</footerTopToolbar_backgroundRepeat>
+                    <footerTopToolbar_backgroundPosition>0px,0px</footerTopToolbar_backgroundPosition>
+                    <footerTopToolbarText_color>#333333</footerTopToolbarText_color>
+                </topToolbarContainer>
+                <footer>
+                    <footer_backgroundColor>transparent</footer_backgroundColor>
+                    <footer_backgroundImage>none</footer_backgroundImage>
+                    <footer_backgroundRepeat>no-repeat</footer_backgroundRepeat>
+                    <footer_backgroundPosition>0px,0px</footer_backgroundPosition>
+                    <footerText_color>#333333</footerText_color>
+                    <footerLinks_color>#575757</footerLinks_color>
+                </footer>
+                <bottomToolbarContainer>
+                    <footerBottomToolbar_backgroundColor>#7e807e</footerBottomToolbar_backgroundColor>
+                    <footerBottomToolbar_backgroundImage>none</footerBottomToolbar_backgroundImage>
+                    <footerBottomToolbar_backgroundRepeat>no-repeat</footerBottomToolbar_backgroundRepeat>
+                    <footerBottomToolbar_backgroundPosition>0px,0px</footerBottomToolbar_backgroundPosition>
+                    <footerBottomToolbarText_color>#ffffff</footerBottomToolbarText_color>
+                </bottomToolbarContainer>
+            </footer>
             <tabs>
-                <tabText_padding>1px 35px 1px 35px</tabText_padding>
-                <tabText_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</tabText_fontFamily>
-                <tabText_fontSize>1.4rem</tabText_fontSize>
-                <tabText_fontWeight>400</tabText_fontWeight>
-                <tabText_textTransform>none</tabText_textTransform>
-                <tabText_color>#666666</tabText_color>
-                <tabTextBorder_borderColor>#cfe2f1</tabTextBorder_borderColor>
+                <tab_padding>1px 35px 1px 35px</tab_padding>
+                <tab_fontFamily>'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif</tab_fontFamily>
+                <tab_fontSize>1.4rem</tab_fontSize>
+                <tab_fontWeight>400</tab_fontWeight>
+                <tab_textTransform>none</tab_textTransform>
+                <tab_color>#666666</tab_color>
+                <tabBorder_borderColor>#cfe2f1</tabBorder_borderColor>
+                <tab_background>#ffffff</tab_background>
                 <tabHover_background>#ffffff</tabHover_background>
                 <tabHover_color>#666666</tabHover_color>
                 <tabActive_background>#ffffff</tabActive_background>
                 <tabActive_color>#d96708</tabActive_color>
             </tabs>
             <buttons>
-                <button_backgroundColor>#ff7a0e</button_backgroundColor>
-                <button_backgroundRepeat>repeat-x</button_backgroundRepeat>
                 <button_background>linear-gradient(to bottom, #ff963b 0%, #ff7a0e 100%)</button_background>
                 <button_color>#ffffff</button_color>
                 <buttonHover_background>linear-gradient(to bottom, false 0%, false 100%)</buttonHover_background>
                 <buttonHover_color>#ffffff</buttonHover_color>
-                <buttonHover_backgroundColor>#ff8b26</buttonHover_backgroundColor>
                 <buttonSecondary_background>#a3a3a3</buttonSecondary_background>
-                <buttonSecondary_backgroundColor>#a3a3a3</buttonSecondary_backgroundColor>
                 <buttonSecondary_color>#ffffff</buttonSecondary_color>
                 <buttonSecondaryHover_background>#9e9e9e</buttonSecondaryHover_background>
-                <buttonSecondaryHover_backgroundColor>#9e9e9e</buttonSecondaryHover_backgroundColor>
                 <buttonSecondaryHover_color>#ffffff</buttonSecondaryHover_color>
             </buttons>
             <fonts>
@@ -196,26 +194,32 @@
             </fonts>
             <css_selector>
                 <body>body</body>
-                <page>.page-header, .page-wrapper .nav-sections, .page-main .columns</page>
+                <page>.page-wrapper</page>
                 <top-toolbar-container>.page-header .panel.wrapper</top-toolbar-container>
+                <top-toolbar-text><![CDATA[.page-header .panel.wrapper, .header.panel > .header.links > li, .header.panel > .header.links > li > a, .header.panel > .header.links > li > a:hover, .header.panel > .header.links > li > a:visited]]></top-toolbar-text>
                 <header-container>.page-header .header.content, .page-wrapper .nav-sections .nav-sections-items</header-container>
-                <navigation-container>.page-wrapper .nav-sections .section-items.nav-sections-items</navigation-container>
+                <navigation-container>.nav-sections</navigation-container>
                 <nav>.page-wrapper .nav-sections .navigation</nav>
-                <content-container>.page-main</content-container>
+                <content-container><![CDATA[.navigation, .breadcrumbs, .page-header .header.panel, .header.content, .footer.content, .page-wrapper > .widget, .page-wrapper > .page-bottom, .block.category.event, .top-container, .page-main, .page-container > .content]]></content-container>
                 <footer>.page-footer</footer>
+                <footer-text>.footer.content</footer-text>
+                <footer-links>.footer.content a, .footer.content a:hover, .footer.content a:visited, .footer.content .links a, .footer.content .links a:hover, .footer.content .links a:visited</footer-links>
                 <footer-top-toolbar>.page-footer .footer-toolbar-top</footer-top-toolbar>
+                <footer-top-toolbar-text>.footer-toolbar-top, .footer-toolbar-top a</footer-top-toolbar-text>
                 <footer-content>.page-footer .footer.content</footer-content>
                 <footer-bottom-toolbar>.page-footer .footer-toolbar-bottom</footer-bottom-toolbar>
+                <footer-bottom-toolbar-text>.page-footer .footer-toolbar-bottom, .footer-toolbar-bottom a, .footer-toolbar-bottom .alink</footer-bottom-toolbar-text>
                 <top-level-link>.nav-sections .navigation a.level-top</top-level-link>
                 <top-level-link-hover><![CDATA[.navigation .level0 > .level-top:hover,.navigation .level0 > .level-top.ui-state-focus]]></top-level-link-hover>
                 <top-level-link-active><![CDATA[.navigation .level0.active > .level-top,.navigation .level0.has-active > .level-top]]></top-level-link-active>
                 <top-level-arrow>.nav-sections .navigation .parent a.level-top:after</top-level-arrow>
+                <top-level-li>.navigation .level0</top-level-li>
                 <low-level-link>.nav-sections .navigation .level0 .submenu a</low-level-link>
                 <low-level-link-hover>.nav-sections .navigation .level0 .submenu a:hover,.navigation .level0 .submenu a.ui-state-focus</low-level-link-hover>
                 <low-level-link-active><![CDATA[.nav-sections .navigation .level0 .submenu .active > a]]></low-level-link-active>
                 <low-level-arrow><![CDATA[.nav-sections .navigation .parent > a:after]]></low-level-arrow>
-                <tab-text>.product.items .item .switch, .argento-tabs .block-title .switch</tab-text>
-                <tab-text-border><![CDATA[.product.data.items > .item.content, .product.data.items > .item.title > .switch, .argento-tabs > .item.content, .argento-tabs > .item.title > .switch]]></tab-text-border>
+                <tab-border><![CDATA[.product.data.items > .item.content, .product.data.items > .item.title > .switch, .argento-tabs > .item.content, .argento-tabs > .item.title > .switch]]></tab-border>
+                <tab><![CDATA[.product.data.items > .item.title > .switch, .argento-tabs > .item.title > .switch]]></tab>
                 <tab-hover><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:focus,.product.data.items > .item.title:not(.disabled) > .switch:hover,.argento-tabs > .item.title:not(.disabled) > .switch:focus,.argento-tabs > .item.title:not(.disabled) > .switch:hover]]></tab-hover>
                 <tab-active><![CDATA[.product.data.items > .item.title:not(.disabled) > .switch:active,.product.data.items > .item.title.active > .switch,.product.data.items > .item.title.active > .switch:focus,.product.data.items > .item.title.active > .switch:hover, .argento-tabs > .item.title:not(.disabled) > .switch:active,.argento-tabs > .item.title.active > .switch,.argento-tabs > .item.title.active > .switch:focus,.argento-tabs > .item.title.active > .switch:hover]]></tab-active>
                 <button>.action.primary</button>

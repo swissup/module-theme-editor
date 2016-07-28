@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="header" translate="label" showInDefault="1" showInWebsite="1" sortOrder="10">
+        <label>Header</label>
+
+        <group id="topToolbarContainer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Top toolbar container</label>
+            <field id="topToolbarContainer_backgroundHeading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Background</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="topToolbarContainer_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="topToolbarContainer_backgroundImage" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Image</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+            </field>
+            <field id="topToolbarContainer_backgroundRepeat" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Repeat</label>
+                <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+            </field>
+            <field id="topToolbarContainer_backgroundPosition" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Position</label>
+                <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+            </field>
+
+            <field id="topToolbarText_heading" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Font</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="topToolbarText_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="topToolbarText_fontSize" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Size</label>
+            </field>
+        </group>
+
+        <group id="navigation" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Navigation</label>
+            <field id="navigationContainer_heading" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Background</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="navigationContainer_backgroundColor" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="navigationContainer_backgroundImage" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Image</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Image</frontend_model>
+                <backend_model>Swissup\ThemeEditor\Model\Config\Backend\Image</backend_model>
+            </field>
+            <field id="navigationContainer_backgroundRepeat" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Repeat</label>
+                <source_model>Swissup\ThemeEditor\Model\Config\Source\BackgroundRepeat</source_model>
+            </field>
+            <field id="navigationContainer_backgroundPosition" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Position</label>
+                <comment>Values should include dimension units: 50% or -20px or 5em, etc</comment>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\BackgroundPosition</frontend_model>
+            </field>
+
+            <field id="topLevelLi_heading" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Menu item dividers</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="topLevelLi_borderLeftColor" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Left divider</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="topLevelLi_borderRightColor" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Right divider</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+
+            <field id="topLevelLink_heading" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Top level links</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="topLevelLink_fontFamily" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Family</label>
+            </field>
+            <field id="topLevelLink_fontSize" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Size</label>
+            </field>
+            <field id="topLevelLink_textTransform" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Text transform</label>
+                <source_model>Swissup\ThemeEditor\Model\Config\Source\TextTransform</source_model>
+            </field>
+            <field id="topLevelLink_color" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="topLevelLinkHover_color" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Hover state font color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="topLevelLinkActive_color" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Active state font color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+
+            <field id="topLevelArrow_heading" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Top level arrows</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="topLevelArrow_fontSize" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Size</label>
+            </field>
+
+            <field id="lowLevelLink_heading" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Links from the rest of the levels</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="lowLevelLink_fontFamily" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Family</label>
+            </field>
+            <field id="lowLevelLink_fontSize" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Size</label>
+            </field>
+            <field id="lowLevelLink_textTransform" translate="label" type="select" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Text transform</label>
+                <source_model>Swissup\ThemeEditor\Model\Config\Source\TextTransform</source_model>
+            </field>
+            <field id="lowLevelLink_backgroundColor" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Background color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="lowLevelLinkHover_backgroundColor" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Hover state background color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="lowLevelLinkActive_backgroundColor" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Active state background color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="lowLevelLink_color" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="lowLevelLinkHover_color" translate="label" type="text" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Hover state font color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+            <field id="lowLevelLinkActive_color" translate="label" type="text" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Active state font color</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            </field>
+
+            <field id="lowLevelArrow_heading" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Rest of the levels arrows</label>
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\CssSelectorHeading</frontend_model>
+            </field>
+            <field id="lowLevelArrow_fontSize" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Font Size</label>
+            </field>
+        </group>
+
+    </group>
+</include>
