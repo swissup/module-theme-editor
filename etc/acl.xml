@@ -6,10 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Swissup_ThemeEditor::config" title="Swissup Themes Editor">
-                                <resource id="Swissup_ThemeEditor::config_swissup_absolute" title="Absolute Theme Editor"/>
-                                <resource id="Swissup_ThemeEditor::config_argento_essence" title="Argento Essence Editor"/>
-                            </resource>
+                            <resource id="Swissup_ThemeEditor::config" title="Swissup Themes Editor"/>
                         </resource>
                     </resource>
                 </resource>
