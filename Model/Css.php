@@ -9,6 +9,10 @@ class Css
     /** Themes */
     const ABSOLUTE_THEME  = 'swissup_absolute';
     const ARGENTO_ESSENCE = 'swissup_argento_essence';
+    const ARGENTO_FLAT    = 'swissup_argento_flat';
+    const ARGENTO_MALL    = 'swissup_argento_mall';
+    const ARGENTO_PURE    = 'swissup_argento_pure';
+    const ARGENTO_PURE2   = 'swissup_argento_pure2';
 
     /** Modes */
     const MODE_CREATE_AND_SAVE = 'create_save';
@@ -77,7 +81,11 @@ class Css
     {
         return [
             self::ABSOLUTE_THEME,
-            self::ARGENTO_ESSENCE
+            self::ARGENTO_ESSENCE,
+            self::ARGENTO_FLAT,
+            self::ARGENTO_MALL,
+            self::ARGENTO_PURE,
+            self::ARGENTO_PURE2
         ];
     }
 
