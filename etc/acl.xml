@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Swissup_ThemeEditor::config" title="Swissup Themes Editor"/>
+                            <resource id="Swissup_ThemeEditor::config" title="Swissup Themes Editor" sortOrder="290"/>
                         </resource>
                     </resource>
                 </resource>
