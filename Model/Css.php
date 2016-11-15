@@ -114,8 +114,9 @@ class Css
         $css    = $this->convertConfigToCss($theme, $config);
         try {
             $this->getStorage()->saveFile([
-                'content'  => $css,
-                'filename' => $filePath
+                'content'   => $css,
+                'directory' => '',
+                'filename'  => $filePath
             ], true);
         } catch (\Exception $e) {
             $this->messageManager->addError($e->getMessage());
