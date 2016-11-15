@@ -180,8 +180,8 @@ class Css
         }
         $node = $this->configLoader->getConfigByPath(
             $theme,
-            ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
-            null
+            $scope,
+            $scopeCode
         );
         $tab = $this->configStructure->getElement($theme);
         if (!$node || !$tab) {
