@@ -246,8 +246,8 @@ class Css
      */
     public function convertConfigToCss($theme, $config)
     {
-        $groupedCss   = [];
-        $groupsToSkip = ['css_selector', 'head'];
+        $groups = [];
+        $groupsToSkip = ['css_selector', 'head', 'media_query'];
         $propsToSkip  = ['heading', 'head_link', 'sticky_header'];
         foreach ($config as $groupName => $groupValues) {
             if (in_array($groupName, $groupsToSkip)) {
@@ -265,25 +265,40 @@ class Css
                 if (false === $value || strlen($value) === 0) {
                     continue; // feature to keep default theme styles from theme.css
                 }
-                $groupedCss[$key][] = "{$prop}:{$value};";
+                $groups[$groupName][$key][] = "{$prop}:{$value};";
             }
         }
         $css = '';
-        foreach ($groupedCss as $key => $cssArray) {
-            if (empty($config['css_selector'])
-                || !is_array($config['css_selector'])
-                || empty($config['css_selector'][$key])) {
-                $selector = $this->helper->getScopeConfig()
-                    ->getValue($theme . '/css_selector/' .$key);
-                if (empty($selector)) {
-                    continue;
+        foreach ($groups as $groupName => $groupedCss) {
+            $tmpCss = '';
+            foreach ($groupedCss as $key => $cssArray) {
+                if (empty($config['css_selector'])
+                    || !is_array($config['css_selector'])
+                    || empty($config['css_selector'][$key])) {
+
+                    $selector = $this->helper->getScopeConfig()
+                        ->getValue($theme . '/css_selector/' . $key);
+                    if (empty($selector)) {
+                        continue;
+                    }
+                } else {
+                    $selector = $config['css_selector'][$key];
                 }
-            } else {
-                $selector = $config['css_selector'][$key];
+
+                $styles = implode('', $cssArray);
+                $tmpCss .= "{$selector}{{$styles}}\n";
             }
-            $styles   = implode('', $cssArray);
-            $css .= "{$selector}{{$styles}}\n";
+
+            // wrap into @media query if needed
+            $mediaQuery = $this->helper->getScopeConfig()
+                ->getValue($theme . '/media_query/' . $groupName);
+            if (!empty($mediaQuery)) {
+                $tmpCss = "{$mediaQuery}{\n{$tmpCss}}\n";
+            }
+
+            $css .= $tmpCss;
         }
+
         if (!empty($config['head']['css'])) {
             $css .= $config['head']['css'];
         }
