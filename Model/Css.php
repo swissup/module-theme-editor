@@ -115,6 +115,8 @@ class Css
         try {
             $this->getStorage()->saveFile([
                 'content'   => $css,
+                // directory is required to throw exception properly.
+                // @see Magento\MediaStorage\Model\File\Storage\File ~301
                 'directory' => '',
                 'filename'  => $filePath
             ], true);
