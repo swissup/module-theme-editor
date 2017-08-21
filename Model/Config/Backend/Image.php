@@ -60,4 +60,9 @@ class Image extends \Magento\Config\Model\Config\Backend\Image
 
         return $this;
     }
+
+    protected function _getAllowedExtensions()
+    {
+        return ['jpg', 'jpeg', 'gif', 'png', 'svg'];
+    }
 }
