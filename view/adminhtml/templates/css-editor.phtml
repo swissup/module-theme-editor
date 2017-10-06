@@ -1,0 +1,7 @@
+<?php
+    $element = $block->getElement();
+?>
+<div class="config-field-wrapper" style="border: 1px solid #adadad;">
+    <?php echo $element->getElementHtml(); ?>
+    <div data-mage-init='{ "configCssEditor": <?php echo $block->getOptions();?> }'></div>
+</div>
