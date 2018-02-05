@@ -41,7 +41,7 @@ class ListHelper extends AbstractHelper
     {
         $this->listBlock = $listBlock;
         $actionsBlock = $listBlock->getLayout()
-            ->createBlock('Magento\Framework\View\Element\Template', 'actions')
+            ->createBlock('Magento\Framework\View\Element\Template')
             ->setTemplate('Magento_Catalog::product/list/actions.phtml');
         $listBlock->setChild('actions', $actionsBlock);
     }
