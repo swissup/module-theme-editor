@@ -32,8 +32,14 @@ class CssSelectorHeading extends \Magento\Backend\Block\AbstractBlock implements
     public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
         if ($selector = $this->_getCssSelector($element)) {
+            $headerText = sprintf(
+                '%1$s <a href="#" onclick="jQuery(this).next(\'.css-selectors\').toggle(); return false;" title="%3$s">...</a> <span class="css-selectors" style="display: none; font-weight: normal;">(%2$s)</span>',
+                $element->getLabel(),
+                $selector,
+                __('Show/hide CSS selectors')
+            );
             return sprintf('<tr id="row_%s"><td colspan="5"><h4 id="%s">%s</h4></td></tr>',
-                $element->getHtmlId(), $element->getHtmlId(), ($element->getLabel() . ' (' . $selector . ')')
+                $element->getHtmlId(), $element->getHtmlId(), $headerText
             );
         } else {
             return sprintf('<tr id="row_%s"><td colspan="5"><h4 id="%s">%s</h4></td></tr>',
