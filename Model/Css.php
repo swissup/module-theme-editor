@@ -117,6 +117,7 @@ class Css
         $config = $this->getThemeConfig($theme, $storeId, $websiteId);
         $css    = $this->convertConfigToCss($theme, $config);
         if (empty($css)) {
+            $this->removeFile($theme, $storeId, $websiteId);
             return; // no need to save file when css is empty
         }
 
