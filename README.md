@@ -4,8 +4,8 @@
 
 ```bash
 cd <magento_root>
-composer config repositories.swissup/theme-editor vcs git@github.com:swissup/theme-editor.git
-composer require swissup/theme-editor:dev-master --prefer-source
+composer config repositories.swissup composer https://docs.swissuplabs.com/packages/
+composer require swissup/module-theme-editor --prefer-source
 bin/magento module:enable Swissup_ThemeEditor
 bin/magento setup:upgrade
 ```
