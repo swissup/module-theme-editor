@@ -1,40 +1,33 @@
 define([
     'jquery',
     'mage/utils/wrapper',
-    'ace/ace',
-    'ace/ext/language_tools'
-], function ($, wrapper, ace) {
+    'Swissup_ThemeEditor/js/codemirror/lib/codemirror',
+    'Swissup_ThemeEditor/js/codemirror/mode/css/css',
+    'Swissup_ThemeEditor/js/codemirror/addon/hint/show-hint',
+    'Swissup_ThemeEditor/js/codemirror/addon/hint/css-hint',
+    'Swissup_ThemeEditor/js/codemirror/addon/edit/closebrackets',
+], function ($, wrapper, codeMirror) {
     'use strict';
 
      return {
         configCssEditor: function (options, element) {
-            var configElement = $(element).prev(["class*='admin__control'"]);
-            var parent = $(element).parent('.config-field-wrapper');
-            configElement.hide();
-
-            var editor = ace.edit(element);
-            editor.setValue(configElement.val());
-            editor.clearSelection();
-            editor.setOptions({
-                mode: 'ace/mode/css',
-                maxLines: 30,
-                minLines: 30,
-                fontSize: 14,
-                enableBasicAutocompletion: true
-            });
+            var configElement = $(element).prev(["class*='admin__control'"]),
+                parent = $(element).parent('.config-field-wrapper'),
+                editor = codeMirror.fromTextArea(configElement[0], {
+                    lineNumbers: true,
+                    mode: 'css',
+                    autoCloseBrackets: true,
+                    extraKeys: {"Ctrl-Space": "autocomplete"},
+                });
 
             if (options.disabled) {
-                editor.setReadOnly(true);
+                editor.setOption('readOnly', 'nocursor');
                 parent.css('opacity', 0.5);
             }
 
-            editor.on("change", function(e) {
-                configElement.val(editor.getValue());
-            });
-
             // wrap toggle function to enable/disable editor
-            toggleValueElements = wrapper.wrap(
-                toggleValueElements,
+            window.toggleValueElements = wrapper.wrap(
+                window.toggleValueElements,
                 function (
                     callOriginal, checkbox, container, excludedElements, checked
                 ) {
@@ -44,7 +37,8 @@ define([
                         excludedElements,
                         checked
                     );
-                    editor.setReadOnly(checkbox.checked);
+
+                    editor.setOption('readOnly', checkbox.checked ? 'nocursor' : false);
                     parent.css('opacity', checkbox.checked ? 0.5 : 1);
                     return result;
                 }
