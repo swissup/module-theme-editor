@@ -2,7 +2,7 @@
     "name": "swissup/module-theme-editor",
     "description": "Theme styles editing extension from Swissup",
     "type": "magento2-module",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "license": "OSL-3.0",
     "autoload": {
         "files": [ "registration.php" ],
