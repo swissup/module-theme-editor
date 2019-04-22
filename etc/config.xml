@@ -3,14 +3,6 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <swissup_argento>
-            <product_list>
-                <grid>
-                    <add_to_cart>default</add_to_cart>
-                </grid>
-                <list>
-                    <add_to_cart>default</add_to_cart>
-                </list>
-            </product_list>
         </swissup_argento>
     </default>
 </config>
