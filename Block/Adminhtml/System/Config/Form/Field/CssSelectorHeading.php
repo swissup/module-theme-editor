@@ -5,17 +5,17 @@ class CssSelectorHeading extends \Magento\Backend\Block\AbstractBlock implements
     \Magento\Framework\Data\Form\Element\Renderer\RendererInterface
 {
     /**
-     * @var \Swissup\ThemeEditor\Helper\Helper
+     * @var \Swissup\ThemeEditor\Helper\Data
      */
     protected $helper;
     /**
      * @param \Magento\Backend\Block\Context $context
-     * @param \Swissup\ThemeEditor\Helper\Helper $helper
+     * @param \Swissup\ThemeEditor\Helper\Data $helper
      * @param array $data
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,
-        \Swissup\ThemeEditor\Helper\Helper $helper,
+        \Swissup\ThemeEditor\Helper\Data $helper,
         array $data = []
     )
     {

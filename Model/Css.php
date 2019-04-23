@@ -45,7 +45,7 @@ class Css
      */
     protected $storeManager;
     /**
-     * @var \Swissup\ThemeEditor\Helper\Helper
+     * @var \Swissup\ThemeEditor\Helper\Data
      */
     protected $helper;
 
@@ -56,7 +56,7 @@ class Css
      * @param \Magento\Config\Model\Config\Loader $configLoader
      * @param \Magento\Config\Model\Config\Structure $configStructure
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Swissup\ThemeEditor\Helper\Helper $helper
+     * @param \Swissup\ThemeEditor\Helper\Data $helper
      */
     public function __construct(
         \Magento\Framework\Message\ManagerInterface $messageManager,
@@ -64,7 +64,7 @@ class Css
         \Magento\Config\Model\Config\Loader $configLoader,
         \Magento\Config\Model\Config\Structure $configStructure,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Swissup\ThemeEditor\Helper\Helper $helper
+        \Swissup\ThemeEditor\Helper\Data $helper
     ) {
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();

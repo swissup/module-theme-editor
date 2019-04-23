@@ -17,19 +17,19 @@ class AddPageClassName implements ObserverInterface
     protected $viewConfig;
 
     /**
-     * @var \Swissup\ThemeEditor\Helper\Helper
+     * @var \Swissup\ThemeEditor\Helper\Data
      */
     protected $helper;
 
     /**
      * @param \Magento\Framework\View\Page\Config $pageConfig
      * @param \Magento\Framework\View\ConfigInterface $viewConfig
-     * @param \Swissup\ThemeEditor\Helper\Helper $helper
+     * @param \Swissup\ThemeEditor\Helper\Data $helper
      */
     public function __construct(
         \Magento\Framework\View\Page\Config $pageConfig,
         \Magento\Framework\View\ConfigInterface $viewConfig,
-        \Swissup\ThemeEditor\Helper\Helper $helper
+        \Swissup\ThemeEditor\Helper\Data $helper
     ) {
         $this->pageConfig = $pageConfig;
         $this->viewConfig = $viewConfig;

@@ -1,9 +1,10 @@
 <?php
+
 namespace Swissup\ThemeEditor\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 
-class Helper extends AbstractHelper
+class Data extends AbstractHelper
 {
     /**
      * Convert capital letters to hyphens in string
@@ -13,7 +14,8 @@ class Helper extends AbstractHelper
      * @param  String camel case string
      * @return String string with hyphens
      */
-    public function camel2dashed($str) {
+    public function camel2dashed($str)
+    {
         return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', $str));
     }
     /**
