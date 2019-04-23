@@ -7,19 +7,32 @@ use Magento\Framework\Event\ObserverInterface;
 class AddPageClassName implements ObserverInterface
 {
     /**
+     * @var \Magento\Framework\View\Page\Config
+     */
+    protected $pageConfig;
+
+    /**
+     * @var \Magento\Framework\View\ConfigInterface
+     */
+    protected $viewConfig;
+
+    /**
      * @var \Swissup\ThemeEditor\Helper\Helper
      */
     protected $helper;
 
     /**
      * @param \Magento\Framework\View\Page\Config $pageConfig
+     * @param \Magento\Framework\View\ConfigInterface $viewConfig
      * @param \Swissup\ThemeEditor\Helper\Helper $helper
      */
     public function __construct(
         \Magento\Framework\View\Page\Config $pageConfig,
+        \Magento\Framework\View\ConfigInterface $viewConfig,
         \Swissup\ThemeEditor\Helper\Helper $helper
     ) {
         $this->pageConfig = $pageConfig;
+        $this->viewConfig = $viewConfig;
         $this->helper = $helper;
     }
 
@@ -32,23 +45,32 @@ class AddPageClassName implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $theme = $observer->getLayout()->getUpdate()->getTheme();
-        $themeCode = strtolower(str_replace(['/', '-'], '_', $theme->getCode()));
         $action = $observer->getEvent()->getFullActionName();
-        $mapping = $this->helper->getScopeConfig()->getValue(
-            $themeCode . '/add_css_class'
-        );
-        if (is_array($mapping)) {
-            foreach ($mapping as $item) {
-                $configValue = $this->helper->getScopeConfig()->getValue(
-                    $item['related_config'],
+        $themeCode = strtolower(str_replace(['/', '-'], '_', $theme->getCode()));
+
+        $items = $this->viewConfig
+            ->getViewConfig()
+            ->getVarValue('Swissup_ThemeEditor', 'add_css_class');
+        if (!is_array($items)) {
+            $items = [];
+        }
+
+        foreach ($items as $item) {
+            $value = true;
+
+            if (isset($item['config'])) {
+                $value = $this->helper->getScopeConfig()->getValue(
+                    $item['config'],
                     ScopeInterface::SCOPE_STORE
                 );
+            }
 
-                if ($configValue
-                    && ($item['action'] == $action || $item['action'] = 'default')
-                ) {
-                    $this->pageConfig->addBodyClass($item['css_class']);
-                }
+            if ($value
+                && (empty($item['handle'])
+                    || $item['handle'] === $action
+                    || $item['handle'] === 'default')
+            ) {
+                $this->pageConfig->addBodyClass($item['class']);
             }
         }
     }
