@@ -1,7 +1,7 @@
 <?php
+
 namespace Swissup\ThemeEditor\Observer;
 
-use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\Event\ObserverInterface;
 
 class AddPageClassName implements ObserverInterface
@@ -12,27 +12,19 @@ class AddPageClassName implements ObserverInterface
     protected $pageConfig;
 
     /**
-     * @var \Magento\Framework\View\ConfigInterface
-     */
-    protected $viewConfig;
-
-    /**
      * @var \Swissup\ThemeEditor\Helper\Data
      */
     protected $helper;
 
     /**
      * @param \Magento\Framework\View\Page\Config $pageConfig
-     * @param \Magento\Framework\View\ConfigInterface $viewConfig
      * @param \Swissup\ThemeEditor\Helper\Data $helper
      */
     public function __construct(
         \Magento\Framework\View\Page\Config $pageConfig,
-        \Magento\Framework\View\ConfigInterface $viewConfig,
         \Swissup\ThemeEditor\Helper\Data $helper
     ) {
         $this->pageConfig = $pageConfig;
-        $this->viewConfig = $viewConfig;
         $this->helper = $helper;
     }
 
@@ -48,9 +40,7 @@ class AddPageClassName implements ObserverInterface
         $action = $observer->getEvent()->getFullActionName();
         $themeCode = strtolower(str_replace(['/', '-'], '_', $theme->getCode()));
 
-        $items = $this->viewConfig
-            ->getViewConfig()
-            ->getVarValue('Swissup_ThemeEditor', 'add_css_class');
+        $items = $this->helper->getViewConfigValue('add_css_class');
         if (!is_array($items)) {
             $items = [];
         }
@@ -59,10 +49,7 @@ class AddPageClassName implements ObserverInterface
             $value = true;
 
             if (isset($item['config'])) {
-                $value = $this->helper->getScopeConfig()->getValue(
-                    $item['config'],
-                    ScopeInterface::SCOPE_STORE
-                );
+                $value = $this->helper->getConfigValue($item['config']);
             }
 
             if ($value
