@@ -32,13 +32,6 @@ class LogoAlt extends \Magento\Theme\Block\Html\Header\Logo
                 return '';
             }
 
-            if (isset($logo['depends']) && is_array($logo['depends'])) {
-                $value = $this->getConfigValue($logo['depends']['config']);
-                if ($value != $logo['depends']['value']) {
-                    return '';
-                }
-            }
-
             $folder = explode('/', $logo['config']);
             $folder = str_replace('_', '/', $folder[0]) . '/images/';
             $logo = $this->getConfigValue($logo['config']);
