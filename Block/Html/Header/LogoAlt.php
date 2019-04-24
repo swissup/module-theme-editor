@@ -2,6 +2,7 @@
 
 namespace Swissup\ThemeEditor\Block\Html\Header;
 
+use Magento\Config\Model\Config\Backend\Image\Logo;
 use Magento\Framework\UrlInterface;
 use Magento\Store\Model\ScopeInterface;
 
@@ -17,8 +18,14 @@ class LogoAlt extends \Magento\Theme\Block\Html\Header\Logo
      */
     protected function _getLogoUrl()
     {
-        $logo = $this->getVar('logo_alt');
-        $folder = '';
+        $logo = $this->getConfigValue('design/header/logo_alt_src');
+
+        if ($logo) {
+            $folder = Logo::UPLOAD_DIR . '/';
+        } else {
+            $logo = $this->getVar('logo_alt');
+            $folder = '';
+        }
 
         if (is_array($logo)) {
             if (!isset($logo['config'])) {
