@@ -36,16 +36,17 @@ class AddPageClassName implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $theme = $observer->getLayout()->getUpdate()->getTheme();
-        $action = $observer->getEvent()->getFullActionName();
-        $themeCode = strtolower(str_replace(['/', '-'], '_', $theme->getCode()));
-
         $items = $this->helper->getViewConfigValue('add_css_class');
         if (!is_array($items)) {
-            $items = [];
+            return;
         }
 
+        $action = $observer->getEvent()->getFullActionName();
         foreach ($items as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+
             $value = true;
 
             if (isset($item['config'])) {
