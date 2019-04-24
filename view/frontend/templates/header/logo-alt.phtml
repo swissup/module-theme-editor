@@ -1,0 +1,26 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Swissup\ThemeEditorArgentoLuxury\Block\Html\Header\LogoAlt $block
+ */
+?>
+
+<?php
+    $logoWidth = $block->getLogoWidth();
+    $logoHeight = $block->getLogoHeight();
+    $logoBlock = $this->getLayout()->getBlock('logo');
+    if ($logoBlock) {
+        $logoWidth = $logoBlock->getLogoWidth();
+        $logoHeight = $logoBlock->getLogoHeight();
+    }
+?>
+
+<?php if ($block->isHomePage() && $block->getLogoSrc()):?>
+    <img src="<?= /* @escapeNotVerified */ $block->getLogoSrc() ?>"
+         alt="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
+         class="logo-alt"
+         <?= $logoWidth ? 'width="' . $logoWidth . '"' : '' ?>
+         <?= $logoHeight ? 'height="' . $logoHeight . '"' : '' ?>
+    />
+<?php endif; ?>
