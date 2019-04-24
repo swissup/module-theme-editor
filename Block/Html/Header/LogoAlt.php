@@ -21,27 +21,17 @@ class LogoAlt extends \Magento\Theme\Block\Html\Header\Logo
         $logo = $this->getConfigValue('design/header/logo_alt_src');
 
         if ($logo) {
-            $folder = Logo::UPLOAD_DIR . '/';
-        } else {
-            $logo = $this->getVar('logo_alt');
-            $folder = '';
-        }
-
-        if (is_array($logo)) {
-            if (!isset($logo['config'])) {
+            $folder = Logo::UPLOAD_DIR;
+        } elseif ($this->hasData('logo_src_fallback_config')) {
+            // old argento installations
+            $folder = $this->getData('logo_src_fallback_folder');
+            $logo = $this->getConfigValue($this->getData('logo_src_fallback_config'));
+            if (!$logo) {
                 return '';
             }
-
-            $folder = explode('/', $logo['config']);
-            $folder = str_replace('_', '/', $folder[0]) . '/images/';
-            $logo = $this->getConfigValue($logo['config']);
         }
 
-        if (!$logo) {
-            return '';
-        }
-
-        $path = $folder . $logo;
+        $path = $folder . '/' . $logo;
         if ($this->_isFile($path)) {
             return $this->_urlBuilder
                 ->getBaseUrl(['_type' => UrlInterface::URL_TYPE_MEDIA])
