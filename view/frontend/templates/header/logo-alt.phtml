@@ -16,7 +16,7 @@
     }
 ?>
 
-<?php if ($block->isHomePage() && $block->getLogoSrc()):?>
+<?php if ($block->getLogoSrc()):?>
     <img src="<?= /* @escapeNotVerified */ $block->getLogoSrc() ?>"
          alt="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
          class="logo-alt"
