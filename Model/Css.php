@@ -146,7 +146,10 @@ class Css
     {
         list($storeCode, $websiteCode) = $this->getCodesFromIds($storeId, $websiteId);
         $filePath = $this->getFilePath($theme, $storeCode, $websiteCode);
-        @unlink($this->getStorage()->getMediaBaseDirectory() . '/' . $filePath);
+        $file = $this->getStorage()->getMediaBaseDirectory() . '/' . $filePath;
+        if (file_exists($file)) {
+            unlink($file);
+        }
     }
 
     /**
