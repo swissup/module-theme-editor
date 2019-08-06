@@ -10,6 +10,7 @@ class Css
     const ABSOLUTE_THEME  = 'swissup_absolute';
     const ARGENTO_ESSENCE = 'swissup_argento_essence';
     const ARGENTO_FLAT    = 'swissup_argento_flat';
+    const ARGENTO_FORCE   = 'swissup_argento_force';
     const ARGENTO_LUXURY  = 'swissup_argento_luxury';
     const ARGENTO_MALL    = 'swissup_argento_mall';
     const ARGENTO_PURE    = 'swissup_argento_pure';
@@ -85,6 +86,7 @@ class Css
             self::ABSOLUTE_THEME,
             self::ARGENTO_ESSENCE,
             self::ARGENTO_FLAT,
+            self::ARGENTO_FORCE,
             self::ARGENTO_LUXURY,
             self::ARGENTO_MALL,
             self::ARGENTO_PURE,
