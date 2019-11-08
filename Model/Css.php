@@ -194,11 +194,27 @@ class Css
             $scope     = ScopeConfigInterface::SCOPE_TYPE_DEFAULT;
             $scopeCode = null;
         }
-        $node = $this->configLoader->getConfigByPath(
-            $theme,
-            $scope,
-            $scopeCode
-        );
+
+        $node = $this->configLoader->getConfigByPath($theme, $scope, $scopeCode);
+        $defaultNode = [];
+        $websiteNode = [];
+
+        if ($storeId || $websiteId) {
+            $defaultNode = $this->configLoader->getConfigByPath(
+                $theme,
+                ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
+                null
+            );
+        }
+
+        if ($storeId) {
+            $websiteNode = $this->configLoader->getConfigByPath(
+                $theme,
+                ScopeInterface::SCOPE_WEBSITES,
+                $this->storeManager->getStore($storeId)->getWebsite()->getId()
+            );
+        }
+
         $tab = $this->configStructure->getElement($theme);
         if (!$node || !$tab) {
             return [];
@@ -209,9 +225,13 @@ class Css
         // This makes config to be written in correct order into css file.
         $config = [];
         foreach ($this->collectPaths($tab) as $path) {
-            if (empty($node[$path])) {
+            if (empty($node[$path]) &&
+                empty($defaultNode[$path]) &&
+                empty($websiteNode[$path])
+            ) {
                 continue;
             }
+
             $value = $this->helper->getScopeConfig()->getValue($path, $scope, $scopeCode);
             $parts = explode('/', $path);
             $valueId = $this->helper->camel2dashed(array_pop($parts));
