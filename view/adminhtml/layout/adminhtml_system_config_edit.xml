@@ -2,7 +2,5 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="jquery/colorpicker/css/colorpicker.css"/>
-        <css src="Swissup_ThemeEditor::js/codemirror/lib/codemirror.css"/>
-        <css src="Swissup_ThemeEditor::js/codemirror/addon/hint/show-hint.css"/>
     </head>
 </page>
