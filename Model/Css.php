@@ -360,6 +360,8 @@ class Css
         // fix to prevent activating of 'Use default' checkbox, when image is deleted
         if (empty($value) || 'none' === $value) {
             $value = 'none';
+        } elseif (strpos($value, 'data:image') === 0) {
+            $value = 'url(' . $value . ');';
         } else {
             $value = 'url(../images/' . $value . ')';
         }
