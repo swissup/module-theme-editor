@@ -65,8 +65,9 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
             }
         }
 
-        // Invalidate block_html cache to get new version of backend styles.
+        // Invalidate block_html and full_page cache to get new version of backend styles.
         $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Block::TYPE_IDENTIFIER);
+        $this->cacheTypeList->invalidate(\Magento\PageCache\Model\Cache\Type::TYPE_IDENTIFIER);
     }
 
     /**
