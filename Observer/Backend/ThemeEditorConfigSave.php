@@ -26,11 +26,13 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
     public function __construct(
         \Swissup\ThemeEditor\Model\CssFactory $cssModelFactory,
         \Magento\Store\Model\ResourceModel\Store\CollectionFactory $storesFactory,
-        \Magento\Framework\App\ResourceConnection $coreResource
+        \Magento\Framework\App\ResourceConnection $coreResource,
+        \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
     ) {
         $this->cssModelFactory = $cssModelFactory;
         $this->storesFactory = $storesFactory;
         $this->coreResource = $coreResource;
+        $this->cacheTypeList = $cacheTypeList;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
@@ -62,6 +64,9 @@ class ThemeEditorConfigSave implements \Magento\Framework\Event\ObserverInterfac
                 }
             }
         }
+
+        // Invalidate block_html cache to get new version of backend styles.
+        $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Block::TYPE_IDENTIFIER);
     }
 
     /**
