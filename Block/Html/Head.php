@@ -91,7 +91,7 @@ class Head extends \Magento\Framework\View\Element\Template implements
             if (file_exists($mediaDir . $filePath)) {
                 $url = $this->_urlBuilder->getBaseUrl(
                     ['_type' => UrlInterface::URL_TYPE_MEDIA]
-                ) . $filePath;
+                ) . $filePath . '?version=' . filemtime($mediaDir . $filePath);
                 $objectBackendCss = new \Magento\Framework\DataObject([
                     'url' => $url,
                     'media_dir' => $mediaDir,
