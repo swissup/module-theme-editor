@@ -82,7 +82,7 @@ class PageLayout extends AbstractLayout
                      // where _checkUnique sets ID of existing config
             ->delete();
 
-        return parent::afterSave();
+        return parent::afterDelete();
     }
 
     /**
