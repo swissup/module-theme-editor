@@ -82,6 +82,9 @@ class PageLayout extends AbstractLayout
                      // where _checkUnique sets ID of existing config
             ->delete();
 
+        // After removing layout it is necessary to invalidate layout cache.
+        $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Layout::TYPE_IDENTIFIER);
+
         return parent::afterDelete();
     }
 
