@@ -42,9 +42,8 @@ class PageLayout extends AbstractLayout
         if (empty($value)) {
             $this->deleteLayout($layoutLink);
         } else {
-            $xml = "<update handle=\"{$value}\" />";
             // insert/update xml layout
-            $this->updateLayout($layoutLink, $this->handle, $xml);
+            $this->updateLayout($layoutLink, $this->handle, $this->generateXml());
         }
 
         $this->configValueFactory->create()
@@ -86,4 +85,15 @@ class PageLayout extends AbstractLayout
         return parent::afterSave();
     }
 
+    /**
+     * Generate XML layout update.
+     *
+     * @return string
+     */
+    public function generateXml()
+    {
+        $value = $this->getData('value');
+
+        return "<update handle=\"{$value}\" />";
+    }
 }
