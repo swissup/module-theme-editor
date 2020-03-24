@@ -12,7 +12,7 @@ class Layout implements \Magento\Framework\Data\OptionSourceInterface
     public function toOptionArray()
     {
         return [
-            ['value' => '', 'label' => __('Theme specified')],
+            ['value' => '', 'label' => __('Specified by theme')],
             ['value' => 'themeeditor_page_one_column', 'label' => __('One column')],
             ['value' => 'themeeditor_page_two_columns_left', 'label' => __('Two columns (left sidebar)')],
             ['value' => 'themeeditor_page_two_columns_right', 'label' => __('Two columns (right sidebar)')],
