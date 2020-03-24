@@ -17,4 +17,15 @@
             </argument>
         </arguments>
     </type>
+    <type name="Swissup\ThemeEditor\Model\Config\Backend\PageLayout">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="themeFactory" xsi:type="object">Magento\Theme\Model\ThemeFactory</item>
+                <item name="themeCode" xsi:type="null" />
+                <item name="configValueFactory" xsi:type="object">Magento\Framework\App\Config\ValueFactory</item>
+                <item name="layoutLinkFactory" xsi:type="object">Magento\Widget\Model\Layout\LinkFactory</item>
+                <item name="layoutUpdateFactory" xsi:type="object">Magento\Widget\Model\Layout\UpdateFactory</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
