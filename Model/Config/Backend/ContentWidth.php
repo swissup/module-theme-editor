@@ -11,7 +11,7 @@ class ContentWidth extends PageLayout
     {
         $value = $this->getData('value');
         $maxWidth = 'none';
-        if ($value = 'limited_width') {
+        if ($value === 'limited_width') {
             $maxWidth = $this->getData('fieldset_data/max_width') . 'px';
         }
 
