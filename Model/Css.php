@@ -50,6 +50,10 @@ class Css
      */
     protected $helper;
 
+    /**
+     * @var \Magento\Framework\App\Cache\TypeListInterface
+     */
+    protected $cacheTypeList;
 
     /**
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
@@ -58,6 +62,7 @@ class Css
      * @param \Magento\Config\Model\Config\Structure $configStructure
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Swissup\ThemeEditor\Helper\Data $helper
+     * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
      */
     public function __construct(
         \Magento\Framework\Message\ManagerInterface $messageManager,
@@ -65,7 +70,8 @@ class Css
         \Magento\Config\Model\Config\Loader $configLoader,
         \Magento\Config\Model\Config\Structure $configStructure,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Swissup\ThemeEditor\Helper\Data $helper
+        \Swissup\ThemeEditor\Helper\Data $helper,
+        \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
     ) {
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();
@@ -73,6 +79,7 @@ class Css
         $this->configStructure = $configStructure;
         $this->storeManager = $storeManager;
         $this->helper = $helper;
+        $this->cacheTypeList = $cacheTypeList;
     }
 
     /**
@@ -131,6 +138,9 @@ class Css
                 'directory' => '',
                 'filename'  => $filePath
             ], true);
+            // Invalidate block_html and full_page cache to get new version of backend styles.
+            $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Block::TYPE_IDENTIFIER);
+            $this->cacheTypeList->invalidate(\Magento\PageCache\Model\Cache\Type::TYPE_IDENTIFIER);
         } catch (\Exception $e) {
             $this->messageManager->addError($e->getMessage());
         }
@@ -149,6 +159,9 @@ class Css
         $file = $this->getStorage()->getMediaBaseDirectory() . '/' . $filePath;
         if (file_exists($file)) {
             unlink($file);
+            // Invalidate block_html and full_page cache to get new version of backend styles.
+            $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Block::TYPE_IDENTIFIER);
+            $this->cacheTypeList->invalidate(\Magento\PageCache\Model\Cache\Type::TYPE_IDENTIFIER);
         }
     }
 
