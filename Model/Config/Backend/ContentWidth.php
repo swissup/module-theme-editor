@@ -20,11 +20,23 @@ class ContentWidth extends PageLayout
                     '<block class="Magento\Framework\View\Element\Text" name="argento.fullwidth.content" after="-">' .
                         '<arguments>' .
                             '<argument name="text" xsi:type="string">' .
-                                "<![CDATA[<style>@media screen and (min-width: 768px) {.page-main {max-width: {$maxWidth};}}</style>]]>" .
+                                "<![CDATA[<style>@media screen and (min-width: 768px) {{$this->getSelector()} {max-width: {$maxWidth};}}</style>]]>" .
                             '</argument>' .
                         '</arguments>' .
                     '</block>' .
                 '</referenceContainer>' .
             '</body>';
+    }
+
+    /**
+     * @return string
+     */
+    public function getSelector()
+    {
+        if ($this->hasData('selector')) {
+            return $this->getData('selector');
+        }
+
+        return '.page-main';
     }
 }
