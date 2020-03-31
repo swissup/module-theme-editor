@@ -209,8 +209,9 @@ class ColumnsCount extends PageLayout
                 continue;
             }
 
+            $width = $this->getItemWidthValue($columns, $spacing);
             $mediaQueries .= "@media screen and (min-width: {$item['width']}px) {" .
-                "{$selector} { width: calc(100%/{$columns} - {$spacing}px - 0.1px) }" .
+                "{$selector} { width: {$width} }" .
             "}\n";
         }
 
@@ -225,5 +226,15 @@ class ColumnsCount extends PageLayout
                     '</block>' .
                 '</referenceContainer>' .
             '</body>';
+    }
+
+    /**
+     * @param  string $columns
+     * @param  string $spacing
+     * @return string
+     */
+    protected function getItemWidthValue($columns, $spacing)
+    {
+        return "calc(100% / {$columns} - {$spacing}px - 0.1px)";
     }
 }
