@@ -4,16 +4,20 @@
     $subHeight = 40;
     $columnsWidth = $block->getContentWidth() / 1920 * 100;
     $element = $block->getElement();
+    $headerWidth = $block->getHeaderWidth() / 1920 * 100;
+    $footerWidth = $block->getFooterWidth() / 1920 * 100;
 ?>
 <style>
     ._page {
         border: 1px solid #e0e0e0;
         margin: 0 auto;
         max-width: 600px;
+        padding: <?= $spacing ?>px;
     }
     ._header {
-        margin: 5px;
+        margin: 0 auto;
         background: #f0f0f0;
+        max-width: <?= $headerWidth ? ($headerWidth . '%') : 'none' ?>;
     }
     ._header-wrapper {
         margin: 0 auto;
@@ -21,7 +25,7 @@
         min-height: 30px;
     }
     ._content {
-        margin: <?= $spacing ?>px;
+        margin: <?= $spacing ?>px 0;
     }
     ._columns {
         margin: 0 auto;
@@ -69,8 +73,9 @@
         float: right;
     }
     ._footer {
-        margin: 5px;
+        margin: 0 auto;
         background: #f0f0f0;
+        max-width: <?= $footerWidth ? ($footerWidth . '%') : 'none' ?>;
     }
     ._footer-wrapper {
         margin: 0 auto;
