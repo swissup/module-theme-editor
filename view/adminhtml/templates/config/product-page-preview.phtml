@@ -1,0 +1,79 @@
+<?php
+    $element = $block->getElement();
+?>
+
+<div id="<?= $element->getHtmlId() ?>" class="_page _product">
+    <div class="_page-wrapper">
+        <div class="_header">
+            <div class="_header-wrapper _watermark" title="Header"></div>
+        </div>
+        <div class="_content">
+            <div class="_columns _one_column">
+                <div class="_main">
+                    <div class="_info-main">
+                        <div class="_name _watermark" title="Product Name"></div>
+                        <div class="_to-cart _watermark" title="To Cart Form"></div>
+                        <div class="_tabs _watermark" title="Product tabs">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="_media">
+                        <div class="_image _watermark" title="Image"></div>
+                        <div class="_thumbs">
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                            <div class="_thumb _watermark" title="Thumb"></div>
+                        </div>
+                    </div>
+                    <div class="_product-blocks">
+                        <div class="_tabs _watermark" title="Product tabs">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="_footer">
+            <div class="_footer-wrapper _watermark" title="Footer"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+require([
+    'jquery',
+    '!domReady'
+], function ($) {
+    var preview = $('#<?= $element->getHtmlId() ?>'),
+        tbody,
+        tabsLayout,
+        tabsPosition;
+
+    /**
+     * Update tabs layout in mock-up
+     */
+    function updateTabsLayout() {
+        var value = tabsLayout.val() ? tabsLayout.val() : '<?= $block->getTabsLayout() ?>';
+
+        preview.attr('data-tabs', tabsLayout.val());
+    }
+
+    /**
+     * Update tabs position in mock-up
+     */
+    function updateTabsPosition() {
+        var value = tabsPosition.val() ? tabsPosition.val() : '<?= $block->getTabsPosition() ?>';
+
+        preview.attr('data-tabs-position', value);
+    }
+
+    tbody = preview.closest('tbody');
+    tabsPosition = $('[name$="[product_tabs][fields][position][value]"]', tbody);
+    tabsLayout = $('[name$="[product_tabs][fields][layout][value]"]', tbody);
+    updateTabsPosition();
+    updateTabsLayout();
+    tabsPosition.change(updateTabsPosition);
+    tabsLayout.change(updateTabsLayout);
+});
+</script>
