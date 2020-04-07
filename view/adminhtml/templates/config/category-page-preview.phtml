@@ -1,206 +1,31 @@
 <?php
-    $height = 160;
-    $spacing = 5;
-    $subHeight = 40;
-    $columnsWidth = $block->getContentWidth() / 1920 * 100;
     $element = $block->getElement();
-    $headerWidth = $block->getHeaderWidth() / 1920 * 100;
-    $footerWidth = $block->getFooterWidth() / 1920 * 100;
 ?>
-<style>
-    ._page {
-        border: 1px solid #e0e0e0;
-        margin: 0 auto;
-        max-width: 600px;
-        padding: <?= $spacing ?>px;
-    }
-    ._header {
-        margin: 0 auto;
-        background: #f0f0f0;
-        max-width: <?= $headerWidth ? ($headerWidth . '%') : 'none' ?>;
-    }
-    ._header-wrapper {
-        margin: 0 auto;
-        max-width: 400px;
-        min-height: 30px;
-    }
-    ._content {
-        margin: <?= $spacing ?>px 0;
-    }
-    ._columns {
-        margin: 0 auto;
-        max-width: <?= $columnsWidth ?>%;
-    }
 
-    ._columns > * {
-        min-height: <?= $height ?>px;
-    }
-
-    ._columns > * > * {
-        background: #e0e0e0;
-    }
-
-    /* Defaul page layout (2-columns-left) */
-    ._left {
-        float: left;
-        width: 20%;
-    }
-
-    ._left ._nav {
-        margin: 0 0 <?= $spacing ?>px;
-        min-height: <?= $height - $spacing - $subHeight ?>px;
-        text-align: center;
-        width: 100%;
-        writing-mode: vertical-rl;
-    }
-
-    ._left ._blocks {
-        min-height: <?= $subHeight ?>px;
-        width: 100%;
-    }
-
-    ._main {
-        box-sizing: border-box;
-        display: inline-block;
-        margin: 0 0 -5px <?= $spacing ?>px;
-        width: calc(80% - <?= $spacing ?>px);
-    }
-    ._main ._grid {
-        min-height: <?= $height ?>px;
-    }
-    ._right {
-        display: none;
-        float: right;
-    }
-    ._footer {
-        margin: 0 auto;
-        background: #f0f0f0;
-        max-width: <?= $footerWidth ? ($footerWidth . '%') : 'none' ?>;
-    }
-    ._footer-wrapper {
-        margin: 0 auto;
-        max-width: 400px;
-        min-height: 40px;
-    }
-
-    /* 1-column */
-    ._columns._one_column ._left,
-    ._columns._one_column ._right {
-        display: none;
-    }
-    ._columns._one_column ._main {
-        margin: 0;
-        width: 100%;
-    }
-    ._columns._one_column ._main ._nav {
-        min-height: <?= $subHeight ?>px;
-        margin: 0 0 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
-    }
-    ._columns._one_column ._main ._grid {
-        min-height: <?= $height - $spacing - $subHeight ?>px;
-    }
-
-    /* 2-columns-right */
-    ._columns._two_columns_right ._left {
-        display: none;
-    }
-    ._columns._two_columns_right ._main {
-        margin: 0 <?= $spacing ?>px -5px 0;
-        width: calc(80% - <?= $spacing ?>px);
-    }
-    ._columns._two_columns_right ._right {
-        display: block;
-        width: 20%;
-    }
-    ._columns._two_columns_right ._right ._nav {
-        margin: 0 0 <?= $spacing ?>px;
-        min-height: <?= $height - $spacing - $subHeight ?>px;
-        text-align: center;
-        width: 100%;
-        writing-mode: vertical-rl;
-    }
-    ._columns._two_columns_right ._right ._blocks {
-        min-height: <?= $subHeight ?>px;
-        width: 100%;
-    }
-
-    /* 3-columns */
-    ._columns._three_columns ._left {
-        width: 15%;
-    }
-    ._columns._three_columns ._left ._nav {
-        margin: 0;
-        min-height: <?= $height ?>px;
-    }
-    ._columns._three_columns ._left ._blocks {
-        min-height: auto;
-    }
-    ._columns._three_columns ._main {
-        margin: 0 <?= $spacing ?>px -5px;
-        width: calc(70% - 10px);
-    }
-    ._columns._three_columns ._right {
-        display: block;
-        width: 15%;
-    }
-    ._columns._three_columns ._right ._blocks {
-        min-height: <?= $height ?>px;
-        width: 100%;
-        writing-mode: vertical-rl;
-    }
-
-    ._content._full_width ._columns,
-    ._content._limited_width ._columns {
-        max-width: none;
-    }
-
-    ._watermark {
-        position: relative;
-    }
-    ._watermark::before {
-        content: attr(data-name);
-        opacity: .5;
-        font-weight: bold;
-        left: 50%;
-        max-width: calc(100% - <?= $spacing ?>px);
-        max-height: calc(100% - <?= $spacing ?>px);
-        overflow: hidden;
-        position: absolute;
-        text-overflow: ellipsis;
-        text-transform: uppercase;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
-
-<div id="<?= $element->getHtmlId() ?>" class="_page _two_columns_left">
+<div id="<?= $element->getHtmlId() ?>" class="_page">
     <div class="_page-wrapper">
         <div class="_header">
-            <div class="_header-wrapper _watermark" data-name="Header"></div>
+            <div class="_header-wrapper _watermark" title="Header"></div>
         </div>
-        <div class="_content">
+        <div class="_content _two_columns_left">
             <div class="_columns">
                 <div class="_main">
-                    <div class="_nav _watermark" data-name="Layered Navigation"></div>
-                    <div class="_grid _watermark" data-name="Products"></div>
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_grid _watermark" title="Products"></div>
                 </div>
                 <div class="_left">
-                    <div class="_nav _watermark" data-name="Layered Navigation"></div>
-                    <div class="_blocks _watermark" data-name="Blocks"></div>
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_blocks _watermark" title="Blocks"></div>
                 </div>
                 <div class="_right">
-                    <div class="_nav _watermark" data-name="Layered Navigation"></div>
-                    <div class="_blocks _watermark" data-name="Blocks"></div>
+                    <div class="_nav _watermark" title="Layered Navigation"></div>
+                    <div class="_blocks _watermark" title="Blocks"></div>
                 </div>
             </div>
             <div style="clear: both"></div>
         </div>
         <div class="_footer">
-            <div class="_footer-wrapper _watermark" data-name="Footer"></div>
+            <div class="_footer-wrapper _watermark" title="Footer"></div>
         </div>
     </div>
 </div>

@@ -46,4 +46,35 @@ class PagePreview extends AbstractBlock implements RendererInterface
             $previewHtml
         );
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function _prepareLayout()
+    {
+        $this->getBlockStyles()->addData($this->getPreviewData());
+
+        return parent::_prepareLayout();
+    }
+
+    /**
+     * Get block with styles.
+     *
+     * @return \Magento\Framework\View\Element\Template
+     */
+    private function getBlockStyles()
+    {
+        $name = 'swissup.themeeditor.preview.styles';
+        if ($block = $this->getLayout()->getBlock($name)) {
+            return $block;
+        }
+
+        $block = $this->getLayout()->addBlock(
+            \Magento\Framework\View\Element\Template::class,
+            'swissup.themeeditor.preview.styles',
+            'before.body.end'
+        )->setTemplate('Swissup_ThemeEditor::config/styles.phtml');
+
+        return $block;
+    }
 }
