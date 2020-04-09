@@ -48,7 +48,8 @@ require([
     var preview = $('#<?= $element->getHtmlId() ?>'),
         tbody,
         tabsLayout,
-        tabsPosition;
+        tabsPosition,
+        imagePosition;
 
     /**
      * Update tabs layout in mock-up
@@ -68,12 +69,21 @@ require([
         preview.attr('data-tabs-position', value);
     }
 
+    function updateImagePosition() {
+        var value = imagePosition.val() !== 'theme' ? imagePosition.val() : '<?= $block->getImagePosition() ?>';
+
+        preview.attr('data-image-position', value);
+    }
+
     tbody = preview.closest('tbody');
     tabsPosition = $('[name$="[product_tabs][fields][position][value]"]', tbody);
     tabsLayout = $('[name$="[product_tabs][fields][layout][value]"]', tbody);
+    imagePosition = $('[name$="[product_image][fields][thumbnails][value]"]', tbody);
     updateTabsPosition();
     updateTabsLayout();
+    updateImagePosition();
     tabsPosition.change(updateTabsPosition);
     tabsLayout.change(updateTabsLayout);
+    imagePosition.change(updateImagePosition);
 });
 </script>

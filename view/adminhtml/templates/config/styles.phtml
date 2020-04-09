@@ -235,6 +235,20 @@
         text-overflow: ellipsis;
     }
 
+    [data-image-position=vertical] ._media ._image {
+        float: right;
+        width: calc(100% - 28px);
+    }
+
+    [data-image-position=vertical] ._media ._thumbs {
+        float: left;
+        width: 24px;
+    }
+
+    [data-image-position=hidden] ._media ._thumbs {
+        display: none;
+    }
+
     ._product-blocks {
         clear: both;
         min-height: 160px;
@@ -258,6 +272,7 @@
         display: block;
         min-height: 60px;
     }
+
     [data-tabs=collapsed] ._tabs::before {
         top: calc(50% + 9px);
     }
