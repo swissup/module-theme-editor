@@ -296,7 +296,7 @@ class Css
     public function convertConfigToCss($theme, $config)
     {
         $groups = [];
-        $groupsToSkip = ['css_selector', 'head', 'media_query', 'homepage', 'category', 'product', 'product_tabs'];
+        $groupsToSkip = ['css_selector', 'head', 'media_query', 'homepage', 'category', 'product', 'product_tabs', 'product_tocart', 'product_image'];
         $propsToSkip  = ['heading', 'head_link', 'sticky_header'];
         foreach ($config as $groupName => $groupValues) {
             if (in_array($groupName, $groupsToSkip)) {

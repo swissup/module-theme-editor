@@ -209,8 +209,20 @@
     }
 
     ._to-cart {
+        clear: both;
         min-height: 80px;
         background: #e0e0e0;
+    }
+
+    [data-tocart-position] ._to-cart {
+        display: none;
+    }
+
+    [data-tocart-position="product.info.main"] ._info-main ._to-cart {
+        display: block;
+    }
+    [data-tocart-position="product.info.media"] ._media ._to-cart {
+        display: block;
     }
 
     ._media {

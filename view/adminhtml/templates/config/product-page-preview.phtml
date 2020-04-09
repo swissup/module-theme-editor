@@ -24,6 +24,7 @@
                             <div class="_thumb _watermark" title="Thumb"></div>
                             <div class="_thumb _watermark" title="Thumb"></div>
                         </div>
+                        <div class="_to-cart _watermark" title="To Cart Form"></div>
                     </div>
                     <div class="_product-blocks">
                         <div class="_tabs _watermark" title="Product tabs">
@@ -42,48 +43,81 @@
 
 <script type="text/javascript">
 require([
-    'jquery',
+    'Magento_Ui/js/lib/view/utils/async',
     '!domReady'
 ], function ($) {
     var preview = $('#<?= $element->getHtmlId() ?>'),
         tbody,
-        tabsLayout,
-        tabsPosition,
-        imagePosition;
-
-    /**
-     * Update tabs layout in mock-up
-     */
-    function updateTabsLayout() {
-        var value = tabsLayout.val() ? tabsLayout.val() : '<?= $block->getTabsLayout() ?>';
-
-        preview.attr('data-tabs', tabsLayout.val());
-    }
-
-    /**
-     * Update tabs position in mock-up
-     */
-    function updateTabsPosition() {
-        var value = tabsPosition.val() ? tabsPosition.val() : '<?= $block->getTabsPosition() ?>';
-
-        preview.attr('data-tabs-position', value);
-    }
-
-    function updateImagePosition() {
-        var value = imagePosition.val() !== 'theme' ? imagePosition.val() : '<?= $block->getImagePosition() ?>';
-
-        preview.attr('data-image-position', value);
-    }
+        tocartPosition;
 
     tbody = preview.closest('tbody');
-    tabsPosition = $('[name$="[product_tabs][fields][position][value]"]', tbody);
-    tabsLayout = $('[name$="[product_tabs][fields][layout][value]"]', tbody);
-    imagePosition = $('[name$="[product_image][fields][thumbnails][value]"]', tbody);
-    updateTabsPosition();
-    updateTabsLayout();
-    updateImagePosition();
-    tabsPosition.change(updateTabsPosition);
-    tabsLayout.change(updateTabsLayout);
-    imagePosition.change(updateImagePosition);
+
+    $.async({
+        selector: '[name$="[product_tabs][fields][position][value]"]',
+        ctx: tbody.get(0)
+    }, function (tabsPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tabsPosition).val() ? $(tabsPosition).val() : '<?= $block->getTabsPosition() ?>';
+
+            preview.attr('data-tabs-position', value);
+        }
+
+        update();
+        $(tabsPosition).change(update);
+    });
+
+    $.async({
+        selector: '[name$="[product_tabs][fields][layout][value]"]',
+        ctx: tbody.get(0)
+    }, function (tabsLayout) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tabsLayout).val() ? $(tabsLayout).val() : '<?= $block->getTabsLayout() ?>';
+
+            preview.attr('data-tabs', value);
+        }
+
+        update();
+        $(tabsLayout).change(update);
+    });
+
+    $.async({
+        selector: '[name$="[product_image][fields][thumbnails][value]"]',
+        ctx: tbody.get(0)
+    }, function (imagePosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(imagePosition).val() ? $(imagePosition).val() : '<?= $block->getImagePosition() ?>';
+
+            preview.attr('data-image-position', value);
+        }
+
+        update();
+        $(imagePosition).change(update);
+    });
+
+    $.async({
+        selector: '[name$="[product_tocart][fields][position][value]"]',
+        ctx: tbody.get(0)
+    }, function (tocartPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(tocartPosition).val() ? $(tocartPosition).val() : '<?= $block->getTocartPosition() ?>';
+
+            preview.attr('data-tocart-position', value);
+        }
+
+        update();
+        $(tocartPosition).change(update);
+    });
 });
 </script>
