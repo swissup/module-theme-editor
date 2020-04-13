@@ -12,7 +12,7 @@ class TocartDestination implements \Magento\Framework\Data\OptionSourceInterface
     public function toOptionArray()
     {
         return [
-            ['value' => '', 'label' => __('Specified by theme')],
+            ['value' => '', 'label' => __('Theme Defined')],
             ['value' => 'product.info.main', 'label' => __('Product Info Main')],
             ['value' => 'product.info.media', 'label' => __('Product Media (bottom)')],
         ];

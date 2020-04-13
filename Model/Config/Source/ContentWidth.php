@@ -12,7 +12,7 @@ class ContentWidth implements \Magento\Framework\Data\OptionSourceInterface
     public function toOptionArray()
     {
         return [
-            ['value' => '', 'label' => __('Specified by theme')],
+            ['value' => '', 'label' => __('Theme Defined')],
             ['value' => 'full_width', 'label' => __('Full width')],
             ['value' => 'limited_width', 'label' => __('Limited width')],
         ];

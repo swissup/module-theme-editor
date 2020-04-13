@@ -12,7 +12,7 @@ class TabsDestination implements \Magento\Framework\Data\OptionSourceInterface
     public function toOptionArray()
     {
         return [
-            ['value' => '', 'label' => __('Specified by theme')],
+            ['value' => '', 'label' => __('Theme Defined')],
             ['value' => 'content', 'label' => __('Main Content')],
             ['value' => 'product.info.main', 'label' => __('Product Info Main (bottom)')],
         ];
