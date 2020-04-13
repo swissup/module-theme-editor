@@ -1,0 +1,180 @@
+._page {
+    border: 1px solid #e0e0e0;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: @spacing;
+}
+
+._header {
+    margin: 0 auto;
+    background: #f0f0f0;
+
+    &-wrapper {
+        margin: 0 auto;
+        max-width: 400px;
+        min-height: 30px;
+    }
+}
+
+._content {
+    margin: @spacing 0;
+}
+
+._columns {
+    margin: 0 auto;
+
+    > * {
+        min-height: @block-height;
+
+        > * {
+            background: #e0e0e0;
+        }
+    }
+}
+
+._footer {
+    margin: 0 auto;
+    background: #f0f0f0;
+
+    &-wrapper {
+        margin: 0 auto;
+        max-width: 400px;
+        min-height: 40px;
+    }
+}
+
+//
+// Default page layout (2-columns-left)
+// _____________________________________
+._left {
+    float: left;
+    width: 20%;
+
+    ._nav {
+        margin: 0 0 @spacing;
+        min-height: @block-height - @spacing - @block-small-height;
+        text-align: center;
+        width: 100%;
+        writing-mode: vertical-rl;
+    }
+
+    ._blocks {
+        min-height: @block-small-height;
+        width: 100%;
+    }
+}
+
+._main {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 0 -@spacing @spacing;
+    width: ~"calc(80% - @{spacing})";
+
+    ._grid {
+        min-height: @block-height;
+    }
+}
+
+._right {
+    display: none;
+    float: right;
+}
+
+//
+// 1-column
+// _____________________________________
+._columns._one_column {
+    ._left,
+    ._right {
+        display: none;
+    }
+
+    ._main {
+        margin: 0;
+        width: 100%;
+
+        ._nav {
+            min-height: @block-small-height;
+            margin: 0 0 @spacing;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        ._grid {
+            min-height: @block-height - @spacing - @block-small-height;
+        }
+    }
+}
+
+//
+// 2-columns-right
+// _____________________________________
+._columns._two_columns_right {
+    ._left {
+        display: none;
+    }
+
+    ._main {
+        margin: 0 @spacing -@spacing 0;
+        width: ~"calc(80% - @{spacing})";
+    }
+
+    ._right {
+        display: block;
+        width: 20%;
+
+        ._nav {
+            margin: 0 0 @spacing;
+            min-height: @block-height - @spacing - @block-small-height;
+            text-align: center;
+            width: 100%;
+            writing-mode: vertical-rl;
+        }
+
+        ._blocks {
+            min-height: @block-small-height;
+            width: 100%;
+        }
+    }
+}
+
+//
+// 3-columns
+// _____________________________________
+._columns._three_columns {
+    ._left {
+        width: 15%;
+
+        ._nav {
+            margin: 0;
+            min-height: @block-height;
+        }
+
+        ._blocks {
+            min-height: auto;
+        }
+    }
+
+    ._main {
+        margin: 0 @spacing -@spacing;
+        width: ~"calc(70% - 2 * @{spacing})";
+    }
+
+    ._right {
+        display: block;
+        width: 15%;
+
+        ._blocks {
+            min-height: @block-height;
+            width: 100%;
+            writing-mode: vertical-rl;
+        }
+    }
+}
+
+._content._full_width ._columns,
+._content._limited_width ._columns {
+    max-width: none;
+}

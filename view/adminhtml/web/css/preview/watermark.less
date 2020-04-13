@@ -1,0 +1,18 @@
+._watermark {
+    position: relative;
+}
+._watermark::before {
+    content: attr(title);
+    opacity: .5;
+    font-weight: bold;
+    left: 50%;
+    max-width: ~"calc(100% - @{spacing})";
+    max-height: ~"calc(100% - @{spacing})";
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
