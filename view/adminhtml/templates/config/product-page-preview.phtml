@@ -50,10 +50,46 @@ require([
 ], function ($) {
     var preview = $('#<?= $element->getHtmlId() ?>'),
         tbody,
-        tocartPosition;
+        contentWidth,
+        maxWidth;
+
+    /**
+     * Update content width in mock-up
+     */
+    function updateContentWidth() {
+        var width;
+
+        if (!contentWidth || !maxWidth) {
+            return;
+        }
+
+        $('._content', preview).attr('class', '_content _' + contentWidth.val());
+        width = (contentWidth.val() === 'limited_width') ? maxWidth.val() : 0;
+        $('._columns', preview).attr('style', width ? ('max-width: ' + (width / 1920 * 100) + '%') : '');
+    }
 
     tbody = preview.closest('tbody');
+    $.async({
+        selector: '[name$="[content_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (element) {
+        contentWidth = $(element);
+        updateContentWidth();
+        contentWidth.change(updateContentWidth);
+    });
 
+    $.async({
+        selector: '[name$="[max_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (element) {
+        maxWidth = $(element);
+        updateContentWidth();
+        maxWidth.on('change paste keyup', updateContentWidth);
+    });
+
+    /**
+     * PRODUCT TABS
+     */
     $.async({
         selector: '[name$="[product_tabs][fields][position][value]"]',
         ctx: tbody.get(0)
@@ -88,6 +124,9 @@ require([
         $(tabsLayout).change(update);
     });
 
+    /**
+     * PRODUCT IMAGE
+     */
     $.async({
         selector: '[name$="[product_image][fields][thumbnails][value]"]',
         ctx: tbody.get(0)
@@ -105,6 +144,9 @@ require([
         $(imagePosition).change(update);
     });
 
+    /**
+     * ADD TO CART FORM
+     */
     $.async({
         selector: '[name$="[product_tocart][fields][position][value]"]',
         ctx: tbody.get(0)
