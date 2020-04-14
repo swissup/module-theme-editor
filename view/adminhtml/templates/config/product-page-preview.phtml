@@ -87,6 +87,52 @@ require([
         maxWidth.on('change paste keyup', updateContentWidth);
     });
 
+    $.async({
+        selector: '[name$="[media_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (mediaBlock) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(mediaBlock).val() > 100 ? 100 : $(mediaBlock).val();
+
+            if (value == 100) {
+                $('._columns ._main', preview).addClass('_media-100');
+            } else {
+                $('._columns ._main', preview).removeClass('_media-100');
+            }
+
+            $('._media', preview).css('width', value + '%');
+        }
+
+        update();
+        $(mediaBlock).on('change paste keyup', update);
+    });
+
+    $.async({
+        selector: '[name$="[infomain_width][value]"]',
+        ctx: tbody.get(0)
+    }, function (infoMain) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(infoMain).val() > 100 ? 100 : $(infoMain).val();
+
+            if (value == 100) {
+                $('._columns ._main', preview).addClass('_infomain-100');
+            } else {
+                $('._columns ._main', preview).removeClass('_infomain-100');
+            }
+
+            $('._info-main', preview).css('width', value + '%');
+        }
+
+        update();
+        $(infoMain).on('change paste keyup', update);
+    });
+
     /**
      * PRODUCT TABS
      */

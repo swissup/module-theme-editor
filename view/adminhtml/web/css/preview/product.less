@@ -1,5 +1,13 @@
-._product ._columns > * > * {
-    background: #f0f0f0;
+._product ._columns {
+    > * > * {
+        background: #f0f0f0;
+    }
+
+    ._main._infomain-100,
+    ._main._media-100 {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 ._info-main {
@@ -49,6 +57,7 @@
     width: 50%;
     margin: 0 0 @spacing;
     padding: @block-inner-padding;
+    order: -1;
 
     ._image {
         background: #e0e0e0;
