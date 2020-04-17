@@ -3,6 +3,36 @@
         background: #f0f0f0;
     }
 
+    &._two_columns_right {
+        ._main {
+            margin: 0 @spacing 0 0;
+        }
+
+        ._nav {
+            min-height: @block-height;
+        }
+    }
+
+    &._two_columns_left {
+        ._main {
+            margin: 0 0 0 @spacing;
+        }
+
+        ._nav {
+            min-height: @block-height;
+        }
+    }
+
+    &._three_columns {
+        ._right {
+            ._nav {
+                min-height: @block-height;
+                writing-mode: vertical-rl;
+                width: 100%;
+            }
+        }
+    }
+
     ._main._infomain-100,
     ._main._media-100 {
         display: flex;

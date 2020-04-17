@@ -8,7 +8,7 @@
             <div class="_header-wrapper _watermark" title="Header"></div>
         </div>
         <div class="_content">
-            <div class="_columns _one_column">
+            <div class="_columns <?= $block->getPageLayout() ?>">
                 <div class="_main">
                     <div class="_info-main">
                         <div class="_name _watermark" title="Product Name"></div>
@@ -33,6 +33,12 @@
                         </div>
                         <div class="_additional _watermark" title="Related, Upsell, Sold Together blocks etc."></div>
                     </div>
+                </div>
+                <div class="_left">
+                    <div class="_nav _watermark" title="Some blocks"></div>
+                </div>
+                <div class="_right">
+                    <div class="_nav _watermark" title="Other blocks"></div>
                 </div>
             </div>
         </div>
@@ -131,6 +137,28 @@ require([
 
         update();
         $(infoMain).on('change paste keyup', update);
+    });
+
+    /**
+     * PAGE LAYOUT
+     */
+    $.async({
+        selector: '[name$="[page_layout][value]"]',
+        ctx: tbody.get(0)
+    }, function (pageLayout) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(pageLayout).val() ?
+                $(pageLayout).val().replace('themeeditor_page', '') :
+                '<?= $block->getPageLayout() ?>';
+
+            $('._columns', preview).attr('class', '_columns ' + value);
+        }
+
+        update();
+        $(pageLayout).change(update);
     });
 
     /**
