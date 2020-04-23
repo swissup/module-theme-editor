@@ -59,7 +59,13 @@ define([
          * @param  {String} name container name
          */
         self.showConfig = function (name) {
-            $('[data-type="container"][data-name="' + name + '"] .settings-dropdown').toggle();
+            var curItem = $('[data-type="container"][data-name="' + name + '"] .settings-dropdown'),
+                curState = curItem.hasClass('shown');
+
+            $('[data-type="container"] .settings-dropdown').removeClass('shown');
+            if (!curState) {
+                curItem.addClass('shown');
+            }
         };
 
         /**
