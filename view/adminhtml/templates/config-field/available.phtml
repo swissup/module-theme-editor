@@ -1,0 +1,10 @@
+<?php $element = $this->getElement(); ?>
+<div id="<?= $element->getHtmlId();?>" class="dragula-element <?= $element->getData('disabled') ? 'disabled' : '' ;?>">
+    <div data-type="container" data-name="available">
+    <?php foreach ($block->getAvailableOptions() as $option): ?>
+        <div data-type="block" data-name="<?= $option['value'];?>" class="header-config">
+            <span class="name"><?= $option['label'];?></span>
+        </div>
+    <?php endforeach; ?>
+    </div>
+</div>

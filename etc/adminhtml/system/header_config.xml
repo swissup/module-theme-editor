@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="header_config" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+        <label>Header Builder</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enabled</label>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment>This will replace the current header. Layout instructions `move` and `remove` won't work for header elements.</comment>
+        </field>
+        <field id="available_blocks" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Blocks available in Header</label>
+            <source_model>Swissup\ThemeEditor\Model\Config\Source\AvailableHeaderBlocks</source_model>
+            <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Available</frontend_model>
+            <depends><field id="enabled">1</field></depends>
+        </field>
+        <field id="layout_heading" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Header Layout</label>
+            <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+            <depends><field id="enabled">1</field></depends>
+        </field>
+        <field id="layout" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Header Layout</label>
+            <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Layout</frontend_model>
+            <depends><field id="enabled">1</field></depends>
+            <comment><![CDATA[
+            <ol class="note" style="padding-left: 15px;">
+                <li>
+                    <p>To remove a block from the header, drag it to the <em>Blocks available</em> section above.</p>
+                </li>
+                <li>
+                    <p>You can change <em>Ajax Search</em> design in <a href="https://docs.swissuplabs.com/m2/extensions/ajaxsearch/configuration/#design" title="Ajax Search Design">Design section</a> in module configuration.</p>
+                </li>
+                <li>
+                    When using <em>Navigation Pro</em> <a href="https://docs.swissuplabs.com/m2/extensions/navigationpro/use-cases/nowrap/">Nowrap menu</a> on one row with other elements, add `nowrap` class for the column containing the menu.
+                </li>
+                <li>
+                    Do not forget to <strong>save config</strong> and <strong>clear cache</strong> to apply the header layout on the frontend.
+                </li>
+                <li>
+                    Get more information about header builder in <a href="https://docs.swissuplabs.com/m2/argento/customization/theme-editor/#header-builder">Theme Editor</a> documentation.
+                </li>
+            </ol>
+            ]]></comment>
+        </field>
+        <field id="preview_hash" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Preview hash</label>
+            <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\PreviewHash</frontend_model>
+        </field>
+        <field id="preview_expires" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Preview expires at (timestamp)</label>
+            <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\PreviewExpires</frontend_model>
+        </field>
+        <field id="preview" translate="label" type="textarea" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Preview Config</label>
+            <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\HeaderPreview</frontend_model>
+            <depends><field id="enabled">1</field></depends>
+        </field>
+    </group>
+</include>

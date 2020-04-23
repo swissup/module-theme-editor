@@ -1,0 +1,210 @@
+@hcl-color-light: #e9e9e9;
+@hcl-color-dark: #adadad;
+
+.dragula-element {
+    background-color: @hcl-color-light;
+    border: 1px solid @hcl-color-dark;
+    box-sizing: border-box;
+    padding: 6px;
+
+    [data-type="container"] {
+        align-items: flex-start;
+        background-color: #fff;
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 38px;
+        padding: 3px;
+        float: left;
+        width: 100%;
+
+        .rtl & {
+            float: right;
+        }
+    }
+
+    [data-type="block"] {
+        background-color: @hcl-color-light;
+        margin: 3px;
+        max-width: ~'calc(100% - 12px)';
+        position: relative;
+
+        .name {
+            overflow: hidden;
+        }
+    }
+
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    &:not(.disabled) {
+        [data-type="block"] {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+
+        [data-type="block"]:hover {
+            outline: 1px solid @hcl-color-dark;
+        }
+    }
+
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+
+        .column-actions a {
+            display: none;
+        }
+    }
+}
+
+[data-type="block"].header-config {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.header-config-layout-wrapper {
+    position: relative;
+
+    textarea {
+        display: none;
+    }
+
+    .dragula-element {
+        [data-type="container"] {
+            position: relative;
+            width: ~'calc(100%/3 - 6px)';
+            padding-right: 20px;
+            margin: 3px;
+
+            &[data-name$="left"] {
+                clear: both;
+            }
+
+            .settings-dropdown {
+                display: none;
+                position: absolute;
+                z-index: 1;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background: #fff;
+                filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5));
+
+                &::before {
+                    border-bottom: 5px solid #fff;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    content: '';
+                    right: 6px;
+                    position: absolute;
+                    top: -5px;
+                }
+
+                > .title {
+                    text-align: center;
+                    padding: 10px;
+                    font-weight: bold;
+                }
+
+                .settings {
+                    padding: 10px;
+
+                    .option-wrapper {
+                        + .option-wrapper {
+                            margin-top: 20px;
+                        }
+                    }
+
+                    .option-label {
+                        margin-bottom: 10px;
+
+                        .tooltip .tooltip-content {
+                            max-width: 265px;
+                        }
+                    }
+
+                    .option {
+                        &, & > span {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > span {
+                            border: 1px solid #ccc;
+                            padding: 5px;
+                            margin: 0 5px;
+
+                            &.first {
+                                margin-left: 0;
+                            }
+
+                            &.last {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .column-actions {
+            font-family: 'Admin Icons';
+            position: absolute;
+            right: 4px;
+            top: ~"calc(50% - 8px)";
+            .rtl & {
+                right: auto;
+                left: 4px;
+            }
+
+            .settings-action::before {
+                content: '\e610';
+            }
+        }
+
+        .column-actions a,
+        .column-actions a:hover,
+        .column-actions a:active {
+            color: #777;
+            text-decoration: none;
+        }
+    }
+}
+
+#row_swissup_argento_header_config_preview_iframe {
+    td {
+        padding-top: 2.2rem;
+        position: relative;
+
+        [data-role="iframe-placeholder"] {
+            position: relative;
+            min-height: 4rem;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+tr[id$='header_config_preview'] {
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+
+    .label,
+    textarea {
+        display: none;
+    }
+
+    .value {
+        display: block;
+        width: 100% !important;
+    }
+}

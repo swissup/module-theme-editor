@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <container name="header.container.configurable" as="header_container_configurable" label="Configurable Page Header Container" htmlTag="header" htmlClass="page-header configurable" before="header.container">
+                <container name="header.panel.wrapper.configurable" htmlClass="panel wrapper" htmlTag="div" before="-">
+                    <container name="header.panel.configurable" label="Configurable Page Header Panel" htmlTag="div" htmlClass="panel header flex-row">
+                        <container name="header.top.left" htmlTag="div" />
+                        <container name="header.top.middle" htmlTag="div" />
+                        <container name="header.top.right" htmlTag="div" />
+                    </container>
+                </container>
+                <container name="header.content.wrapper.configurable" label="Configurable Page Header Wrapper" as="header-content-wrapper-configurable" htmlTag="div" htmlClass="header wrapper">
+                    <container name="header.content.configurable" label="Configurable Page Header" as="header-content-configurable" htmlTag="div" htmlClass="header content flex-row">
+                        <container name="header.main.left" htmlTag="div" />
+                        <container name="header.main.middle" htmlTag="div" />
+                        <container name="header.main.right" htmlTag="div" />
+                    </container>
+                </container>
+                <container name="header.bottom.wrapper.configurable" label="Configurable Page Header Bottom Wrapper" as="header-bottom-wrapper-configurable" htmlTag="div" htmlClass="header wrapper">
+                    <container name="header.bottom.configurable" label="Configurable Header Bottom" as="header-bottom-configurable" htmlTag="div" htmlClass="header bottom flex-row">
+                        <container name="header.bottom.left" htmlTag="div" />
+                        <container name="header.bottom.middle" htmlTag="div" />
+                        <container name="header.bottom.right" htmlTag="div" />
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <move element="top.links" destination="header_account" />
+        <referenceContainer name="header.container" remove="true"/>
+    </body>
+</page>

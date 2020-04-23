@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Header Preview</title>
+    </head>
+    <update handle="swissup_configurable_header" />
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="disable_cache" cacheable="false" />
+        </referenceContainer>
+        <referenceContainer name="footer-container" remove="true" />
+    </body>
+</page>

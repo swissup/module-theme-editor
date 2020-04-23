@@ -3,5 +3,7 @@
     <head>
         <css src="jquery/colorpicker/css/colorpicker.css"/>
         <css src="Swissup_ThemeEditor::css/preview.css"/>
+        <css src="Swissup_ThemeEditor::css/header_conf.css"/>
+        <css src="Swissup_ThemeEditor::lib/dragula/dragula.css"/>
     </head>
 </page>

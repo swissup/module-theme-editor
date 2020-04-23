@@ -1,0 +1,86 @@
+<?php
+    $element = $block->getElement();
+?>
+<div class="header-config-layout-wrapper" data-mage-init='{"Swissup_ThemeEditor/js/header/layout": <?= $block->getOptions();?>}'>
+<div data-role="spinner" class="admin__data-grid-loading-mask">
+    <div class="spinner">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+</div>
+    <?= $element->getElementHtml(); ?>
+</div>
+
+<script type="text/html" id="layout-template">
+    <div data-type="container" data-bind="attr: {'data-name': name}">
+        <!-- ko foreach: { data: children } -->
+        <div data-type="block" data-bind="attr: {'data-name': name}" class="header-config">
+            <span class="name" data-bind="text: $root.availableBlocks[name], attr: {title: $root.availableBlocks[name]}"></span>
+        </div>
+        <!-- /ko -->
+        <div class="column-actions">
+            <a class="settings-action" title="Settings" href="#" data-bind="click: function () { $root.showConfig(name); }"></a>
+        </div>
+        <div class="settings-dropdown">
+            <div class="title"><?= __('Column Settings') ?></div>
+            <div class="settings">
+                <div class="option-wrapper">
+                    <div class="option-label">
+                        <span>Align Items</span>
+                        <div class="tooltip">
+                            <span class="help"><span></span></span>
+                            <div class="tooltip-content">Select how items will be aligned inside column.</div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <span class="first">
+                            <input type="radio" id="align-left" value="left" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
+                            <label for="align-left">Left</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="align-center" value="center" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
+                            <label for="align-center">Center</label>
+                        </span>
+                        <span class="last">
+                            <input type="radio" id="align-right" value="right" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
+                            <label for="align-right">Right</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="option-wrapper">
+                    <div class="option-label">
+                        <span>Column Grow/Shrink</span>
+                        <div class="tooltip">
+                            <span class="help"><span></span></span>
+                            <div class="tooltip-content">Control column size and free space distribution.<br><strong>Default</strong> - the column will take space according to its content size and will shrink when there is no enough space.<br><strong>Grow</strong> - the column will grow to fill all available space and will shrink when space not enough.<br><strong>None</strong> - the column will always have its content size and won't shrink.</div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <span class="first">
+                            <input type="radio" id="grow-default" value="" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
+                            <label for="grow-default">Default</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="grow-grow" value="1" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
+                            <label for="grow-grow">Grow</label>
+                        </span>
+                        <span class="last">
+                            <input type="radio" id="grow-none" value="none" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
+                            <label for="grow-none">None</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="option-wrapper">
+                    <div class="option-label">
+                        <span>Additional CSS Classes</span>
+                        <div class="tooltip">
+                            <span class="help"><span></span></span>
+                            <div class="tooltip-content">Assign additional CSS classes separated with whitespace.</div>
+                        </div>
+                    </div>
+                    <div class="option"><input type="text" name="class" data-bind='value: $data.config.classes'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

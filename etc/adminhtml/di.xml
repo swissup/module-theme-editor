@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Swissup\ThemeEditor\Model\Config\Source\AvailableHeaderBlocks">
+        <arguments>
+            <argument name="options" xsi:type="array">
+                <item name="logo" xsi:type="string" translate="true">Logo</item>
+                <item name="top.search" xsi:type="string" translate="true">Search Form</item>
+                <item name="minicart" xsi:type="string" translate="true">Shopping Cart</item>
+                <item name="navigation.sections" xsi:type="string" translate="true">Navigation</item>
+                <item name="currency" xsi:type="string" translate="true">Currency Switcher</item>
+                <item name="store_language" xsi:type="string" translate="true">Language Switcher</item>
+                <item name="header.links" xsi:type="string" translate="true">Header Links</item>
+                <item name="header_account" xsi:type="string" translate="true">Customer Menu</item>
+                <item name="header_cms_links" xsi:type="string" translate="true">CMS Links</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
