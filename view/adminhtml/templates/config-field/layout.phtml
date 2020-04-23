@@ -34,16 +34,16 @@
                     </div>
                     <div class="option">
                         <span class="first">
-                            <input type="radio" id="align-left" value="left" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
-                            <label for="align-left">Left</label>
+                            <input type="radio" value="left" data-bind='attr: {id: "align-left-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                            <label data-bind='attr: {for: "align-left-" + $index()}'>Left</label>
                         </span>
                         <span>
-                            <input type="radio" id="align-center" value="center" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
-                            <label for="align-center">Center</label>
+                            <input type="radio" value="center" data-bind='attr: {id: "align-center-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                            <label data-bind='attr: {for: "align-center-" + $index()}'>Center</label>
                         </span>
                         <span class="last">
-                            <input type="radio" id="align-right" value="right" data-bind='attr: {name: name + ".align"}, checked: $data.config.align'>
-                            <label for="align-right">Right</label>
+                            <input type="radio" value="right" data-bind='attr: {id: "align-right-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                            <label data-bind='attr: {for: "align-right-" + $index()}'>Right</label>
                         </span>
                     </div>
                 </div>
@@ -57,16 +57,16 @@
                     </div>
                     <div class="option">
                         <span class="first">
-                            <input type="radio" id="grow-default" value="" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
-                            <label for="grow-default">Default</label>
+                            <input type="radio" value="" data-bind='attr: {id: "grow-default-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                            <label data-bind='attr: {for: "grow-default-" + $index()}'>Default</label>
                         </span>
                         <span>
-                            <input type="radio" id="grow-grow" value="1" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
-                            <label for="grow-grow">Grow</label>
+                            <input type="radio" id="grow-grow" value="1" data-bind='attr: {id: "grow-grow-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                            <label data-bind='attr: {for: "grow-grow-" + $index()}'>Grow</label>
                         </span>
                         <span class="last">
-                            <input type="radio" id="grow-none" value="none" data-bind='attr: {name: name + ".grow"}, checked: $data.config.grow'>
-                            <label for="grow-none">None</label>
+                            <input type="radio" id="grow-none" value="none" data-bind='attr: {id: "grow-none-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                            <label data-bind='attr: {for: "grow-none-" + $index()}'>None</label>
                         </span>
                     </div>
                 </div>
