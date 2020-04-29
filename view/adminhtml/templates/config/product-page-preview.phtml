@@ -209,7 +209,9 @@ require([
          * Preview updater
          */
         function update() {
-            var value = $(imagePosition).val() ? $(imagePosition).val() : '<?= $block->getImagePosition() ?>';
+            var value = $(imagePosition).val() !== 'theme' ?
+                $(imagePosition).val() :
+                '<?= $block->getImagePosition() ?>';
 
             preview.attr('data-image-position', value);
         }
