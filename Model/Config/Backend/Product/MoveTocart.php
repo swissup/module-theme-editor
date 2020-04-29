@@ -37,7 +37,7 @@ class MoveTocart extends PageLayout
                                             '$(\'.product-info-main .product.media\').detach().insertAfter(\'.column.main > .product-info-main\');' .
                                             '},' .
                                             'exit: function () {' .
-                                                '$(\'.column.main > .product.media\').detach().insertAfter(\'.product-info-main .product-info-price\');' .
+                                                '$(\'.column.main > .product.media\').detach().insertAfter(\'.product-info-main .page-title-wrapper\');' .
                                             '}' .
                                         '});' .
                                     '});' .
