@@ -1,1 +1,137 @@
- 
+left,links
+top,oben
+"Show/hide CSS selectors","CSS-Selektoren ein- / ausblenden"
+"Swissup Themes Editor","Swissup Themes Editor"
+"Argento Essence","Argento Essenz"
+Buttons,Tasten
+"Primary Buttons",Primärschaltflächen
+Background,Hintergrund
+"Font Color",Schriftfarbe
+"Hover State Background","Schwebezustand Hintergrund"
+"Hover State Font Color","Hover State Schriftfarbe"
+"Other Buttons","Andere Tasten"
+"Hover Background","Hover Hintergrund"
+"Hover Font Color",Hover-Schriftfarbe
+Fonts,Schriftarten
+"Font Family",Schriftfamilie
+Color,Farbe
+"Product name link in listing","Produktname Link in der Liste"
+"Hover Color",Schwebefarbe
+"Top toolbar container","Oberer Symbolleistencontainer"
+Repeat,Wiederholen
+"Text Color",Textfarbe
+"Links Color","Links Farbe"
+"Bottom toolbar container","Unterer Symbolleistencontainer"
+"Additional css","Zusätzliche CSS"
+"Css styles",CSS-Stile
+"Cart counter background color",Warenkorbzählerhintergrundfarbe
+Navigation,Navigation
+"Menu item dividers",Menüpunktteiler
+"Left divider","Linker Teiler"
+"Right divider","Rechter Teiler"
+"Top level links",Top-Level-Links
+"Font Size",Schriftgröße
+"Text transform",Texttransformation
+"Hover state font color",Hover-Status-Schriftfarbe
+"Active state font color","Aktive Schriftfarbe"
+"Top level arrows","Pfeile der obersten Ebene"
+"Links from the rest of the levels","Links von den restlichen Levels"
+"Background color",Hintergrundfarbe
+"Hover state background color","Schwebezustand Hintergrundfarbe"
+"Active state background color","Hintergrundfarbe des aktiven Zustands"
+"Rest of the levels arrows","Restliche Levelpfeile"
+"Body background",Körperhintergrund
+"Page wrapper",Seitenumbruch
+Max-width,"Maximale Breite"
+"Content wrapper",Inhaltsverpackung
+"Product and Homepage Tabs","Produkt- und Homepage-Registerkarten"
+Padding,Polsterung
+Font-family,Schriftfamilie
+"Font size",Schriftgröße
+"Font weight",Schriftgewicht
+transform,verwandeln
+"Background Color",Hintergrundfarbe
+"Font color",Schriftfarbe
+"Border color",Randfarbe
+"Hover state",Schwebezustand
+"Active state","Aktiver Zustand"
+"Argento Luxury","Argento Luxus"
+"Border Color",Randfarbe
+"Hover State Border Color","Hover State Border Color"
+"Titles Color","Titel Farbe"
+"Border bottom","Rand unten"
+Shadow,Schatten
+"Enable Fullscreen Slider","Aktivieren Sie den Vollbild-Schieberegler"
+"Homepage logo",Homepage-Logo
+"Argento Pure2","Argento Pure2"
+"Inverted Primary Buttons (Add to Cart, Checkout)","Umgekehrte Primärschaltflächen (In den Warenkorb, Kasse)"
+"Argento Flat","Argento Wohnung"
+"Argento Mall","Argento Mall"
+"Header background color","Header Hintergrundfarbe"
+"Product Tabs",Produktregisterkarten
+"Argento Stripes",Argento-Streifen
+"""Add to Wish List"" and ""Add to Compate"" buttons","Schaltflächen ""Zur Wunschliste hinzufügen"" und ""Zum Kompatieren hinzufügen"""
+"Hover State Background Color","Schwebezustand Hintergrundfarbe"
+"Final price in listing and on product page","Endpreis in der Auflistung und auf der Produktseite"
+"Links separator color","Links Trennfarbe"
+"Enable sticky menu","Aktivieren Sie das Sticky-Menü"
+"Header background",Header-Hintergrund
+"Header top panel",Kopfzeile
+"Text color",Textfarbe
+"Border bottom width",Randbodenbreite
+"Border bottom style","Rand unten Stil"
+"Border bottom color",Randbodenfarbe
+"Arrow color",Pfeilfarbe
+"Top level ""Departments"" link","Link ""Abteilungen"" der obersten Ebene"
+"Background image",Hintergrundbild
+"Background repeat","Hintergrund Wiederholung"
+"Background position",Hintergrundposition
+"Hover state arrow color","Schwebezustand Pfeilfarbe"
+"Active state arrow color","Pfeilfarbe des aktiven Zustands"
+"""Departments"" direct children links","""Abteilungen"" leiten Kinder Links"
+"Search button",Suchschaltfläche
+"Minicart button",Minicart-Taste
+"My Account button","Die Schaltfläche Mein Konto"
+"Alternative Logo Image","Alternatives Logo-Bild"
+"This logo is used in some Argento themes","Dieses Logo wird in einigen Argento-Themen verwendet"
+"Property $themeCode must be specified.","Die Eigenschaft $themeCode muss angegeben werden."
+"Theme Defined","Thema definiert"
+"Full width",Gesamtbreite
+"Limited width","Begrenzte Breite"
+"One column","Eine Spalte"
+"Two columns (left sidebar)","Zwei Spalten (linke Seitenleiste)"
+"Two columns (right sidebar)","Zwei Spalten (rechte Seitenleiste)"
+"Three columns","Drei Spalten"
+"Category Page",Kategorieseite
+"Preview page layout","Vorschau des Seitenlayouts"
+"Content width",Inhaltsbreite
+"Max width","maximale Breite"
+"Products list mode",Produktlistenmodus
+"Grid Mode",Rastermodus
+"Products per Page Allowed Values","Produkte pro Seite Zulässige Werte"
+"Products per Page Default Value","Standardwert für Produkte pro Seite"
+"Must be in the allowed values list","Muss in der Liste der zulässigen Werte enthalten sein"
+"Columns per Row","Spalten pro Zeile"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Essence it is ""-1"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Essenz ist es ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Flat it is ""15"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Flat ist es ""15""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Force it is ""6"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Force ist es ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Luxury it is ""6"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Luxus ist es ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Mall it is ""-1"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Mall ist es ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Pure2 it is ""-1"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Pure2 ist es ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Stripes it is ""-1"".","<b> Minimale Breite </ b> - Minimale Breite eines Bildschirms, auf den die Spaltennummer angewendet werden muss. <br /> <b> Spalten </ b> - Spalten zählen sich selbst. <br /> <b> Abstand </ b > - Abstand zwischen Zellen im Raster. Für Streifen ist es ""-1""."
+"List Mode",Listenmodus
+"Product Page",Produktseite
+"On a left side you can see simple page layout. Change config option and you'll see its effect there.","Auf der linken Seite sehen Sie ein einfaches Seitenlayout. Ändern Sie die Konfigurationsoption und Sie werden ihre Wirkung dort sehen."
+"Media block width, %","Medienblockbreite,%"
+"Info Main block width, %","Info Hauptblockbreite,%"
+"Width in percents for product info main block.","Breite in Prozent für Produktinfo-Hauptblock."
+"Thumbnails Type","Thumbnails Typ"
+"It duplicates <a href=""section/lightboxpro/#lightboxpro_general"">Lightbox Pro config</a>.","Es dupliziert die <a href=""section/lightboxpro/#lightboxpro_general""> Lightbox Pro-Konfiguration </a>."
+"To Cart Form","In den Warenkorb"
+Tabs,Tabs
+"It duplicates <a href=""section/swissup_easytabs/"">Easytabs config</a>.","Es dupliziert <a href=""section/swissup_easytabs/""> Easytabs-Konfiguration </a>."
+"Photo in description tab","Foto in der Registerkarte Beschreibung"
+"Sticky add to cart","Sticky in den Warenkorb legen"
+"Min width, px","Min. Breite, px"
+Columns,Säulen
+"Spacing, px","Abstand, px"
