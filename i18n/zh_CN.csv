@@ -1,1 +1,137 @@
- 
+left,剩下
+top,最佳
+"Show/hide CSS selectors",显示/隐藏CSS选择器
+"Swissup Themes Editor",Swissup主题编辑器
+"Argento Essence",Argento精华
+Buttons,纽扣
+"Primary Buttons",主要按钮
+Background,背景
+"Font Color",字体颜色
+"Hover State Background",悬停状态背景
+"Hover State Font Color",悬停状态字体颜色
+"Other Buttons",其他按钮
+"Hover Background",悬停背景
+"Hover Font Color",悬停字体颜色
+Fonts,字型
+"Font Family",字体系列
+Color,颜色
+"Product name link in listing",清单中的产品名称链接
+"Hover Color",悬停颜色
+"Top toolbar container",顶部工具栏容器
+Repeat,重复
+"Text Color",文字颜色
+"Links Color",链接颜色
+"Bottom toolbar container",底部工具栏容器
+"Additional css",额外的CSS
+"Css styles",CSS样式
+"Cart counter background color",购物车柜台背景颜色
+Navigation,导航
+"Menu item dividers",菜单项目分隔线
+"Left divider",左分隔线
+"Right divider",右分隔线
+"Top level links",顶级链接
+"Font Size",字体大小
+"Text transform",文字转换
+"Hover state font color",悬停状态字体颜色
+"Active state font color",活动状态字体颜色
+"Top level arrows",顶级箭头
+"Links from the rest of the levels",来自其他级别的链接
+"Background color",背景颜色
+"Hover state background color",悬停状态背景颜色
+"Active state background color",活动状态背景色
+"Rest of the levels arrows",其余级别的箭头
+"Body background",身体背景
+"Page wrapper",页面包装
+Max-width,最大宽度
+"Content wrapper",内容包装
+"Product and Homepage Tabs",产品和首页标签
+Padding,填充
+Font-family,字体系列
+"Font size",字体大小
+"Font weight",字型粗细
+transform,转变
+"Background Color",背景颜色
+"Font color",字体颜色
+"Border color",边框颜色
+"Hover state",悬停状态
+"Active state",活跃状态
+"Argento Luxury","Argento Luxury"
+"Border Color",边框颜色
+"Hover State Border Color",悬停状态边框颜色
+"Titles Color",标题颜色
+"Border bottom",边框底
+Shadow,阴影
+"Enable Fullscreen Slider",启用全屏滑块
+"Homepage logo",主页徽标
+"Argento Pure2","Argento Pure2"
+"Inverted Primary Buttons (Add to Cart, Checkout)",反向主按钮（添加到购物车，结帐）
+"Argento Flat","Argento Flat"
+"Argento Mall",阿尔真托购物中心
+"Header background color",标头背景色
+"Product Tabs",产品标签
+"Argento Stripes",阿尔根托条纹
+"""Add to Wish List"" and ""Add to Compate"" buttons",“添加到愿望清单”和“添加到符合条件”按钮
+"Hover State Background Color",悬停状态背景颜色
+"Final price in listing and on product page",清单和产品页面上的最终价格
+"Links separator color",链接分隔符颜色
+"Enable sticky menu",启用即时贴菜单
+"Header background",标头背景
+"Header top panel",页眉顶部面板
+"Text color",文字颜色
+"Border bottom width",边框底宽
+"Border bottom style",边框底样式
+"Border bottom color",边框底色
+"Arrow color",箭头颜色
+"Top level ""Departments"" link",顶级“部门”链接
+"Background image",背景图片
+"Background repeat",背景重复
+"Background position",背景位置
+"Hover state arrow color",悬停状态箭头颜色
+"Active state arrow color",活动状态箭头颜色
+"""Departments"" direct children links",“部门”直接子链接
+"Search button",搜索按钮
+"Minicart button",Minicart按钮
+"My Account button",我的帐户按钮
+"Alternative Logo Image",备用徽标图片
+"This logo is used in some Argento themes",此徽标在某些Argento主题中使用
+"Property $themeCode must be specified.",必须指定属性$themeCode。
+"Theme Defined",主题定义
+"Full width",全屏宽度
+"Limited width",宽度限制
+"One column",一栏
+"Two columns (left sidebar)",两列（左侧栏）
+"Two columns (right sidebar)",两列（右侧）
+"Three columns",三列
+"Category Page",分类页面
+"Preview page layout",预览页面布局
+"Content width",内容宽度
+"Max width",最大宽度
+"Products list mode",产品清单模式
+"Grid Mode",网格模式
+"Products per Page Allowed Values",每页产品允许值
+"Products per Page Default Value",每页产品默认值
+"Must be in the allowed values list",必须在允许值列表中
+"Columns per Row",每行列
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Essence it is ""-1"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于本质，它是“ -1”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Flat it is ""15"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于Flat，它是“ 15”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Force it is ""6"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于Force，它是“ 6”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Luxury it is ""6"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于奢侈品，它是“ 6”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Mall it is ""-1"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于Mall，它是“ -1”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Pure2 it is ""-1"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于Pure2，它是“ -1”。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Stripes it is ""-1"".","<b>最小宽度</ b>-必须应用列号的屏幕的最小宽度。<br /> <b>列</ b>-列本身。<br /> <b>间距</ b >-网格中单元格之间的间距。对于Stripes，它是“ -1”。"
+"List Mode",列表模式
+"Product Page",产品页面
+"On a left side you can see simple page layout. Change config option and you'll see its effect there.",在左侧，您可以看到简单的页面布局。更改配置选项，您将在那里看到其效果。
+"Media block width, %",介质块宽度，％
+"Info Main block width, %",信息主块宽度，％
+"Width in percents for product info main block.",产品信息主块的宽度（以百分比为单位）。
+"Thumbnails Type",缩图类型
+"It duplicates <a href=""section/lightboxpro/#lightboxpro_general"">Lightbox Pro config</a>.","它复制了<a href=""section/lightboxpro/#lightboxpro_general""> Lightbox Pro配置</a>。"
+"To Cart Form",到购物车表格
+Tabs,标签
+"It duplicates <a href=""section/swissup_easytabs/"">Easytabs config</a>.","它复制<a href=""section/swissup_easytabs/""> Easytabs配置</a>。"
+"Photo in description tab",描述标签中的照片
+"Sticky add to cart",粘性添加到购物车
+"Min width, px",最小宽度，px
+Columns,列
+"Spacing, px",间距，px
