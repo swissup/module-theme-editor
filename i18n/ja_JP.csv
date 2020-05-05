@@ -1,1 +1,137 @@
- 
+left,左
+top,上
+"Show/hide CSS selectors",CSSセレクターの表示/非表示
+"Swissup Themes Editor",Swissupテーマエディター
+"Argento Essence",アルジェントエッセンス
+Buttons,ボタン
+"Primary Buttons",主ボタン
+Background,バックグラウンド
+"Font Color",フォントカラー
+"Hover State Background",ホバー状態の背景
+"Hover State Font Color",ホバー状態のフォントの色
+"Other Buttons",その他のボタン
+"Hover Background",ホバー背景
+"Hover Font Color",ホバーフォントの色
+Fonts,書体
+"Font Family",フォントファミリー
+Color,色
+"Product name link in listing",リスト内の製品名リンク
+"Hover Color",ホバーカラー
+"Top toolbar container",トップツールバーコンテナ
+Repeat,繰り返す
+"Text Color",テキストの色
+"Links Color",リンクの色
+"Bottom toolbar container",下部ツールバーコンテナー
+"Additional css",追加のCSS
+"Css styles",CSSスタイル
+"Cart counter background color",カートカウンターの背景色
+Navigation,ナビゲーション
+"Menu item dividers",メニューアイテムの仕切り
+"Left divider",左仕切り
+"Right divider",右仕切り
+"Top level links",トップレベルのリンク
+"Font Size",フォントサイズ
+"Text transform",テキスト変換
+"Hover state font color",ホバー状態のフォントの色
+"Active state font color",アクティブな状態のフォントの色
+"Top level arrows",トップレベルの矢印
+"Links from the rest of the levels",残りのレベルからのリンク
+"Background color",背景色
+"Hover state background color",ホバー状態の背景色
+"Active state background color",アクティブな状態の背景色
+"Rest of the levels arrows",残りのレベルの矢印
+"Body background",体の背景
+"Page wrapper",ページラッパー
+Max-width,最大幅
+"Content wrapper",コンテンツラッパー
+"Product and Homepage Tabs",製品とホームページのタブ
+Padding,パディング
+Font-family,フォントファミリー
+"Font size",フォントサイズ
+"Font weight",フォントの太さ
+transform,変身
+"Background Color",背景色
+"Font color",フォント色
+"Border color",ボーダの色
+"Hover state",ホバー状態
+"Active state",アクティブ状態
+"Argento Luxury",アルジェントラグジュアリー
+"Border Color",ボーダの色
+"Hover State Border Color",ホバー状態のボーダー色
+"Titles Color",タイトルの色
+"Border bottom",ボーダーボトム
+Shadow,影
+"Enable Fullscreen Slider",全画面スライダーを有効にする
+"Homepage logo",ホームページのロゴ
+"Argento Pure2",アルジェントピュア2
+"Inverted Primary Buttons (Add to Cart, Checkout)",反転した主ボタン（カートに追加、チェックアウト）
+"Argento Flat",アルジェントフラット
+"Argento Mall",アルジェントモール
+"Header background color",ヘッダーの背景色
+"Product Tabs",製品タブ
+"Argento Stripes",アルジェントストライプ
+"""Add to Wish List"" and ""Add to Compate"" buttons",「ウィッシュリストに追加」および「比較に追加」ボタン
+"Hover State Background Color",ホバー状態の背景色
+"Final price in listing and on product page",リストおよび製品ページの最終価格
+"Links separator color",リンクセパレータの色
+"Enable sticky menu",付箋メニューを有効にする
+"Header background",ヘッダーの背景
+"Header top panel",ヘッダー上部パネル
+"Text color",テキストの色
+"Border bottom width",ボーダーの下の幅
+"Border bottom style",ボーダーボトムスタイル
+"Border bottom color",ボーダーボトムカラー
+"Arrow color",矢印の色
+"Top level ""Departments"" link",トップレベルの「部門」リンク
+"Background image",背景画像
+"Background repeat",バックグラウンドリピート
+"Background position",背景の位置
+"Hover state arrow color",ホバー状態の矢印の色
+"Active state arrow color",アクティブな状態の矢印の色
+"""Departments"" direct children links",「部門」の直接の子リンク
+"Search button",検索ボタン
+"Minicart button",ミニカートボタン
+"My Account button",マイアカウントボタン
+"Alternative Logo Image",代替ロゴ画像
+"This logo is used in some Argento themes",このロゴは、いくつかのArgentoテーマで使用されています
+"Property $themeCode must be specified.",プロパティ$themeCodeを指定する必要があります。
+"Theme Defined",定義されたテーマ
+"Full width",全幅
+"Limited width",限られた幅
+"One column",1列
+"Two columns (left sidebar)",2列（左サイドバー）
+"Two columns (right sidebar)",2列（右サイドバー）
+"Three columns",3列
+"Category Page",カテゴリーページ
+"Preview page layout",ページレイアウトのプレビュー
+"Content width",コンテンツの幅
+"Max width",最大幅
+"Products list mode",製品リストモード
+"Grid Mode",グリッドモード
+"Products per Page Allowed Values",ページあたりの製品の許容値
+"Products per Page Default Value",ページごとの製品のデフォルト値
+"Must be in the allowed values list",許容値リストに含まれている必要があります
+"Columns per Row",行ごとの列
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Essence it is ""-1"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。エッセンスの場合は「-1」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Flat it is ""15"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。フラットの場合は「15」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Force it is ""6"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。フォースの場合は「6」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Luxury it is ""6"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。ラグジュアリーの場合は「6」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Mall it is ""-1"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。モールの場合は「-1」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Pure2 it is ""-1"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。 Pure2の場合は「-1」です。"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Stripes it is ""-1"".","<b>最小幅</ b>-列数を適用する必要がある画面の最小幅。<br /> <b>列</ b>-列自体がカウントされます。<br /> <b>間隔</ b >-グリッド内のセル間の間隔。 Stripesの場合は「-1」です。"
+"List Mode",リストモード
+"Product Page",製品ページ
+"On a left side you can see simple page layout. Change config option and you'll see its effect there.",左側には、単純なページレイアウトが表示されています。設定オプションを変更すると、その効果がわかります。
+"Media block width, %",メディアブロック幅、％
+"Info Main block width, %",情報メインブロックの幅、％
+"Width in percents for product info main block.",製品情報のメインブロックの幅（パーセント）。
+"Thumbnails Type",サムネイルのタイプ
+"It duplicates <a href=""section/lightboxpro/#lightboxpro_general"">Lightbox Pro config</a>.","<a href=""section/lightboxpro/#lightboxpro_general""> Lightbox Pro構成</a>と重複しています。"
+"To Cart Form",カートフォームへ
+Tabs,タブ
+"It duplicates <a href=""section/swissup_easytabs/"">Easytabs config</a>.","<a href=""section/swissup_easytabs/""> Easytabs config </a>を複製します。"
+"Photo in description tab",説明タブの写真
+"Sticky add to cart",カートに追加
+"Min width, px",最小幅、px
+Columns,カラム
+"Spacing, px",間隔、px
