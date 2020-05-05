@@ -1,1 +1,137 @@
- 
+left,links
+top,top
+"Show/hide CSS selectors","Toon / verberg CSS-kiezers"
+"Swissup Themes Editor","Swissup Thema's Editor"
+"Argento Essence","Argento Essence"
+Buttons,Toetsen
+"Primary Buttons","Primaire knoppen"
+Background,Achtergrond
+"Font Color","Lettertype kleur"
+"Hover State Background","Hover State Achtergrond"
+"Hover State Font Color","Hover State Font Color"
+"Other Buttons","Andere knoppen"
+"Hover Background","Hover achtergrond"
+"Hover Font Color","Tekstkleur zweven"
+Fonts,Lettertypen
+"Font Family",Lettertypefamilie
+Color,Kleur
+"Product name link in listing","Productnaam link in aanbieding"
+"Hover Color","Hover Color"
+"Top toolbar container","Bovenste werkbalkcontainer"
+Repeat,Herhaling
+"Text Color","Tekst kleur"
+"Links Color","Links kleur"
+"Bottom toolbar container","Onderste werkbalkcontainer"
+"Additional css","Extra css"
+"Css styles",CSS-stijlen
+"Cart counter background color","Achtergrondkleur winkelwagen teller"
+Navigation,Navigatie
+"Menu item dividers","Menu-item verdelers"
+"Left divider","Linker verdeler"
+"Right divider","Rechter scheidingslijn"
+"Top level links","Links op het hoogste niveau"
+"Font Size",Lettertypegrootte
+"Text transform",Teksttransformatie
+"Hover state font color","Tekstkleur zweefstand"
+"Active state font color","Lettertype actieve status"
+"Top level arrows","Pijlen op het hoogste niveau"
+"Links from the rest of the levels","Links van de rest van de levels"
+"Background color","Achtergrond kleur"
+"Hover state background color","Achtergrondkleur zweeftoestand"
+"Active state background color","Achtergrondkleur actieve toestand"
+"Rest of the levels arrows","Rest van de niveauspijlen"
+"Body background","Body achtergrond"
+"Page wrapper",Paginaomslag
+Max-width,"Maximale wijdte"
+"Content wrapper","Content wrapper"
+"Product and Homepage Tabs","Product- en startpagina-tabbladen"
+Padding,Vulling
+Font-family,Font-familie
+"Font size",Lettertypegrootte
+"Font weight","Lettertype dikte"
+transform,transformeren
+"Background Color","Achtergrond kleur"
+"Font color",Letterkleur
+"Border color","Rand kleur"
+"Hover state","Hover staat"
+"Active state","Actieve staat"
+"Argento Luxury","Argento Luxe"
+"Border Color","Rand kleur"
+"Hover State Border Color","Hover State Border Color"
+"Titles Color","Titels kleur"
+"Border bottom","Rand onderaan"
+Shadow,Schaduw
+"Enable Fullscreen Slider","Schakel Fullscreen Slider in"
+"Homepage logo","Logo van de homepage"
+"Argento Pure2","Argento Pure2"
+"Inverted Primary Buttons (Add to Cart, Checkout)","Omgekeerde primaire knoppen (toevoegen aan winkelwagen, afrekenen)"
+"Argento Flat","Argento Flat"
+"Argento Mall","Argento Mall"
+"Header background color","Achtergrondkleur koptekst"
+"Product Tabs",Producttabbladen
+"Argento Stripes","Argento Stripes"
+"""Add to Wish List"" and ""Add to Compate"" buttons","""Toevoegen aan verlanglijstje"" en ""Toevoegen aan Compate"" knoppen"
+"Hover State Background Color","Achtergrondkleur zweeftoestand"
+"Final price in listing and on product page","Eindprijs in aanbieding en op productpagina"
+"Links separator color","Scheidingskleur koppelingen"
+"Enable sticky menu","Sticky menu inschakelen"
+"Header background","Koptekst achtergrond"
+"Header top panel","Bovenpaneel van koptekst"
+"Text color","Tekst kleur"
+"Border bottom width","Breedte onderrand"
+"Border bottom style","Rand onderaan stijl"
+"Border bottom color","Kleur onderste rand"
+"Arrow color","Kleur pijl"
+"Top level ""Departments"" link","Link 'Afdelingen' op het hoogste niveau"
+"Background image","Achtergrond afbeelding"
+"Background repeat","Achtergrond herhaling"
+"Background position",Achtergrondpositie
+"Hover state arrow color","Hover state pijlkleur"
+"Active state arrow color","Kleur actieve pijl"
+"""Departments"" direct children links","""Afdelingen"" leiden kinderlinks"
+"Search button",Zoekknop
+"Minicart button",Minicart-knop
+"My Account button","Mijn account-knop"
+"Alternative Logo Image","Alternatieve logo-afbeelding"
+"This logo is used in some Argento themes","Dit logo wordt gebruikt in sommige Argento-thema's"
+"Property $themeCode must be specified.","Eigenschap $themeCode moet worden gespecificeerd."
+"Theme Defined","Thema gedefinieerd"
+"Full width","Volledige breedte"
+"Limited width","Beperkte breedte"
+"One column","Een kolom"
+"Two columns (left sidebar)","Twee kolommen (linkerzijbalk)"
+"Two columns (right sidebar)","Twee kolommen (rechterzijbalk)"
+"Three columns","Drie kolommen"
+"Category Page",Categoriepagina
+"Preview page layout","Voorbeeld pagina-indeling"
+"Content width","Inhoud breedte"
+"Max width","Maximale wijdte"
+"Products list mode",Productenlijstmodus
+"Grid Mode","Raster modus"
+"Products per Page Allowed Values","Producten per pagina Toegestane waarden"
+"Products per Page Default Value","Producten per pagina Standaardwaarde"
+"Must be in the allowed values list","Moet in de lijst met toegestane waarden staan"
+"Columns per Row","Kolommen per rij"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Essence it is ""-1"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen vanzelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Essence is het ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Flat it is ""15"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen vanzelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Flat is het ""15""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Force it is ""6"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen zelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Force is het ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Luxury it is ""6"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen vanzelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor luxe is het ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Mall it is ""-1"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen vanzelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Mall is het ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Pure2 it is ""-1"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen vanzelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Pure2 is het ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Stripes it is ""-1"".","<b> Min. breedte </b> - min. breedte van een scherm waarop het kolomnummer moet worden toegepast. <br /> <b> Kolommen </b> - kolommen tellen zelf. <br /> <b> Afstand </ b > - afstand tussen cellen in raster. Voor Stripes is het ""-1""."
+"List Mode",Lijstmodus
+"Product Page",Productpagina
+"On a left side you can see simple page layout. Change config option and you'll see its effect there.","Aan de linkerkant ziet u een eenvoudige pagina-indeling. Wijzig de configuratieoptie en je zult het effect daar zien."
+"Media block width, %","Breedte mediablok,%"
+"Info Main block width, %","Info Breedte hoofdblok,%"
+"Width in percents for product info main block.","Breedte in procenten voor productinfo hoofdblok."
+"Thumbnails Type","Miniaturen type"
+"It duplicates <a href=""section/lightboxpro/#lightboxpro_general"">Lightbox Pro config</a>.","Het dupliceert <a href=""section/lightboxpro/#lightboxpro_general""> Lightbox Pro-configuratie </a>."
+"To Cart Form","Naar winkelwagenformulier"
+Tabs,Tabbladen
+"It duplicates <a href=""section/swissup_easytabs/"">Easytabs config</a>.","Het dupliceert <a href=""section/swissup_easytabs/""> Easytabs config </a>."
+"Photo in description tab","Foto in tabblad beschrijving"
+"Sticky add to cart","Kleverig in winkelwagen"
+"Min width, px","Min breedte, px"
+Columns,Kolommen
+"Spacing, px","Spatiëring, px"
