@@ -1,1 +1,137 @@
- 
+left,venstre
+top,topp
+"Show/hide CSS selectors","Vis / skjul CSS-velgere"
+"Swissup Themes Editor","Swissup Themes Editor"
+"Argento Essence","Argento Essence"
+Buttons,knapper
+"Primary Buttons","Primære knapper"
+Background,Bakgrunn
+"Font Color",Skriftfarge
+"Hover State Background","Hover State bakgrunn"
+"Hover State Font Color","Hover State-skriftfarge"
+"Other Buttons","Andre knapper"
+"Hover Background","Hold bakgrunnen"
+"Hover Font Color","Hold pekefarge"
+Fonts,fonter
+"Font Family","Font Family"
+Color,Farge
+"Product name link in listing","Produktnavlenke i listen"
+"Hover Color","Svever farge"
+"Top toolbar container","Topp verktøylinjebeholder"
+Repeat,Gjenta
+"Text Color",Tekstfarge
+"Links Color",Koblingsfarge
+"Bottom toolbar container","Beholder nederst på verktøylinjen"
+"Additional css","Ytterligere css"
+"Css styles",CSS-stiler
+"Cart counter background color","Bakgrunnsfarge i vogn"
+Navigation,Navigasjon
+"Menu item dividers",Menyelementdelere
+"Left divider","Venstre skillelinje"
+"Right divider","Høyre skillelinje"
+"Top level links","Linker på toppnivå"
+"Font Size",Skriftstørrelse
+"Text transform",Teksttransform
+"Hover state font color","Hold markøren for skriftfarge"
+"Active state font color","Aktiv tilstand skriftfarge"
+"Top level arrows","Toppnivå piler"
+"Links from the rest of the levels","Koblinger fra resten av nivåene"
+"Background color",Bakgrunnsfarge
+"Hover state background color","Hold markøren bakgrunnen farge"
+"Active state background color","Bakgrunnsfarge i aktiv tilstand"
+"Rest of the levels arrows","Resten av nivåpilene"
+"Body background",Kroppsbakgrunn
+"Page wrapper",Sideinnpakning
+Max-width,Max-bredde
+"Content wrapper",Innholdsinnpakning
+"Product and Homepage Tabs","Produkt- og hjemmeside-faner"
+Padding,padding
+Font-family,Font-family
+"Font size",Skriftstørrelse
+"Font weight",Fontvekt
+transform,forvandle
+"Background Color",Bakgrunnsfarge
+"Font color",Skriftfarge
+"Border color",Grensefarge
+"Hover state","Hold svevetilstand"
+"Active state","Aktiv tilstand"
+"Argento Luxury","Argento Luxury"
+"Border Color",Grensefarge
+"Hover State Border Color","Hold markøren kantlinjefarge"
+"Titles Color","Titler Farge"
+"Border bottom",Grensebunn
+Shadow,skygge
+"Enable Fullscreen Slider","Aktiver glidebryteren for fullskjerm"
+"Homepage logo",Startside-logo
+"Argento Pure2","Argento Pure2"
+"Inverted Primary Buttons (Add to Cart, Checkout)","Inverterte primærknapper (Legg i handlekurv, kasse)"
+"Argento Flat","Argento Flat"
+"Argento Mall","Argento Mall"
+"Header background color","Tittel bakgrunnsfarge"
+"Product Tabs",Produktfaner
+"Argento Stripes","Argento Stripes"
+"""Add to Wish List"" and ""Add to Compate"" buttons","""Legg til ønskeliste"" og ""Legg til i kompatere"" -knappene"
+"Hover State Background Color","Hold musepekeren bakgrunnsfarge"
+"Final price in listing and on product page","Endelig pris i oppføringen og på produktsiden"
+"Links separator color",Koblingsskillerfarge
+"Enable sticky menu","Aktiver klebrig meny"
+"Header background",Topptekstbakgrunn
+"Header top panel","Topp topppanel"
+"Text color",Tekstfarge
+"Border bottom width","Bunnbredde på kant"
+"Border bottom style",Bunnstil
+"Border bottom color","Bunnfarge på kant"
+"Arrow color",Pilfarge
+"Top level ""Departments"" link","Link ""Avdelinger"" på toppnivå"
+"Background image",Bakgrunnsbilde
+"Background repeat","Bakgrunnen gjentar"
+"Background position",Bakgrunnsstilling
+"Hover state arrow color","Hold pilens farge"
+"Active state arrow color","Aktiv fargefil"
+"""Departments"" direct children links","""Avdelinger"" direkte lenker til barn"
+"Search button",Søkeknapp
+"Minicart button",Minicart-knapp
+"My Account button","Min konto-knapp"
+"Alternative Logo Image","Alternativt logobilde"
+"This logo is used in some Argento themes","Denne logoen brukes i noen Argento-temaer"
+"Property $themeCode must be specified.","Eiendom $themeCode må spesifiseres."
+"Theme Defined","Tema definert"
+"Full width","Full bredde"
+"Limited width","Begrenset bredde"
+"One column","En kolonne"
+"Two columns (left sidebar)","To kolonner (venstre sidefelt)"
+"Two columns (right sidebar)","To kolonner (høyre sidefelt)"
+"Three columns","Tre kolonner"
+"Category Page",Kategoriside
+"Preview page layout","Forhåndsvis sideoppsett"
+"Content width",Innholdsbredde
+"Max width","Maks bredde"
+"Products list mode",Produktlistemodus
+"Grid Mode",Rutenettmodus
+"Products per Page Allowed Values","Produkter per side tillatte verdier"
+"Products per Page Default Value","Produkter per side Standardverdi"
+"Must be in the allowed values list","Må være i listen over tillatte verdier"
+"Columns per Row","Kolonner per rad"
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Essence it is ""-1"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For essensen er det ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Flat it is ""15"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For Flat er det ""15""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Force it is ""6"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For Force er det ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Luxury it is ""6"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For luksus er det ""6""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Mall it is ""-1"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For kjøpesenter er det ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Pure2 it is ""-1"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For Pure2 er det ""-1""."
+"<b>Min width</b> - min width of a screen where columns number must be applied.<br /><b>Columns</b> - columns count itself.<br /><b>Spacing</b> - spacing between cells in grid. For Stripes it is ""-1"".","<b> Min. bredde </b> - min. bredde på et skjermbilde der kolonnenummer må brukes. <br /> <b> Kolonner </b> - kolonnene teller seg selv. <br /> <b> Avstand </ b > - avstand mellom celler i rutenettet. For Stripes er det ""-1""."
+"List Mode",Listemodus
+"Product Page",Produktside
+"On a left side you can see simple page layout. Change config option and you'll see its effect there.","På venstre side kan du se enkel sideoppsett. Endre konfigurasjonsalternativet, så får du se effekten der."
+"Media block width, %","Medieblokk bredde,%"
+"Info Main block width, %","Info Hovedblokkbredde,%"
+"Width in percents for product info main block.","Bredde i prosent for hovedinfo for produktinfo."
+"Thumbnails Type","Miniatyrtype Type"
+"It duplicates <a href=""section/lightboxpro/#lightboxpro_general"">Lightbox Pro config</a>.","Den dupliserer <a href=""section/lightboxpro/#lightboxpro_general""> Lightbox Pro config </a>."
+"To Cart Form","Til kurvform"
+Tabs,Tabs
+"It duplicates <a href=""section/swissup_easytabs/"">Easytabs config</a>.","Den dupliserer <a href=""section/swissup_easytabs/""> Easytabs config </a>."
+"Photo in description tab","Foto i kategorien beskrivelse"
+"Sticky add to cart","Klistret legg i handlekurven"
+"Min width, px","Min bredde, px"
+Columns,kolonner
+"Spacing, px","Avstand, px"
