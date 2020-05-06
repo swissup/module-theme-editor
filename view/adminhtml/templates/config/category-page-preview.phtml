@@ -9,9 +9,13 @@
         </div>
         <div class="_content _two_columns_left">
             <div class="_columns">
+                <div class="_title _watermark" title="Category title"></div>
+                <div class="_desc _before _watermark" title="Description"></div>
                 <div class="_main">
+                    <div class="_desc _before _watermark" title="Description"></div>
                     <div class="_nav _watermark" title="Layered Navigation"></div>
                     <div class="_grid _watermark" title="Products"></div>
+                    <div class="_desc _after _watermark" title="Description"></div>
                 </div>
                 <div class="_left">
                     <div class="_nav _watermark" title="Layered Navigation"></div>
@@ -21,6 +25,7 @@
                     <div class="_nav _watermark" title="Layered Navigation"></div>
                     <div class="_blocks _watermark" title="Blocks"></div>
                 </div>
+                <div class="_desc _after _watermark" title="Description"></div>
             </div>
             <div style="clear: both"></div>
         </div>
@@ -32,7 +37,7 @@
 
 <script type="text/javascript">
 require([
-    'jquery',
+    'Magento_Ui/js/lib/view/utils/async',
     '!domReady'
 ], function ($) {
     var preview = $('#<?= $element->getHtmlId() ?>'),
@@ -62,6 +67,29 @@ require([
     }
 
     tbody = preview.closest('tbody');
+
+    /**
+     * Description position
+     */
+    $.async({
+        selector: '[name$="[description_position][value]"]',
+        ctx: tbody.get(0)
+    }, function (descriptionPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(descriptionPosition).val() ?
+                $(descriptionPosition).val() :
+                '<?= $block->getDescriptionPosition() ?>';
+
+            preview.attr('data-description-position', value);
+        }
+
+        update();
+        $(descriptionPosition).change(update);
+    });
+
     pageLayout = $('[name$="[page_layout][value]"]', tbody);
     contentWidth = $('[name$="[content_width][value]"]', tbody);
     maxWidth = $('[name$="[max_width][value]"]', tbody);
