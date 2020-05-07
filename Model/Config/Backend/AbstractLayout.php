@@ -87,11 +87,18 @@ abstract class AbstractLayout extends \Magento\Framework\App\Config\Value
      */
     public function deleteLayout(Layout\Link $layoutLink)
     {
+        if (!$layoutLink->getLayoutUpdateId()) {
+            return;
+        }
+
         // delete layout records
         // Layout updates table has foring key with casecade on delete
         $this->layoutUpdateFactory->create()
             ->load($layoutLink->getLayoutUpdateId())
             ->delete();
+
+        // After removing layout it is necessary to invalidate layout cache.
+        $this->cacheTypeList->invalidate(\Magento\Framework\App\Cache\Type\Layout::TYPE_IDENTIFIER);
     }
 
     /**
