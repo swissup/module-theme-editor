@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="page.wrapper">
-            <container name="header.container.configurable" as="header_container_configurable" label="Configurable Page Header Container" htmlTag="header" htmlClass="page-header configurable" before="header.container">
+            <container name="header.container.configurable" as="header_container_configurable" label="Configurable Page Header Container" htmlTag="header" htmlClass="page-header configurable" before="-">
                 <container name="header.panel.wrapper.configurable" htmlClass="panel wrapper" htmlTag="div" before="-">
                     <container name="header.panel.configurable" label="Configurable Page Header Panel" htmlTag="div" htmlClass="panel header flex-row">
                         <container name="header.top.left" htmlTag="div" />
