@@ -8,6 +8,11 @@
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             <comment>This will replace the current header. Layout instructions `move` and `remove` won't work for header elements.</comment>
         </field>
+        <field id="exclude" translate="label" type="textarea" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Disable Configurable Header On</label>
+            <comment>Disable header on the pages with custom header layout: empty, checkout, etc</comment>
+            <depends><field id="enabled">1</field></depends>
+        </field>
         <field id="available_blocks" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Blocks available in Header</label>
             <source_model>Swissup\ThemeEditor\Model\Config\Source\AvailableHeaderBlocks</source_model>

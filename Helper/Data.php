@@ -40,6 +40,11 @@ class Data extends AbstractHelper
     const PATH_HEADER_LAYOUT_PREVIEW = '/header_config/preview';
 
     /**
+     * Configurable header disable on pages
+     */
+    const PATH_HEADER_EXCLUDE = '/header_config/exclude';
+
+    /**
      * @var \Magento\Framework\View\ConfigInterface
      */
     private $viewConfig;
@@ -128,6 +133,12 @@ class Data extends AbstractHelper
             $theme = $this->layout->getUpdate()->getTheme();
         }
         $themeConfig = $this->themeCodeToConfigPath($theme->getCode());
+
+        $action = $this->_getRequest()->getFullActionName();
+        $exclude = explode("\n", $this->getConfigValue($themeConfig . self::PATH_HEADER_EXCLUDE));
+        if (in_array($action, $exclude)) {
+            return false;
+        }
 
         return $this->getConfigValue($themeConfig . self::PATH_HEADER_ENABLED);
     }
