@@ -8,5 +8,11 @@
 firecheckout_index_index</exclude>
             </header_config>
         </swissup_argento_pure2>
+        <swissup_argento_home>
+            <header_config>
+                <exclude>checkout_index_index
+firecheckout_index_index</exclude>
+            </header_config>
+        </swissup_argento_home>
     </default>
 </config>

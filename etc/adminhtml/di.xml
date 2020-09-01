@@ -13,6 +13,7 @@
                 <item name="header.links" xsi:type="string" translate="true">Header Links</item>
                 <item name="header_account" xsi:type="string" translate="true">Customer Menu</item>
                 <item name="header_cms_links" xsi:type="string" translate="true">CMS Links</item>
+                <item name="header_wishlist" xsi:type="string" translate="true">Wishlist Link</item>
             </argument>
         </arguments>
     </type>

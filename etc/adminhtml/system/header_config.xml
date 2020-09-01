@@ -37,7 +37,7 @@
                     <p>You can change <em>Ajax Search</em> design in <a href="https://docs.swissuplabs.com/m2/extensions/ajaxsearch/configuration/#design" title="Ajax Search Design">Design section</a> in module configuration.</p>
                 </li>
                 <li>
-                    When using <em>Navigation Pro</em> <a href="https://docs.swissuplabs.com/m2/extensions/navigationpro/use-cases/nowrap/">Nowrap menu</a> on one row with other elements, add `nowrap` class for the column containing the menu.
+                    When using multiple items on one row, add `md-flex` class for the column.
                 </li>
                 <li>
                     Do not forget to <strong>save config</strong> and <strong>clear cache</strong> to apply the header layout on the frontend.
