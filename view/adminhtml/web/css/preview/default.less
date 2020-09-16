@@ -58,6 +58,7 @@
         text-align: center;
         width: 100%;
         writing-mode: vertical-rl;
+        transform: scale(-1);
     }
 
     ._blocks {
@@ -96,12 +97,7 @@
         width: 100%;
 
         ._nav {
-            min-height: @block-small-height;
-            margin: 0 0 @spacing;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 100%;
+            display: block;
         }
 
         ._grid {
@@ -128,7 +124,6 @@
         width: 20%;
 
         ._nav {
-            margin: 0 0 @spacing;
             min-height: @block-height - @spacing - @block-small-height;
             text-align: center;
             width: 100%;

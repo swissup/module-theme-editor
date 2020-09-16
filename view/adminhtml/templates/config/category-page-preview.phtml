@@ -90,6 +90,28 @@ require([
         $(descriptionPosition).change(update);
     });
 
+    /**
+     * Layered Navigation position
+     */
+    $.async({
+        selector: '[name$="[layered_navigation_position][value]"]',
+        ctx: tbody.get(0)
+    }, function (layeredNavigationPosition) {
+        /**
+         * Preview updater
+         */
+        function update() {
+            var value = $(layeredNavigationPosition).val() ?
+                $(layeredNavigationPosition).val() :
+                '<?= $block->getLayeredNavigationPosition() ?>';
+
+            preview.attr('data-layered-navigation-position', value);
+        }
+
+        update();
+        $(layeredNavigationPosition).change(update);
+    });
+
     pageLayout = $('[name$="[page_layout][value]"]', tbody);
     contentWidth = $('[name$="[content_width][value]"]', tbody);
     maxWidth = $('[name$="[max_width][value]"]', tbody);
