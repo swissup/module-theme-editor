@@ -27,7 +27,7 @@ define([
         function _assignImage() {
             var themeTitle,
                 image,
-                html = '<div class="img-wrapper"><img src="{{image}}" width="120" /></div>';
+                html = '<div class="img-wrapper"><img src="{{image}}" width="240" /></div>';
 
             themeTitle = $(this).text().trim();
             image = options.images[themeTitle];
