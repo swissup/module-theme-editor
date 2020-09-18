@@ -1,0 +1,25 @@
+<?php
+    $images = [];
+    $collectionFactory = $block->getData('themeCollectionFactory');
+    if ($collectionFactory) {
+        $collection = $collectionFactory->create()->addAreaFilter();
+        foreach ($collection as $theme) {
+            $images[$theme->getThemeTitle()] = $theme->getThemeImage()->getPreviewImageUrl();
+        }
+    }
+?>
+<script type="text/x-magento-init">
+{
+    ".swissup-theme-editor-tab": {
+        "Swissup_ThemeEditor/js/theme-selector": {
+            "destination": ".section-config.swissup-themes-container",
+            "itemToActivateWhenSelected": ".swissup-theme-editor-config-item",
+            "title": {
+                "selected": "<?= $block->escapeJs(__('Selected theme: <strong>{{themeName}}</strong> <small><a href="#">Change</a></small>')) ?>",
+                "no": "<?= $block->escapeJs(__('Please select theme below')) ?>"
+            },
+            "images": <?= json_encode($images) ?>
+        }
+    }
+}
+</script>

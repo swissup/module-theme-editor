@@ -2,6 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="jquery/colorpicker/css/colorpicker.css"/>
+        <css src="Swissup_ThemeEditor::css/theme-section.css"/>
         <css src="Swissup_ThemeEditor::css/preview.css"/>
         <css src="Swissup_ThemeEditor::css/header_conf.css"/>
         <css src="Swissup_ThemeEditor::lib/dragula/dragula.css"/>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+        <group id="themes" translate="label" sortOrder="-100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <fieldset_css>swissup-themes-container</fieldset_css>
+            <label>Themes</label>
+            <field id="themes" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Themes</frontend_model>
+            </field>
+        </group>
+</include>

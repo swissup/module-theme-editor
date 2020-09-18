@@ -40,4 +40,11 @@
             </argument>
         </arguments>
     </type>
+    <type name="Swissup\ThemeEditor\Block\Adminhtml\System\Config\Form\Field\Themes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="themeCollectionFactory" xsi:type="object">Magento\Theme\Model\ResourceModel\Theme\CollectionFactory</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
