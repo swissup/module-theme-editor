@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Swissup\Pagebuilder\Model\Section\SourceModel\Logo">
+        <arguments>
+            <argument name="fields" xsi:type="array">
+                <item name="logo_alt_src" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Alternative Logo Image</item>
+                    <item name="notice" xsi:type="string" translate="true">This logo is used in some Argento themes</item>
+                    <item name="sort_order" xsi:type="string">10</item>
+                    <item name="type" xsi:type="string">image</item>
+                    <item name="path" xsi:type="string">design/header/logo_alt_src</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="basePath" xsi:type="string">logo</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
