@@ -9,7 +9,7 @@
             <class>separator-top swissup-theme-editor-config-item</class>
             <label>Themes Editor</label>
             <tab>swissup</tab>
-            <resource>Swissup_ThemeEditor::core_config</resource>
+            <resource>Swissup_ThemeEditor::config</resource>
 
             <include path="Swissup_ThemeEditor::system/themes.xml"/>
         </section>
