@@ -37,7 +37,10 @@
                     <p>You can change <em>Ajax Search</em> design in <a href="https://docs.swissuplabs.com/m2/extensions/ajaxsearch/configuration/#design" title="Ajax Search Design">Design section</a> in module configuration.</p>
                 </li>
                 <li>
-                    When using multiple items on one row, add `md-flex` class for the column.
+                    <p>You can change <em>Navigation Pro</em> design using <a href="https://docs.swissuplabs.com/m2/extensions/navigationpro/backend/menu-settings/#modifiers" title="Navigation Pro Modifiers">Modifiers</a> in menu settings.</p>
+                </li>
+                <li>
+                    When using multiple items on one row, add <em>md-flex</em> class for the column.
                 </li>
                 <li>
                     Do not forget to <strong>save config</strong> and <strong>clear cache</strong> to apply the header layout on the frontend.
