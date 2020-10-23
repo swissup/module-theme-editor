@@ -15,6 +15,7 @@
                 <item name="header_cms_links" xsi:type="string" translate="true">CMS Links</item>
                 <item name="header_wishlist" xsi:type="string" translate="true">Wishlist Link</item>
                 <item name="header_cms_content" xsi:type="string" translate="true">CMS Content</item>
+                <item name="header_slider" xsi:type="string" translate="true">Header Slider</item>
             </argument>
         </arguments>
     </type>
