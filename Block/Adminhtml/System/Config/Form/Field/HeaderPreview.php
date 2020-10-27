@@ -104,7 +104,7 @@ class HeaderPreview extends \Magento\Config\Block\System\Config\Form\Field
         $url = ['swissupeditor', 'header', 'preview', 'hash', '{{previewHash}}'];
 
         return $store->getBaseUrl()
-            . implode($url, '/')
+            . implode('/', $url)
             . '/?___store=' . $store->getCode();
     }
 
