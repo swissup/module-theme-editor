@@ -1,55 +1,13 @@
 .swissup-theme-editor-tab {
-    display: none;
-
     .swissup-themes-container & {
-        display: block;
-        background: none;
-        border-width: 0 !important;
-
-        .admin__page-nav-title {
-            text-transform: none;
-            border: solid #ccc;
-            border-width: 1px 0 0;
-            background: #f8f8f8;
-
-            &::after {
-                content: none;
-            }
-        }
-
-        &._show {
-            .admin__page-nav-title {
-                background: #f8f8f8;
-                border-width: 1px 0 1px;
-
-                &::after {
-                    content: none;
-                }
-            }
-        }
-
         .admin__page-nav-item {
-            border-width: 0 !important;
-            margin: 0;
-
-            a {
-                display: block;
-                padding: 1.5rem;
-                margin: 1rem;
-                border-width: 0;
-                text-align: center;
-                border-radius: 5px;
-
+            .admin__page-nav-link {
                 .img-wrapper {
                     background: #fff;
                     border-radius: 5px;
                     margin-bottom: 10px;
                     box-shadow: 0 3px 20px -3px rgba(0,0,0,0.35);
                     overflow: hidden;
-
-                    img {
-                        vertical-align: top;
-                    }
                 }
             }
 
@@ -58,27 +16,6 @@
                     box-shadow: 0 3px 20px -3px rgba(0,0,0,0.35), 0 0 0 2px #007bdb;
                 }
             }
-        }
-
-        &.admin__page-nav .admin__page-nav-items {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        &.admin__page-nav._collapsed._show ._collapsible + .admin__page-nav-items {
-            display: flex !important;
-        }
-    }
-}
-
-.swissup-themes-container {
-    .entry-edit-head {
-        display: none;
-    }
-
-    &:last-child {
-        .admin__page-nav-title {
-            border-width: 1px 0 1px;
         }
     }
 }

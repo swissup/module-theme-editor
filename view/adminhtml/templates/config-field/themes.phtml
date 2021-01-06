@@ -11,11 +11,11 @@
 <script type="text/x-magento-init">
 {
     ".swissup-theme-editor-tab": {
-        "Swissup_ThemeEditor/js/theme-selector": {
+        "Swissup_Core/js/system-config/section-mover": {
             "destination": ".section-config.swissup-themes-container",
             "itemToActivateWhenSelected": ".swissup-theme-editor-config-item",
             "title": {
-                "selected": "<?= $block->escapeJs(__('Selected theme: <strong>{{themeName}}</strong> <small><a href="#">Change</a></small>')) ?>",
+                "selected": "<?= $block->escapeJs(__('Selected theme: <strong>{{itemName}}</strong> <small><a href="#">Change</a></small>')) ?>",
                 "no": "<?= $block->escapeJs(__('Please select theme below')) ?>"
             },
             "images": <?= json_encode($images) ?>
