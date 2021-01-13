@@ -2,7 +2,7 @@
     "name": "swissup/module-theme-editor",
     "description": "Theme styles editing extension from Swissup",
     "type": "magento2-module",
-    "version": "1.9.5",
+    "version": "1.9.6",
     "license": "OSL-3.0",
     "require": {
         "swissup/module-codemirror": "^1.1.8"
