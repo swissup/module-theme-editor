@@ -3,9 +3,15 @@
     <head>
         <css src="jquery/colorpicker/css/colorpicker.css"/>
         <css src="Swissup_Core::css/system-config/section-mover.css"/>
+        <css src="Swissup_Core::css/system-config/item-appender.css"/>
         <css src="Swissup_ThemeEditor::css/theme-section.css"/>
         <css src="Swissup_ThemeEditor::css/preview.css"/>
         <css src="Swissup_ThemeEditor::css/header_conf.css"/>
         <css src="Swissup_ThemeEditor::lib/dragula/dragula.css"/>
     </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="swissup.themeEditor.itemAppender" template="Swissup_ThemeEditor::config-field/item-appender.phtml" />
+        </referenceContainer>
+    </body>
 </page>
