@@ -5,6 +5,7 @@
     "version": "1.9.6",
     "license": "OSL-3.0",
     "require": {
+        "swissup/module-core": "^1.12.4",
         "swissup/module-codemirror": "^1.1.8"
     },
     "autoload": {
