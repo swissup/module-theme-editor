@@ -23,4 +23,21 @@
             </field>
         </fieldset>
     </fieldset>
+    <fieldset name="theme">
+        <field name="swissup_theme_editor_code" sortOrder="20" formElement="select">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Applied Theme Editor</label>
+                <notice translate="true">If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly.</notice>
+                <dataScope>swissup_theme_editor_code</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Swissup\ThemeEditor\Model\Config\Source\ThemeEditor"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
 </form>

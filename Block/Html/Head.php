@@ -10,20 +10,27 @@ class Head extends \Magento\Framework\View\Element\Template implements
      * @var \Swissup\ThemeEditor\Model\Css
      */
     private $cssModel;
+
     /**
-     * Construct
-     *
+     * @var \Swissup\ThemeEditor\Helper\Data
+     */
+    private $helper;
+
+    /**
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Swissup\ThemeEditor\Model\CssFactory $cssModelFactory
+     * @param \Swissup\ThemeEditor\Helper\Data $helper
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Swissup\ThemeEditor\Model\CssFactory $cssModelFactory,
+        \Swissup\ThemeEditor\Helper\Data $helper,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->cssModel = $cssModelFactory->create();
+        $this->helper = $helper;
     }
     /**
      * @return void
@@ -75,19 +82,27 @@ class Head extends \Magento\Framework\View\Element\Template implements
      */
     public function getBackendCss()
     {
-        $themeCode   = $this->getLayout()->getUpdate()->getTheme()->getCode();
-        $theme       = strtolower(str_replace(['/', '-'], '_', $themeCode));
-        $storeCode   = $this->_storeManager->getStore()->getCode();
+        $theme = $this->getLayout()->getUpdate()->getTheme()->getCode();
+        $theme = strtolower(str_replace(['/', '-'], '_', $theme));
+        $storeCode  = $this->_storeManager->getStore()->getCode();
         $websiteCode = $this->_storeManager->getWebsite()->getCode();
+        $mediaDir = $this->getMediaDirectory()->getAbsolutePath();
+
+        // manually selected theme editor
+        $editor = $this->helper->getConfigValue('design/swissup_theme_editor/code');
+        if ($editor) {
+            $theme = $editor;
+        }
+
         $args = [
             [$theme, $storeCode, $websiteCode],
             [$theme, null, $websiteCode],
             [$theme, null, null]
         ];
-        $mediaDir = $this->getMediaDirectory()->getAbsolutePath();
-        $css      = $this->cssModel;
+
         foreach ($args as $_args) {
-            $filePath = $css->getFilePath($_args[0], $_args[1], $_args[2]);
+            $filePath = $this->cssModel->getFilePath($_args[0], $_args[1], $_args[2]);
+
             if (file_exists($mediaDir . $filePath)) {
                 $url = $this->_urlBuilder->getBaseUrl(
                     ['_type' => UrlInterface::URL_TYPE_MEDIA]
