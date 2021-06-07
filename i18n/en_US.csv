@@ -141,4 +141,4 @@ Columns,Columns
 "Before all columns after title","Before all columns after title"
 "Description position","Description position"
 "Applied Theme Editor","Applied Theme Editor"
-"If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly.","If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly."
+"If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly. IMPORTANT: Make sure your theme is a child of selected theme.","If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly. IMPORTANT: Make sure your theme is a child of selected theme."
