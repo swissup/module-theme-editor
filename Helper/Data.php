@@ -190,12 +190,20 @@ class Data extends AbstractHelper
     public function themeCodeToConfigPath($code)
     {
         // manually selected theme editor
-        $editor = $this->getConfigValue('design/swissup_theme_editor/code');
+        $editor = $this->getThemeEditorCode();
         if ($editor) {
             return $editor;
         }
 
         return strtolower(str_replace(['/', '-'], '_', $code));
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getThemeEditorCode()
+    {
+        return $this->getConfigValue('design/swissup_theme_editor/code');
     }
 
     /**

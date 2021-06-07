@@ -89,7 +89,7 @@ class Head extends \Magento\Framework\View\Element\Template implements
         $mediaDir = $this->getMediaDirectory()->getAbsolutePath();
 
         // manually selected theme editor
-        $editor = $this->helper->getConfigValue('design/swissup_theme_editor/code');
+        $editor = $this->helper->getThemeEditorCode();
         if ($editor) {
             $theme = $editor;
         }

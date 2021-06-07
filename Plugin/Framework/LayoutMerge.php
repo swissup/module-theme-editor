@@ -64,7 +64,7 @@ class LayoutMerge
 
         $this->layoutLinkIds = [];
 
-        $editor = $this->helper->getConfigValue('design/swissup_theme_editor/code');
+        $editor = $this->helper->getThemeEditorCode();
         if ($editor) {
             $this->layoutLinkIds = $this->collectLayoutLinkIds($this->helper->getConfigValue($editor));
         }
