@@ -152,6 +152,8 @@ define([
                 this.configField.val(),
                 this.options.availableBlocks
             );
+
+            ko.cleanNode(this.element.get(0));
             ko.applyBindings(dragulaVM, this.element.get(0));
 
             // initialize dragula
