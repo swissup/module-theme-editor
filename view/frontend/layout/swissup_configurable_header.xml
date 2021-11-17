@@ -17,7 +17,7 @@
                         <container name="header.main.right" htmlTag="div" />
                     </container>
                 </container>
-                <container name="header.bottom.wrapper.configurable" label="Configurable Page Header Bottom Wrapper" as="header-bottom-wrapper-configurable" htmlTag="div" htmlClass="header wrapper">
+                <container name="header.bottom.wrapper.configurable" label="Configurable Page Header Bottom Wrapper" as="header-bottom-wrapper-configurable" htmlTag="div" htmlClass="header wrapper last">
                     <container name="header.bottom.configurable" label="Configurable Header Bottom" as="header-bottom-configurable" htmlTag="div" htmlClass="header bottom flex-row">
                         <container name="header.bottom.left" htmlTag="div" />
                         <container name="header.bottom.middle" htmlTag="div" />
