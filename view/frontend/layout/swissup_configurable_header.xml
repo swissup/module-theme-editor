@@ -27,6 +27,21 @@
             </container>
         </referenceContainer>
 
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="header_account" template="Magento_Theme::html/header/my-account.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="header_wishlist" template="Magento_Theme::html/header/wishlist.phtml" />
+            <block class="Magento\Cms\Block\Block" name="header_slider">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_slider</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="header_cms_content">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_cms_content</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
         <move element="top.links" destination="header_account" />
         <referenceContainer name="header.container" remove="true"/>
     </body>
