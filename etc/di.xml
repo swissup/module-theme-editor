@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Less in Backend config -->
+    <type name="Magento\Framework\View\Asset\Source">
+        <plugin name="swissup_theme_editor" type="Swissup\ThemeEditor\Plugin\Framework\AssetSource" />
+    </type>
+
     <type name="Magento\Framework\View\Model\Layout\Merge">
         <plugin name="swissup_themeeditor" type="Swissup\ThemeEditor\Plugin\Framework\LayoutMerge" sortOrder="5"/>
     </type>

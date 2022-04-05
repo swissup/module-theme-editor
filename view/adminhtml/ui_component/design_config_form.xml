@@ -28,7 +28,7 @@
             <settings>
                 <dataType>string</dataType>
                 <label translate="true">Applied Theme Editor</label>
-                <notice translate="true">If you want to apply theme editor customizations for a custom theme, you must select theme editor explicitly. IMPORTANT: Make sure your theme is a child of selected theme.</notice>
+                <notice translate="true"><![CDATA[DEPRECATED: Use view.xml instead. If you want to apply theme editor customizations for a custom theme, you must set correct editor code in view.xml file. See https://docs.swissuplabs.com/m2/argento/customization/custom-theme/#enable-theme-editor-for-custom-theme]]></notice>
                 <dataScope>swissup_theme_editor_code</dataScope>
             </settings>
             <formElements>

@@ -2,10 +2,15 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="head" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label>Additional css</label>
+        <label>Additional styles</label>
         <field id="css" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
             <label>Css styles</label>
             <frontend_model>Swissup\Codemirror\Block\Adminhtml\System\Config\Form\Field\Css</frontend_model>
+        </field>
+        <field id="less" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+            <label>Less styles</label>
+            <comment><![CDATA[Use less syntax and variables to change styles!<br/>You must run `setup:static-content:deploy` command to see the changes.]]></comment>
+            <frontend_model>Swissup\Codemirror\Block\Adminhtml\System\Config\Form\Field\Less</frontend_model>
         </field>
     </group>
 </include>

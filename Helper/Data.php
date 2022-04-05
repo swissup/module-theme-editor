@@ -132,7 +132,7 @@ class Data extends AbstractHelper
         if (!$theme) {
             $theme = $this->layout->getUpdate()->getTheme();
         }
-        $themeConfig = $this->themeCodeToConfigPath($theme->getCode());
+        $themeConfig = $this->themeCodeToConfigPath($theme);
 
         $action = $this->_getRequest()->getFullActionName();
         $exclude = explode("\n", $this->getConfigValue($themeConfig . self::PATH_HEADER_EXCLUDE));
@@ -156,7 +156,7 @@ class Data extends AbstractHelper
         $scope = ScopeInterface::SCOPE_STORE;
         $scopeCode = null;
         if ($theme) {
-            $section = $this->themeCodeToConfigPath($theme->getCode());
+            $section = $this->themeCodeToConfigPath($theme);
         } else if ($this->_getRequest()->getRouteName() == Area::AREA_ADMINHTML) {
             $section = $this->_getRequest()->getParam('section');
 
@@ -170,7 +170,7 @@ class Data extends AbstractHelper
             }
         } else {
             $theme = $this->layout->getUpdate()->getTheme();
-            $section = $this->themeCodeToConfigPath($theme->getCode());
+            $section = $this->themeCodeToConfigPath($theme);
         }
 
         if ($this->_getRequest()->getFullActionName() == self::PREVIEW_ACTION) {
@@ -183,29 +183,49 @@ class Data extends AbstractHelper
         return $config ? json_decode($config, true) : [];
     }
 
+    public function getLessStyles(ThemeInterface $theme): string
+    {
+        return (string) $this->getConfigValue(
+            $this->themeCodeToConfigPath($theme) . '/head/less'
+        );
+    }
+
     /**
      * Convert theme code to config path
      *
      * @param  string $code
      * @return string
      */
-    public function themeCodeToConfigPath($code)
+    public function themeCodeToConfigPath(ThemeInterface $theme)
     {
         // manually selected theme editor
-        $editor = $this->getThemeEditorCode();
+        $editor = $this->getThemeEditorCode($theme);
         if ($editor) {
             return $editor;
         }
 
-        return strtolower(str_replace(['/', '-'], '_', $code));
+        return strtolower(str_replace(['/', '-'], '_', $theme->getCode()));
     }
 
     /**
      * @return string|null
      */
-    public function getThemeEditorCode()
+    public function getThemeEditorCode(ThemeInterface $theme = null)
     {
-        return $this->getConfigValue('design/swissup_theme_editor/code');
+        if ($theme) {
+            $viewConfig = $this->viewConfig->getViewConfig(['themeModel' => $theme]);
+        } else {
+            $viewConfig = $this->getViewConfig();
+        }
+
+        $code = $viewConfig->getVarValue('Swissup_ThemeEditor', 'code');
+
+        // fallback to deprecated config value
+        if (!$code) {
+            $code = $this->getConfigValue('design/swissup_theme_editor/code');
+        }
+
+        return $code;
     }
 
     /**
@@ -217,7 +237,7 @@ class Data extends AbstractHelper
     public function validatePreviewHash($hash)
     {
         $theme = $this->layout->getUpdate()->getTheme();
-        $section = $this->themeCodeToConfigPath($theme->getCode());
+        $section = $this->themeCodeToConfigPath($theme);
         $hashConfig = $this->getConfigValue($section . self::PATH_HEADER_PREVIEW_HASH);
 
         if (isset($hashConfig) && $hash == $hashConfig) {
