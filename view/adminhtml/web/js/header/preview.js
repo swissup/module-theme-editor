@@ -104,7 +104,7 @@ define([
             // start preview on successful save
             var iframe;
 
-            iframe = $('<iframe/>', {
+            iframe = $('<iframe></iframe>', {
                 src: this.options.previewUrl.replace(
                         '{{previewHash}}',
                         $('input[id$="header_config_preview_hash"').val()

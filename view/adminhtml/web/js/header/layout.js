@@ -120,7 +120,7 @@ define([
      */
     function prepareDragulaElement(options) {
         var dragulaElement = $(
-            '<div/>',
+            '<div></div>',
             {
                 class: 'dragula-element',
                 'data-bind': 'template: { name: \'layout-template\', foreach: containers}'
