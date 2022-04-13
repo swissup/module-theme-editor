@@ -11,76 +11,78 @@
     <?= $element->getElementHtml(); ?>
 </div>
 
-<script type="text/html" id="layout-template">
-    <div data-type="container" data-bind="attr: {'data-name': name}">
-        <!-- ko foreach: { data: children } -->
-        <div data-type="block" data-bind="attr: {'data-name': name}" class="header-config">
-            <span class="name" data-bind="text: $root.availableBlocks[name], attr: {title: $root.availableBlocks[name]}"></span>
-        </div>
-        <!-- /ko -->
-        <div class="settings-dropdown">
-            <div class="title"><?= __('Column Settings') ?></div>
-            <div class="settings">
-                <div class="option-wrapper">
-                    <div class="option-label">
-                        <span>Align Items</span>
-                        <div class="tooltip">
-                            <span class="help"><span></span></span>
-                            <div class="tooltip-content">Select how items will be aligned inside column.</div>
+<script type="text/html" id="layoutTemplate">
+    <div class="dragula-element" data-bind="foreach: containers, css: { disabled: disabled }" afterRender="afterRender">
+        <div data-type="container" data-bind="attr: {'data-name': name}">
+            <!-- ko foreach: { data: children } -->
+            <div data-type="block" data-bind="attr: {'data-name': name}" class="header-config">
+                <span class="name" data-bind="text: $root.availableBlocks[name], attr: {title: $root.availableBlocks[name]}"></span>
+            </div>
+            <!-- /ko -->
+            <div class="settings-dropdown">
+                <div class="title"><?= __('Column Settings') ?></div>
+                <div class="settings">
+                    <div class="option-wrapper">
+                        <div class="option-label">
+                            <span>Align Items</span>
+                            <div class="tooltip">
+                                <span class="help"><span></span></span>
+                                <div class="tooltip-content">Select how items will be aligned inside column.</div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <span class="first">
+                                <input type="radio" value="left" data-bind='attr: {id: "align-left-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                                <label data-bind='attr: {for: "align-left-" + $index()}'>Left</label>
+                            </span>
+                            <span>
+                                <input type="radio" value="center" data-bind='attr: {id: "align-center-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                                <label data-bind='attr: {for: "align-center-" + $index()}'>Center</label>
+                            </span>
+                            <span class="last">
+                                <input type="radio" value="right" data-bind='attr: {id: "align-right-" + $index(), name: name + ".align"}, checked: $data.config.align'>
+                                <label data-bind='attr: {for: "align-right-" + $index()}'>Right</label>
+                            </span>
                         </div>
                     </div>
-                    <div class="option">
-                        <span class="first">
-                            <input type="radio" value="left" data-bind='attr: {id: "align-left-" + $index(), name: name + ".align"}, checked: $data.config.align'>
-                            <label data-bind='attr: {for: "align-left-" + $index()}'>Left</label>
-                        </span>
-                        <span>
-                            <input type="radio" value="center" data-bind='attr: {id: "align-center-" + $index(), name: name + ".align"}, checked: $data.config.align'>
-                            <label data-bind='attr: {for: "align-center-" + $index()}'>Center</label>
-                        </span>
-                        <span class="last">
-                            <input type="radio" value="right" data-bind='attr: {id: "align-right-" + $index(), name: name + ".align"}, checked: $data.config.align'>
-                            <label data-bind='attr: {for: "align-right-" + $index()}'>Right</label>
-                        </span>
-                    </div>
-                </div>
-                <div class="option-wrapper">
-                    <div class="option-label">
-                        <span>Column Grow/Shrink</span>
-                        <div class="tooltip">
-                            <span class="help"><span></span></span>
-                            <div class="tooltip-content">Control column size and free space distribution.<br><strong>Default</strong> - the column will take space according to its content size and will shrink when there is no enough space.<br><strong>Grow</strong> - the column will grow to fill all available space and will shrink when space not enough.<br><strong>None</strong> - the column will always have its content size and won't shrink.</div>
+                    <div class="option-wrapper">
+                        <div class="option-label">
+                            <span>Column Grow/Shrink</span>
+                            <div class="tooltip">
+                                <span class="help"><span></span></span>
+                                <div class="tooltip-content">Control column size and free space distribution.<br><strong>Default</strong> - the column will take space according to its content size and will shrink when there is no enough space.<br><strong>Grow</strong> - the column will grow to fill all available space and will shrink when space not enough.<br><strong>None</strong> - the column will always have its content size and won't shrink.</div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <span class="first">
+                                <input type="radio" value="" data-bind='attr: {id: "grow-default-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                                <label data-bind='attr: {for: "grow-default-" + $index()}'>Default</label>
+                            </span>
+                            <span>
+                                <input type="radio" id="grow-grow" value="1" data-bind='attr: {id: "grow-grow-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                                <label data-bind='attr: {for: "grow-grow-" + $index()}'>Grow</label>
+                            </span>
+                            <span class="last">
+                                <input type="radio" id="grow-none" value="none" data-bind='attr: {id: "grow-none-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
+                                <label data-bind='attr: {for: "grow-none-" + $index()}'>None</label>
+                            </span>
                         </div>
                     </div>
-                    <div class="option">
-                        <span class="first">
-                            <input type="radio" value="" data-bind='attr: {id: "grow-default-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
-                            <label data-bind='attr: {for: "grow-default-" + $index()}'>Default</label>
-                        </span>
-                        <span>
-                            <input type="radio" id="grow-grow" value="1" data-bind='attr: {id: "grow-grow-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
-                            <label data-bind='attr: {for: "grow-grow-" + $index()}'>Grow</label>
-                        </span>
-                        <span class="last">
-                            <input type="radio" id="grow-none" value="none" data-bind='attr: {id: "grow-none-" + $index(), name: name + ".grow"}, checked: $data.config.grow'>
-                            <label data-bind='attr: {for: "grow-none-" + $index()}'>None</label>
-                        </span>
-                    </div>
-                </div>
-                <div class="option-wrapper">
-                    <div class="option-label">
-                        <span>Additional CSS Classes</span>
-                        <div class="tooltip">
-                            <span class="help"><span></span></span>
-                            <div class="tooltip-content">Assign additional CSS classes separated with whitespace.</div>
+                    <div class="option-wrapper">
+                        <div class="option-label">
+                            <span>Additional CSS Classes</span>
+                            <div class="tooltip">
+                                <span class="help"><span></span></span>
+                                <div class="tooltip-content">Assign additional CSS classes separated with whitespace.</div>
+                            </div>
                         </div>
+                        <div class="option"><input type="text" name="class" data-bind='value: $data.config.classes'></div>
                     </div>
-                    <div class="option"><input type="text" name="class" data-bind='value: $data.config.classes'></div>
                 </div>
             </div>
-        </div>
-        <div class="column-actions">
-            <a class="settings-action" title="Settings" href="#" data-bind="click: function () { $root.showConfig(name); }"></a>
+            <div class="column-actions">
+                <a class="settings-action" title="Settings" href="#" data-bind="click: function () { $root.showConfig(name); }"></a>
+            </div>
         </div>
     </div>
 </script>

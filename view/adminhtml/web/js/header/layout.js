@@ -4,9 +4,8 @@ define([
     'jquery',
     'knockout',
     'Swissup_ThemeEditor/lib/dragula/dragula',
-    'mage/utils/wrapper',
-    'Magento_Ui/js/modal/modal' // 2.3.3: create 'jquery-ui-modules/widget' dependency
-], function ($, ko, dragula, wrapper, modal) {
+    'mage/utils/wrapper'
+], function ($, ko, dragula, wrapper) {
     'use strict';
 
     /**
@@ -115,50 +114,41 @@ define([
     }
 
     /**
-     * @param  {Object} options
-     * @return {jQuery}
+     * Wrap toggle function to enable/disable dragula element.
      */
-    function prepareDragulaElement(options) {
-        var dragulaElement = $(
-            '<div></div>',
-            {
-                class: 'dragula-element',
-                'data-bind': 'template: { name: \'layout-template\', foreach: containers}'
+    function _wrapToggleValueElements() {
+        toggleValueElements = wrapper.wrap(
+            toggleValueElements,
+            function () {
+                var args = Array.prototype.slice.call(arguments),
+                    originalFn = args.shift();
+
+                $(args[1]).find('.dragula-element').toggleClass('disabled');
+
+                return originalFn.apply(this, args);
             }
         );
-
-        if (options.disabled) {
-            dragulaElement.addClass('disabled');
-        }
-
-        return dragulaElement;
     }
 
-    $.widget('swissup.headerLayout', {
-        /**
-         * {@inheritdoc}
-         */
-        _create: function () {
-            var dragulaVM;
+    return function (options, element) {
+        const $el = $(element),
+            $textarea = $el.children('textarea');
 
-            this.configField = this.element
-                .children('textarea')
-                .attr('data-bind', 'value: layoutConfigValue')
-                .hide();
-            prepareDragulaElement(this.options).insertAfter(this.configField);
+        var dragulaVM;
 
-            // apply knockout binding
-            dragulaVM = new DragulaElementViewModel(
-                this.configField.val(),
-                this.options.availableBlocks
-            );
+        $textarea.attr('data-bind', 'value: layoutConfigValue').hide();
+        $('<div data-bind="template: { name: \'layoutTemplate\' }"></div>').insertAfter($textarea);
 
-            ko.cleanNode(this.element.get(0));
-            ko.applyBindings(dragulaVM, this.element.get(0));
-
+        // apply knockout binding
+        dragulaVM = new DragulaElementViewModel(
+            $textarea.val(),
+            options.availableBlocks
+        );
+        dragulaVM.disabled = options.disabled;
+        dragulaVM.afterRender = function () {
             // initialize dragula
-            this.drake = dragula(
-                $('#' + this.options.parentId).find('.dragula-element').children().toArray(),
+            dragula(
+                $(`#${options.parentId} .dragula-element`).children().toArray(),
                 {
                     moves: function (el, source, handle, sibling) {
                         return $(el).data('type') == 'block';
@@ -166,35 +156,13 @@ define([
                 }
             ).on('drop', dragulaVM.onDragulaDrop);
 
-            // wrap toggle function to enable/disable dragula element
-            toggleValueElements = wrapper.wrap(
-                toggleValueElements,
-                function (
-                    callOriginal, checkbox, container, excludedElements, checked
-                ) {
-                    var result = callOriginal(
-                        checkbox,
-                        container,
-                        excludedElements,
-                        checked
-                    );
+            // hide spinner
+            $el.children('[data-role="spinner"]').hide();
+        };
 
-                    $(container).find('.dragula-element').toggleClass('disabled');
+        ko.cleanNode($el.get(0));
+        ko.applyBindings(dragulaVM, $el.get(0));
 
-                    return result;
-                }
-            );
-
-            this.hideSpinner();
-        },
-
-        /**
-         * Hide initial spinner on layout config
-         */
-        hideSpinner: function () {
-            this.element.children('[data-role="spinner"]').hide();
-        }
-    });
-
-    return $.swissup.headerLayout;
+        _wrapToggleValueElements();
+    };
 });
