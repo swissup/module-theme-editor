@@ -135,7 +135,10 @@ class Data extends AbstractHelper
         $themeConfig = $this->themeCodeToConfigPath($theme);
 
         $action = $this->_getRequest()->getFullActionName();
-        $exclude = explode("\n", $this->getConfigValue($themeConfig . self::PATH_HEADER_EXCLUDE));
+        $exclude = explode(
+            "\n",
+            $this->getConfigValue($themeConfig . self::PATH_HEADER_EXCLUDE) ?: ''
+        );
         $exclude = array_map('trim', $exclude);
 
         if (in_array($action, $exclude)) {
