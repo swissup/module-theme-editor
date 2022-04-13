@@ -6,6 +6,9 @@
     border: 1px solid @hcl-color-dark;
     box-sizing: border-box;
     padding: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 
     [data-type="container"] {
         align-items: flex-start;
@@ -15,12 +18,7 @@
         flex-wrap: wrap;
         min-height: 38px;
         padding: 3px;
-        float: left;
         width: 100%;
-
-        .rtl & {
-            float: right;
-        }
     }
 
     [data-type="block"] {
@@ -32,12 +30,6 @@
         .name {
             overflow: hidden;
         }
-    }
-
-    &::after {
-        content: '';
-        clear: both;
-        display: table;
     }
 
     &:not(.disabled) {
@@ -78,13 +70,8 @@
     .dragula-element {
         [data-type="container"] {
             position: relative;
-            width: ~'calc(100%/3 - 6px)';
+            width: ~'calc(100%/3 - 4px)';
             padding-right: 20px;
-            margin: 3px;
-
-            &[data-name$="left"] {
-                clear: both;
-            }
 
             .settings-dropdown {
                 display: none;
