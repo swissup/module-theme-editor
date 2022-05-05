@@ -221,7 +221,17 @@ class Data extends AbstractHelper
             $viewConfig = $this->getViewConfig();
         }
 
-        $code = $viewConfig->getVarValue('Swissup_ThemeEditor', 'code');
+        try {
+            $code = $viewConfig->getVarValue('Swissup_ThemeEditor', 'code');
+        } catch (\InvalidArgumentException $e) {
+            /**
+             * Catch exception when select widget container in Magento Admin.
+             *
+             * Required parameter 'theme_dir' was not passed in
+             * magento/framework/View/Design/Fallback/Rule/Simple.php
+             */
+            $code = null;
+        }
 
         // fallback to deprecated config value
         if (!$code) {
