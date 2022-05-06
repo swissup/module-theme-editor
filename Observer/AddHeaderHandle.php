@@ -4,15 +4,15 @@ namespace Swissup\ThemeEditor\Observer;
 class AddHeaderHandle implements \Magento\Framework\Event\ObserverInterface
 {
     /**
-     * @var \Swissup\ThemeEditor\Helper\Data
+     * @var \Swissup\ThemeEditor\Helper\Header
      */
     private $helper;
 
     /**
-     * @param \Swissup\ThemeEditor\Helper\Data $helper
+     * @param \Swissup\ThemeEditor\Helper\Header $helper
      */
     public function __construct(
-        \Swissup\ThemeEditor\Helper\Data $helper
+        \Swissup\ThemeEditor\Helper\Header $helper
     ) {
         $this->helper = $helper;
     }

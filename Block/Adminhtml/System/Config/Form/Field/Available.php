@@ -13,18 +13,18 @@ class Available extends \Magento\Config\Block\System\Config\Form\Field
     protected $_template = 'config-field/available.phtml';
 
     /**
-     * @var \Swissup\ThemeEditor\Helper\Data
+     * @var \Swissup\ThemeEditor\Helper\Header
      */
     protected $helper;
 
     /**
      * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Swissup\ThemeEditor\Helper\Data $helper
+     * @param \Swissup\ThemeEditor\Helper\Header $helper
      * @param array $data
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
-        \Swissup\ThemeEditor\Helper\Data $helper,
+        \Swissup\ThemeEditor\Helper\Header $helper,
         array $data = []
     ) {
         $this->helper = $helper;

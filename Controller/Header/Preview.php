@@ -6,17 +6,17 @@ use Magento\Framework\Controller\ResultFactory;
 class Preview extends \Magento\Framework\App\Action\Action
 {
     /**
-     * @var \Swissup\ThemeEditor\Helper\Data
+     * @var \Swissup\ThemeEditor\Helper\Header
      */
     protected $helper;
 
     /**
      * @param \Magento\Framework\App\Action\Context $context
-     * @param \Swissup\ThemeEditor\Helper\Data $helper
+     * @param \Swissup\ThemeEditor\Helper\Header $helper
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Swissup\ThemeEditor\Helper\Data $helper
+        \Swissup\ThemeEditor\Helper\Header $helper
     ) {
         $this->helper = $helper;
         parent::__construct($context);

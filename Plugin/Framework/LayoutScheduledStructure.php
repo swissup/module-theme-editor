@@ -6,7 +6,7 @@ use Magento\Framework\View\Layout\ScheduledStructure;
 class LayoutScheduledStructure
 {
     /**
-     * @var \Swissup\ThemeEditor\Helper\Data
+     * @var \Swissup\ThemeEditor\Helper\Header
      */
     private $helper;
 
@@ -16,10 +16,10 @@ class LayoutScheduledStructure
     protected $headerConfig = null;
 
     /**
-     * @param \Swissup\ThemeEditor\Helper\Data $helper
+     * @param \Swissup\ThemeEditor\Helper\Header $helper
      */
     public function __construct(
-        \Swissup\ThemeEditor\Helper\Data $helper
+        \Swissup\ThemeEditor\Helper\Header $helper
     ) {
         $this->helper = $helper;
     }
