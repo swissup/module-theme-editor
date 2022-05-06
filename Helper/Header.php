@@ -5,6 +5,7 @@ namespace Swissup\ThemeEditor\Helper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Area;
+use Magento\Framework\View\Design\ThemeInterface;
 use Magento\Store\Model\ScopeInterface;
 
 class Header extends AbstractHelper
