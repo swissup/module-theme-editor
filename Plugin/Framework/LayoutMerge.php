@@ -66,7 +66,11 @@ class LayoutMerge
 
         $editor = $this->helper->getThemeEditorCode();
         if ($editor) {
-            $this->layoutLinkIds = $this->collectLayoutLinkIds($this->helper->getConfigValue($editor));
+            $config = $this->helper->getConfigValue($editor);
+
+            if ($config) {
+                $this->layoutLinkIds = $this->collectLayoutLinkIds($config);
+            }
         }
 
         return $this->layoutLinkIds;
