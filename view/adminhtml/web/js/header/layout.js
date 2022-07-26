@@ -1,168 +1,157 @@
-/* global toggleValueElements */
 /* eslint-disable no-native-reassign */
 define([
     'jquery',
-    'knockout',
-    'Swissup_ThemeEditor/lib/dragula/dragula',
-    'mage/utils/wrapper'
-], function ($, ko, dragula, wrapper) {
+    'underscore',
+    'mage/template',
+    'text!Swissup_ThemeEditor/template/layout.html',
+    'jquery/ui',
+    'Magento_Ui/js/modal/modal' // 2.3.3: create 'jquery-ui-modules/widget' dependency
+], function ($, _, mageTemplate, tmplLayout) {
     'use strict';
 
     /**
-     * KO view model to maintain layout mockup
-     *
-     * @param {Object} configValue
-     * @param {Object} availableBlocks
+     * Listen click on inherit checkbox to enable/disbale layout.
      */
-    function DragulaElementViewModel(configValue, availableBlocks) {
-        var self = this;
+    $('body').on('change', '.config-inherit', (event) => {
+        const $layout = $(event.currentTarget)
+            .closest('.use-default')
+            .siblings('.value')
+            .find('.header-layout');
 
-        self.availableBlocks = availableBlocks;
+        $layout.toggleClass('disabled');
+        $layout.trigger('swissup::toggleIsInherit');
+    });
 
-        self.containers = $.map($.parseJSON(configValue), function (element) {
-            element.children = ko.observableArray(element.children);
+    $.widget('swissup.themeEditorHeaderBuilder', {
+        containers: [],
 
-            $.each(element.config, function(key, value) {
-                element.config[key] = ko.observable(value);
+        allowedBlocks: {},
+
+        isInherit: false,
+
+        $layout: false,
+
+        /**
+         * @private
+         */
+        _create: function () {
+            const me = this,
+                $el = me.element;
+
+            me.containers = me._readContainers();
+            me.allowedBlocks = me._readAllowedBlocks();
+            me.isInherit = me.options.isInherit;
+
+            $el.find('textarea').hide();
+            me.updateLayout();
+            $el.find('[data-role="spinner"]').hide();
+
+            me._on({
+                'click .settings-action': me.showConfig.bind(me),
+                'input': _.debounce(me.updateContainers.bind(me), 200),
+                'swissup::toggleIsInherit': (event) => {
+                    me.isInherit = !me.isInherit;
+                }
             });
 
-            return element;
-        });
+            me._initAllowedContainer();
+        },
+
+        _initAllowedContainer: function () {
+            $(this.options.allowedContainer).sortable({
+                connectWith: [this.options.allowedContainer, this.options.layoutContainers].join(','),
+                handle: '.name',
+                start: (event, ui) => {
+                    ui.placeholder.html(ui.item.html());
+                },
+                tolerance: "pointer"
+            });
+        },
 
         /**
-         * [removeChild description]
+         * @private
          */
-        self.removeChild = function (block, container) {
-            container.children.remove(block);
-        };
+        _readAllowedBlocks: function () {
+            return this.options.availableBlocks;
+        },
 
         /**
-         * [addChild description]
+         * @private
          */
-        self.addChild = function (block, container, beforeBlock) {
-            var index;
-
-            if (beforeBlock) {
-                index = container.children().indexOf(beforeBlock);
-                container.children.splice(index, 0, block);
-            } else {
-                container.children.push(block);
-            }
-        };
-
-        self.layoutConfigValue = ko.computed(function () {
-            return ko.toJSON(self.containers);
-        });
+        _readContainers: function () {
+            return JSON.parse(this.element.find('textarea').val());
+        },
 
         /**
-         * @param  {String} name container name
+         * @private
          */
-        self.showConfig = function (name) {
-            var curItem = $('[data-type="container"][data-name="' + name + '"] .settings-dropdown'),
+        _renderLayout: function () {
+            const $layout = $(mageTemplate(tmplLayout, this));
+
+            $layout.appendTo(this.element);
+
+            return $layout;
+        },
+
+        updateLayout: function () {
+            const me = this;
+
+            me.$layout && me.$layout.remove();
+            me.$layout = me._renderLayout();
+            $(me.options.layoutContainers).sortable({
+                connectWith: [me.options.allowedContainer, me.options.layoutContainers].join(','),
+                handle: '.name',
+                start: (event, ui) => {
+                    ui.placeholder.html(ui.item.html());
+                },
+                tolerance: "pointer",
+                update: () => {
+                    me.updateContainers();
+                    me.updateLayout();
+                }
+            });
+        },
+
+        updateContainers: function () {
+            const me = this,
+                $el = me.element;
+
+            var containers = [];
+            $(me.options.layoutContainers).each(function () {
+                var children = [],
+                    config = {};
+
+                $(this).find('[data-type="block"]').each(function () {
+                    children.push({name: $(this).data('name')});
+                });
+
+                $(this).find('.settings-dropdown :input').serializeArray().each(item => {
+                    config[item.name.split('.').pop()] = item.value;
+                });
+
+                containers.push({
+                    children: children,
+                    config: config,
+                    name: $(this).data('name')
+                });
+            });
+
+            $el.find('textarea').val(JSON.stringify(containers));
+            me.containers = me._readContainers();
+        },
+
+        showConfig: function (event) {
+            const curItem = $(event.currentTarget).closest('[data-type="container"]').find('.settings-dropdown'),
                 curState = curItem.hasClass('shown');
 
             $('[data-type="container"] .settings-dropdown').removeClass('shown');
             if (!curState) {
                 curItem.addClass('shown');
             }
-        };
 
-        /**
-         * @param  {HTMLElement} el
-         * @return {Boolean}
-         */
-        self.isNameAvailable = function (el) {
-            return $(el).data('name') === 'available';
-        };
+            event.preventDefault();
+        }
+    });
 
-        /**
-         * @param  {HTMLElement} el
-         * @param  {HTMLElement} target
-         * @param  {HTMLElement} source
-         * @param  {HTMLElement} sibling
-         */
-        self.onDragulaDrop = function (el, target, source, sibling) {
-            var block;
-
-            if (!target) {
-                return;
-            }
-
-            if (self.isNameAvailable(source)) {
-                // create new ko data block
-                block = {
-                    'name': $(el).data('name')
-                };
-            } else {
-                // remove block from old container
-                block = ko.dataFor(el);
-                self.removeChild(block, ko.dataFor(source));
-            }
-
-            // add block to new container
-            if (!self.isNameAvailable(target)) {
-                self.addChild(
-                    block,
-                    ko.dataFor(target),
-                    sibling ? ko.dataFor(sibling) : null
-                );
-
-                // remove droped element to prevent block duplication
-                $(el).remove();
-            }
-        };
-    }
-
-    /**
-     * Wrap toggle function to enable/disable dragula element.
-     */
-    function _wrapToggleValueElements() {
-        toggleValueElements = wrapper.wrap(
-            toggleValueElements,
-            function () {
-                var args = Array.prototype.slice.call(arguments),
-                    originalFn = args.shift();
-
-                $(args[1]).find('.dragula-element').toggleClass('disabled');
-
-                return originalFn.apply(this, args);
-            }
-        );
-    }
-
-    return function (options, element) {
-        const $el = $(element),
-            $textarea = $el.children('textarea');
-
-        var dragulaVM;
-
-        $textarea.attr('data-bind', 'value: layoutConfigValue').hide();
-        $('<div data-bind="template: { name: \'layoutTemplate\' }"></div>').insertAfter($textarea);
-
-        // apply knockout binding
-        dragulaVM = new DragulaElementViewModel(
-            $textarea.val(),
-            options.availableBlocks
-        );
-        dragulaVM.disabled = options.disabled;
-        dragulaVM.afterRender = function () {
-            // initialize dragula
-            dragula(
-                $(`#${options.parentId} .dragula-element`).children().toArray(),
-                {
-                    moves: function (el, source, handle, sibling) {
-                        return $(el).data('type') == 'block';
-                    }
-                }
-            ).on('drop', dragulaVM.onDragulaDrop);
-
-            // hide spinner
-            $el.children('[data-role="spinner"]').hide();
-        };
-
-        ko.cleanNode($el.get(0));
-        ko.applyBindings(dragulaVM, $el.get(0));
-
-        _wrapToggleValueElements();
-    };
+    return $.swissup.themeEditorHeaderBuilder;
 });

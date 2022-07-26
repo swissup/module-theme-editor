@@ -16,6 +16,7 @@
         border: none;
         display: flex;
         flex-wrap: wrap;
+        margin: 0;
         min-height: 38px;
         padding: 3px;
         width: 100%;
@@ -28,7 +29,9 @@
         position: relative;
 
         .name {
+            display: block;
             overflow: hidden;
+            padding: 5px;
         }
     }
 
@@ -53,11 +56,24 @@
             display: none;
         }
     }
+
+    .ui-sortable-placeholder {
+        background-color: @hcl-color-light;
+        margin: 3px;
+        opacity: .4;
+        visibility: visible !important;
+
+        .name {
+            display: block;
+            font-size: 1.2rem;
+            overflow: hidden;
+            padding: 5px;
+        }
+    }
 }
 
 [data-type="block"].header-config {
     font-size: 1.2rem;
-    padding: 5px;
 }
 
 .header-config-layout-wrapper {

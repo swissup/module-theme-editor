@@ -78,9 +78,11 @@ class Layout extends \Magento\Config\Block\System\Config\Form\Field
     {
         return json_encode(
             [
-                'disabled' => $this->getElement()->getData('disabled'),
                 'parentId' => $this->getElement()->getContainer()->getHtmlId(),
                 'availableBlocks' => $this->availableBlocks->toOptions(),
+                'isInherit' => !!$this->getElement()->getData('disabled'),
+                'allowedContainer' => '#swissup_argento_force_header_config_available_blocks [data-type="container"]',
+                'layoutContainers' => '.header-config-layout-wrapper [data-type="container"]'
             ]
         );
     }

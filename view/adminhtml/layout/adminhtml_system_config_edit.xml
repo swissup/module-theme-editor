@@ -7,7 +7,6 @@
         <css src="Swissup_ThemeEditor::css/theme-section.css"/>
         <css src="Swissup_ThemeEditor::css/preview.css"/>
         <css src="Swissup_ThemeEditor::css/header_conf.css"/>
-        <css src="Swissup_ThemeEditor::lib/dragula/dragula.css"/>
     </head>
     <body>
         <referenceContainer name="before.body.end">

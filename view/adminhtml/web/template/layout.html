@@ -1,0 +1,79 @@
+<div id="<%= widgetFullName %>-<%= uuid %>" class="dragula-element header-layout<% if (isInherit) {%> disabled<% } %>">
+    <% containers.each((container, index) => { %>
+    <div data-type="container" data-name="<%- container.name %>">
+        <% container.children.each((block, index) => { %>
+        <div data-type="block" data-index="<%- index %>" data-name="<%- block.name %>" class="header-config">
+            <span class="name" title="<%- allowedBlocks[block.name] %>">
+                <%= allowedBlocks[block.name] %>
+            </span>
+        </div>
+        <% }) %>
+        <div class="settings-dropdown">
+            <div class="title"><%= _.i18n('Column Settings') %></div>
+            <div class="settings">
+                <div class="option-wrapper">
+                    <div class="option-label">
+                        <span><%= _.i18n('Align Items') %></span>
+                        <div class="tooltip">
+                            <span class="help"><span></span></span>
+                            <div class="tooltip-content">Select how items will be aligned inside column.</div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <span class="first">
+                            <input type="radio" id="align-left-<%= index %>" name="<%= container.name %>.align" value="left"<% print(container.config.align == 'left' ? ' checked' : '') %>>
+                            <label for="align-left-<%= index %>">Left</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="align-center-<%= index %>" name="<%= container.name %>.align" value="center"<% print(container.config.align == 'center' ? ' checked' : '') %>>
+                            <label for="align-center-<%= index %>">Center</label>
+                        </span>
+                        <span class="last">
+                            <input type="radio" id="align-right-<%= index %>" name="<%= container.name %>.align" value="right"<% print(container.config.align == 'right' ? ' checked' : '') %>>
+                            <label for="align-right-<%= index %>">Right</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="option-wrapper">
+                        <div class="option-label">
+                            <span>Column Grow/Shrink</span>
+                            <div class="tooltip">
+                                <span class="help"><span></span></span>
+                                <div class="tooltip-content">Control column size and free space distribution.<br><strong>Default</strong> - the column will take space according to its content size and will shrink when there is no enough space.<br><strong>Grow</strong> - the column will grow to fill all available space and will shrink when space not enough.<br><strong>None</strong> - the column will always have its content size and won't shrink.</div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <span class="first">
+                                <input type="radio" id="grow-default-<%= index %>" name="<%= container.name %>.grow" value=""<% print(container.config.grow == '' ? ' checked' : '') %>>
+                                <label for="grow-default-<%= index %>">Default</label>
+                            </span>
+                            <span>
+                                <input type="radio" id="grow-grow-<%= index %>" name="<%= container.name %>.grow" value="1"<% print(container.config.grow == '1' ? ' checked' : '') %>>
+                                <label for="grow-grow-<%= index %>">Grow</label>
+                            </span>
+                            <span class="last">
+                                <input type="radio" id="grow-none-<%= index %>" name="<%= container.name %>.grow" value="none"<% print(container.config.grow == 'none' ? ' checked' : '') %>>
+                                <label for="grow-none-<%= index %>">None</label>
+                            </span>
+                        </div>
+                    </div>
+                <div class="option-wrapper">
+                    <div class="option-label">
+                        <span>Additional CSS Classes</span>
+                        <div class="tooltip">
+                            <span class="help"><span></span></span>
+                            <div class="tooltip-content">Assign additional CSS classes separated with whitespace.</div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <input type="text" name="classes" value="<%= container.config.classes %>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column-actions">
+            <a class="settings-action" title="Settings" href="#"></a>
+        </div>
+    </div>
+    <% }) %>
+</div>
