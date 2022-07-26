@@ -81,7 +81,7 @@ require([
     }, function (element) {
         contentWidth = $(element);
         updateContentWidth();
-        contentWidth.change(updateContentWidth);
+        contentWidth.on('change', updateContentWidth);
     });
 
     $.async({
@@ -158,7 +158,7 @@ require([
         }
 
         update();
-        $(pageLayout).change(update);
+        $(pageLayout).on('change', update);
     });
 
     /**
@@ -178,7 +178,7 @@ require([
         }
 
         update();
-        $(tabsPosition).change(update);
+        $(tabsPosition).on('change', update);
     });
 
     $.async({
@@ -195,7 +195,7 @@ require([
         }
 
         update();
-        $(tabsLayout).change(update);
+        $(tabsLayout).on('change', update);
     });
 
     /**
@@ -217,7 +217,7 @@ require([
         }
 
         update();
-        $(imagePosition).change(update);
+        $(imagePosition).on('change', update);
     });
 
     /**
@@ -237,7 +237,7 @@ require([
         }
 
         update();
-        $(tocartPosition).change(update);
+        $(tocartPosition).on('change', update);
     });
 });
 </script>

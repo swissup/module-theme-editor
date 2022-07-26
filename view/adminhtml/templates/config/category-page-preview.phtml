@@ -87,7 +87,7 @@ require([
         }
 
         update();
-        $(descriptionPosition).change(update);
+        $(descriptionPosition).on('change', update);
     });
 
     /**
@@ -109,7 +109,7 @@ require([
         }
 
         update();
-        $(layeredNavigationPosition).change(update);
+        $(layeredNavigationPosition).on('change', update);
     });
 
     pageLayout = $('[name$="[page_layout][value]"]', tbody);
@@ -117,8 +117,8 @@ require([
     maxWidth = $('[name$="[max_width][value]"]', tbody);
     updatePageLayout();
     updateContentWidth();
-    pageLayout.change(updatePageLayout);
-    contentWidth.change(updateContentWidth);
+    pageLayout.on('change', updatePageLayout);
+    contentWidth.on('change', updateContentWidth);
     maxWidth.on('change paste keyup', updateContentWidth);
 });
 </script>
