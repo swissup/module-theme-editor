@@ -76,12 +76,14 @@ class Layout extends \Magento\Config\Block\System\Config\Form\Field
      */
     public function getOptions()
     {
+        $fieldsetHtmlId = $this->getElement()->getContainer()->getHtmlId();
+
         return json_encode(
             [
-                'parentId' => $this->getElement()->getContainer()->getHtmlId(),
+                'parentId' => $fieldsetHtmlId,
                 'availableBlocks' => $this->availableBlocks->toOptions(),
                 'isInherit' => !!$this->getElement()->getData('disabled'),
-                'allowedContainer' => '#swissup_argento_force_header_config_available_blocks [data-type="container"]',
+                'allowedContainer' => "#${fieldsetHtmlId}_available_blocks [data-type=\"container\"]",
                 'layoutContainers' => '.header-config-layout-wrapper [data-type="container"]'
             ]
         );
