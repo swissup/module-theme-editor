@@ -201,6 +201,7 @@ class ColumnsCount extends PageLayout
                 'body[class].wishlist-index-index .products-grid .product-item',
                 'body[class] .block.widget .products-grid .product-item'
             ]);
+        $selectorSpacing = 'body[class] .column.main .products-grid .product-item:nth-child(n)';
         $mediaQueries = '';
         foreach ($value as $item) {
             $columns = (int)$item['columns'];
@@ -212,6 +213,7 @@ class ColumnsCount extends PageLayout
             $width = $this->getItemWidthValue($columns, $spacing);
             $mediaQueries .= "@media screen and (min-width: {$item['width']}px) {" .
                 "{$selector} { width: {$width} }" .
+                "{$selectorSpacing} { margin: 0 0 {$spacing}px {$spacing}px }" .
             "}\n";
         }
 
