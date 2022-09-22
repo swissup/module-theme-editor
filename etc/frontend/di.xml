@@ -5,4 +5,8 @@
         <plugin name="swissup-theme-editor-layout-scheduled-structure"
                 type="Swissup\ThemeEditor\Plugin\Framework\LayoutScheduledStructure" sortOrder="1"/>
     </type>
+    <!-- Less in Backend config -->
+    <type name="Magento\Framework\View\Asset\Source">
+        <plugin name="swissup_theme_editor" type="Swissup\ThemeEditor\Plugin\Framework\AssetSource" />
+    </type>
 </config>
