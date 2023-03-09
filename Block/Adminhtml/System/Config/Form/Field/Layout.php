@@ -83,7 +83,7 @@ class Layout extends \Magento\Config\Block\System\Config\Form\Field
                 'parentId' => $fieldsetHtmlId,
                 'availableBlocks' => $this->availableBlocks->toOptions(),
                 'isInherit' => !!$this->getElement()->getData('disabled'),
-                'allowedContainer' => "#${fieldsetHtmlId}_available_blocks [data-type=\"container\"]",
+                'allowedContainer' => "#{$fieldsetHtmlId}_available_blocks [data-type=\"container\"]",
                 'layoutContainers' => '.header-config-layout-wrapper [data-type="container"]'
             ]
         );
