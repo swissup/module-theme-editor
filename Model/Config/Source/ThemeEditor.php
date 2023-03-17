@@ -4,6 +4,7 @@ namespace Swissup\ThemeEditor\Model\Config\Source;
 
 class ThemeEditor implements \Magento\Framework\Data\OptionSourceInterface
 {
+    private $cssModel;
     /**
      * @param \Swissup\ThemeEditor\Model\Css $cssModel
      */
