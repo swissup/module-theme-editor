@@ -42,7 +42,6 @@
             </block>
         </referenceContainer>
 
-        <move element="top.links" destination="header_account" />
         <referenceContainer name="header.container" remove="true"/>
     </body>
 </page>

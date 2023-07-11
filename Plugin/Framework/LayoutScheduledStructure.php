@@ -36,6 +36,7 @@ class LayoutScheduledStructure
             return null;
         }
 
+        $children = [];
         foreach ($this->getHeaderConfig() as $container) {
             $prevChild = null;
             foreach ($container['children'] as $child) {
@@ -44,7 +45,16 @@ class LayoutScheduledStructure
                     [$container['name'], $prevChild ?: '-', (bool)$prevChild, '']
                 );
                 $prevChild = $child['name'];
+                $children[] = $child['name'];
             }
+        }
+
+        // fix for top links
+        if (in_array('header_account', $children) && !in_array('header.links', $children)) {
+            $subject->setElementToMove(
+                'top.links',
+                ['header_account', '-', true, '']
+            );
         }
 
         return null;
