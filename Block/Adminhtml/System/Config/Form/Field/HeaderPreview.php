@@ -26,7 +26,7 @@ class HeaderPreview extends \Magento\Config\Block\System\Config\Form\Field
         array $data = []
     ) {
         $this->elementFactory = $elementFactory;
-        return parent::__construct($context, $data);
+        parent::__construct($context, $data);
     }
 
     /**

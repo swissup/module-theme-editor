@@ -29,7 +29,7 @@ class Layout extends \Magento\Config\Block\System\Config\Form\Field
         array $data = []
     ) {
         $this->availableBlocks = $availableBlocks;
-        return parent::__construct($context, $data);
+        parent::__construct($context, $data);
     }
 
     /**
