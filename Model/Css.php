@@ -8,6 +8,7 @@ class Css
 {
     /** Themes */
     const ABSOLUTE_THEME  = 'swissup_absolute';
+    const ARGENTO_CHIC    = 'swissup_argento_chic';
     const ARGENTO_ESSENCE = 'swissup_argento_essence';
     const ARGENTO_FLAT    = 'swissup_argento_flat';
     const ARGENTO_FORCE   = 'swissup_argento_force';
@@ -93,6 +94,7 @@ class Css
     {
         return [
             self::ABSOLUTE_THEME,
+            self::ARGENTO_CHIC,
             self::ARGENTO_ESSENCE,
             self::ARGENTO_FLAT,
             self::ARGENTO_FORCE,
