@@ -19,6 +19,7 @@ class Css
     const ARGENTO_PURE    = 'swissup_argento_pure';
     const ARGENTO_PURE2   = 'swissup_argento_pure2';
     const ARGENTO_STRIPES = 'swissup_argento_stripes';
+    const ARGENTO_BREEZE_CHIC    = 'swissup_argentobreeze_chic';
 
     /** Modes */
     const MODE_CREATE_AND_SAVE = 'create_save';
@@ -104,7 +105,8 @@ class Css
             self::ARGENTO_MARKETPLACE,
             self::ARGENTO_PURE,
             self::ARGENTO_PURE2,
-            self::ARGENTO_STRIPES
+            self::ARGENTO_STRIPES,
+            self::ARGENTO_BREEZE_CHIC
         ];
     }
 
