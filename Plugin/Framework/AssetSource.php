@@ -36,13 +36,7 @@ class AssetSource
         $result,
         \Magento\Framework\View\Asset\LocalInterface $asset
     ) {
-        $filepath = $asset->getSourceFile();
-        $filename = basename($filepath);
-
-        if (!$result ||
-            strpos($filename, self::FILENAME) === false ||
-            strpos($result, self::PLACEHOLDER) === false
-        ) {
+        if (!$result || strpos($result, self::PLACEHOLDER) === false) {
             return $result;
         }
 
