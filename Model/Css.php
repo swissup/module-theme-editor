@@ -21,6 +21,7 @@ class Css
     const ARGENTO_STRIPES = 'swissup_argento_stripes';
     const ARGENTO_BREEZE_CHIC    = 'swissup_argentobreeze_chic';
     const ARGENTO_BREEZE_STRIPES = 'swissup_argentobreeze_stripes';
+    const ARGENTO_BREEZE_FORCE   = 'swissup_argentobreeze_force';
 
     /** Modes */
     const MODE_CREATE_AND_SAVE = 'create_save';
@@ -109,6 +110,7 @@ class Css
             self::ARGENTO_STRIPES,
             self::ARGENTO_BREEZE_CHIC,
             self::ARGENTO_BREEZE_STRIPES,
+            self::ARGENTO_BREEZE_FORCE,
         ];
     }
 
