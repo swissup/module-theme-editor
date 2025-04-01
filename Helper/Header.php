@@ -76,7 +76,7 @@ class Header extends AbstractHelper
      * @param  ThemeInterface $theme
      * @return boolean
      */
-    public function isHeaderEnabled(ThemeInterface $theme = null)
+    public function isHeaderEnabled(?ThemeInterface $theme = null)
     {
         if (in_array(
             'swissupeditor_header_preview',
@@ -110,7 +110,7 @@ class Header extends AbstractHelper
      * @param  ThemeInterface $theme
      * @return array
      */
-    public function getHeaderLayout(ThemeInterface $theme = null)
+    public function getHeaderLayout(?ThemeInterface $theme = null)
     {
         $scope = ScopeInterface::SCOPE_STORE;
         $scopeCode = null;

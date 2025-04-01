@@ -98,7 +98,7 @@ class Data extends AbstractHelper
     /**
      * @return string|null
      */
-    public function getThemeEditorCode(ThemeInterface $theme = null)
+    public function getThemeEditorCode(?ThemeInterface $theme = null)
     {
         if ($theme) {
             $viewConfig = $this->viewConfig->getViewConfig(['themeModel' => $theme]);
