@@ -2,10 +2,10 @@
     "name": "swissup/module-theme-editor",
     "description": "Theme styles editing extension from Swissup",
     "type": "magento2-module",
-    "version": "1.10.12",
+    "version": "1.10.13",
     "license": "OSL-3.0",
     "require": {
-        "swissup/module-core": "^1.12.20",
+        "swissup/module-core": "^1.12.22",
         "swissup/module-codemirror": "^1.1.8"
     },
     "autoload": {
