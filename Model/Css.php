@@ -19,9 +19,10 @@ class Css
     const ARGENTO_PURE    = 'swissup_argento_pure';
     const ARGENTO_PURE2   = 'swissup_argento_pure2';
     const ARGENTO_STRIPES = 'swissup_argento_stripes';
+    const ARGENTO_BREEZE_BUSINESS = 'swissup_argentobreeze_business';
     const ARGENTO_BREEZE_CHIC    = 'swissup_argentobreeze_chic';
-    const ARGENTO_BREEZE_STRIPES = 'swissup_argentobreeze_stripes';
     const ARGENTO_BREEZE_FORCE   = 'swissup_argentobreeze_force';
+    const ARGENTO_BREEZE_STRIPES = 'swissup_argentobreeze_stripes';
 
     /** Modes */
     const MODE_CREATE_AND_SAVE = 'create_save';
@@ -108,9 +109,10 @@ class Css
             self::ARGENTO_PURE,
             self::ARGENTO_PURE2,
             self::ARGENTO_STRIPES,
+            self::ARGENTO_BREEZE_BUSINESS,
             self::ARGENTO_BREEZE_CHIC,
-            self::ARGENTO_BREEZE_STRIPES,
             self::ARGENTO_BREEZE_FORCE,
+            self::ARGENTO_BREEZE_STRIPES,
         ];
     }
 
