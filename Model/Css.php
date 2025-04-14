@@ -318,6 +318,18 @@ class Css
             }
             foreach ($groupValues as $name => $value) {
                 $value = (string)$value;
+
+                if (strpos($name, '_cssprop_') !== false) {
+                    $name = str_replace('_cssprop_', '_--', $name);
+                } elseif (strpos($name, '_cssproprgb_') !== false) {
+                    $name = str_replace('_cssproprgb_', '_--', $name);
+                    if (strlen($value) === 4) {
+                        $value = implode(',', sscanf($value, "#%1x%1x%1x"));
+                    } elseif (strlen($value) === 7) {
+                        $value = implode(',', sscanf($value, "#%2x%2x%2x"));
+                    }
+                }
+
                 list($key, $prop) = explode('_', $name);
                 if (in_array($prop, $propsToSkip)) {
                     continue;
