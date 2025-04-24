@@ -44,9 +44,9 @@ class Css
     protected $configLoader;
 
     /**
-     * @var \Magento\Config\Model\Config\StructureFactory
+     * @var \Magento\Config\Model\Config\Structure
      */
-    protected $configStructureFactory;
+    protected $configStructure;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
@@ -66,7 +66,7 @@ class Css
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory
      * @param \Magento\Config\Model\Config\Loader $configLoader
-     * @param \Magento\Config\Model\Config\StructureFactory $configStructureFactory
+     * @param \Magento\Config\Model\Config\Structure $configStructure
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Swissup\ThemeEditor\Helper\Data $helper
      * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
@@ -75,7 +75,7 @@ class Css
         \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory,
         \Magento\Config\Model\Config\Loader $configLoader,
-        \Magento\Config\Model\Config\StructureFactory $configStructureFactory,
+        \Magento\Config\Model\Config\Structure $configStructure,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Swissup\ThemeEditor\Helper\Data $helper,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
@@ -83,7 +83,7 @@ class Css
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();
         $this->configLoader = $configLoader;
-        $this->configStructureFactory = $configStructureFactory;
+        $this->configStructure = $configStructure;
         $this->storeManager = $storeManager;
         $this->helper = $helper;
         $this->cacheTypeList = $cacheTypeList;
@@ -242,7 +242,7 @@ class Css
             );
         }
 
-        $tab = $this->configStructureFactory->create()->getElement($theme);
+        $tab = $this->configStructure->getElement($theme);
         if (!$node || !$tab) {
             return [];
         }
