@@ -44,9 +44,9 @@ class Css
     protected $configLoader;
 
     /**
-     * @var \Magento\Config\Model\Config\Structure
+     * @var \Magento\Config\Model\Config\StructureFactory
      */
-    protected $configStructure;
+    protected $configStructureFactory;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
@@ -66,7 +66,7 @@ class Css
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory
      * @param \Magento\Config\Model\Config\Loader $configLoader
-     * @param \Magento\Config\Model\Config\Structure $configStructure
+     * @param \Magento\Config\Model\Config\StructureFactory $configStructureFactory
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Swissup\ThemeEditor\Helper\Data $helper
      * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
@@ -75,7 +75,7 @@ class Css
         \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\MediaStorage\Model\File\Storage\FileFactory $mediaStorageFactory,
         \Magento\Config\Model\Config\Loader $configLoader,
-        \Magento\Config\Model\Config\Structure $configStructure,
+        \Magento\Config\Model\Config\StructureFactory $configStructureFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Swissup\ThemeEditor\Helper\Data $helper,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
@@ -83,7 +83,7 @@ class Css
         $this->messageManager = $messageManager;
         $this->mediaStorage = $mediaStorageFactory->create();
         $this->configLoader = $configLoader;
-        $this->configStructure = $configStructure;
+        $this->configStructureFactory = $configStructureFactory;
         $this->storeManager = $storeManager;
         $this->helper = $helper;
         $this->cacheTypeList = $cacheTypeList;
@@ -242,7 +242,7 @@ class Css
             );
         }
 
-        $tab = $this->configStructure->getElement($theme);
+        $tab = $this->configStructureFactory->create()->getElement($theme);
         if (!$node || !$tab) {
             return [];
         }
@@ -310,7 +310,19 @@ class Css
     public function convertConfigToCss($theme, $config)
     {
         $groups = [];
-        $groupsToSkip = ['css_selector', 'head', 'media_query', 'homepage', 'category', 'product', 'product_tabs', 'product_tocart', 'product_image', 'header_config'];
+        $groupsToSkip = [
+            'css_selector',
+            'head',
+            'media_query',
+            'homepage',
+            'category',
+            'product',
+            'product_tabs',
+            'product_tocart',
+            'product_image',
+            'header_config',
+            'frontend_mode'
+        ];
         $propsToSkip  = ['heading', 'head_link', 'sticky_header'];
         foreach ($config as $groupName => $groupValues) {
             if (in_array($groupName, $groupsToSkip)) {
