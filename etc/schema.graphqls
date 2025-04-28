@@ -1,0 +1,44 @@
+type ThemeEditorProperty {
+    id: String!
+    label: String!
+    path: String!
+    selector: String!
+    property: String!
+    value: String!
+}
+
+type ThemeEditorConfigGroup {
+    key: String!
+    selector: String!
+    label: String!
+    properties: [ThemeEditorProperty!]
+    groupLabel: String
+}
+
+type Query {
+    getThemeEditorProperties(themeCode: String!, accessToken: String): [ThemeEditorConfigGroup!]
+    @resolver(class: "\\Swissup\\ThemeEditor\\Model\\Resolver\\GetThemeEditorProperties")
+    @doc(description: ".")
+    @acl(id: "Swissup_ThemeEditor:config")
+}
+
+input UpdateThemeEditorCssPropertiesInput {
+    accessToken: String!
+    props: [ThemeEditorCssPropertyInput!]!
+}
+
+input ThemeEditorCssPropertyInput @doc(description: "Defines updates to items in a wish list.") {
+     property: String! @doc(description: "")
+     value: String! @doc(description: "")
+}
+
+type UpdateThemeEditorPropertyValuesResult {
+    success: Boolean!
+    message: String
+}
+
+type Mutation {
+    updateThemeEditorPropertyValues(input: UpdateThemeEditorCssPropertiesInput!): UpdateThemeEditorPropertyValuesResult
+    @resolver(class: "\\Swissup\\ThemeEditor\\Model\\Resolver\\UpdateThemeEditorPropertyValues")
+    @acl(id: "Swissup_ThemeEditor:config")
+}

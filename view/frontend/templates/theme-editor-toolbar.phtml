@@ -1,0 +1,38 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Swissup\ThemeEditor\ViewModel\ThemeEditorHighlight $viewModel */
+$viewModel = $block->getViewModel();
+if ($viewModel->isEnabled()):
+    $settings = $viewModel->getSettings();
+?>
+<div id="theme-editor-toolbar">
+    <div class="toolbar-header">
+        <button class="toggle-button" id="theme-editor-highligh-toggler">
+            <span class="toggle-indicator"></span>
+            <span class="toggle-text">Theme Editor Toolbar</span>
+        </button>
+    </div>
+    <div class="toolbar-content" style="display: none">
+        <select id="theme-editor-choose-current" >
+        </select>
+        <div id="theme-editor-toolbar-current-element-container" style="display: none">
+            <label for="theme-editor-current-settings-selector">Current Element:</label>
+    <!--        <i id="theme-editor-current-settings-config-id"></i>-->
+            <input type="input" id="theme-editor-current-settings-selector">
+            <ul id="theme-editor-current-settings-selector-properties">
+            </ul>
+            <button class="button" id="theme-editor-highligh-save">
+                <span>Save</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Swissup_ThemeEditor/js/theme-editor-toolbar": <?= $settings; ?>
+    }
+}
+</script>
+<?php endif; ?>

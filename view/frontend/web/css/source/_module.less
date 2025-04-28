@@ -1,0 +1,191 @@
+//
+//  Variables
+//  _____________________________________________
+@theme-editor-toolbar__background: #f0f0f0;
+@theme-editor-toolbar__border-color: #ccc;
+@theme-editor-toolbar__text-color: #333;
+@theme-editor-toolbar__active-color: #4CAF50;
+@theme-editor-toolbar__active-hover-color: #45a049;
+@theme-editor-toolbar__hover-color: #ddd;
+@theme-editor-toolbar__indicator-color: #ffffff;
+@theme-editor-toolbar__selected-border-color: blue;
+@theme-editor-toolbar__mask-stripe-color: #f5f5c0;
+@theme-editor-toolbar__z-index: 10000;
+@theme-editor-toolbar__width: 345px;
+@theme-editor-toolbar__height: 38px;
+
+& when (@media-common = true) {
+    // Theme Editor Toolbar
+    #theme-editor-toolbar {
+        position: fixed;
+        top: 50px;
+        left: 80%;
+        background-color: @theme-editor-toolbar__background;
+        border: 1px solid @theme-editor-toolbar__border-color;
+        padding: 10px;
+        z-index: @theme-editor-toolbar__z-index;
+        border-radius: 10px;
+
+        // Header
+        .toolbar-header {
+            margin-bottom: 10px;
+        }
+
+        // Properties List
+        ul#theme-editor-current-settings-selector-properties {
+            padding: 10px 0;
+            li {
+                display: flex;
+                flex-direction: column;
+
+                i {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        // Toggle Button
+        .toggle-button {
+            position: relative;
+            padding: 8px 36px;
+            border: 2px solid @theme-editor-toolbar__border-color;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: @theme-editor-toolbar__background;
+            color: @theme-editor-toolbar__text-color;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 16px;
+            width: @theme-editor-toolbar__width;
+            height: @theme-editor-toolbar__height;
+
+            &:hover {
+                background-color: @theme-editor-toolbar__hover-color;
+            }
+
+            &.active {
+                background-color: @theme-editor-toolbar__active-color;
+                color: @theme-editor-toolbar__indicator-color;
+                border-color: @theme-editor-toolbar__active-color;
+
+                &:hover {
+                    background-color: @theme-editor-toolbar__active-hover-color;
+                }
+
+                .toggle-indicator {
+                    transform: translateX(310px);
+                }
+            }
+        }
+
+        // Toggle Indicator
+        .toggle-indicator {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: @theme-editor-toolbar__indicator-color;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        // Saving Indicator
+        .saving-indicator {
+            position: relative;
+            pointer-events: none;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -10px;
+                border: 2px solid @theme-editor-toolbar__border-color;
+                border-top-color: @theme-editor-toolbar__selected-border-color;
+                border-radius: 50%;
+                animation: saving-spin 1s linear infinite;
+            }
+        }
+
+        .saving-complete {
+            pointer-events: auto;
+
+            .saving-indicator::after {
+                content: '✓';
+                border: none;
+                color: @theme-editor-toolbar__active-color;
+                font-size: 1.2em;
+                width: auto;
+                height: auto;
+                margin-top: -0.6em;
+                margin-left: -0.3em;
+                animation: none;
+            }
+        }
+    }
+
+    // Theme Editor Settings
+    .theme-editor-settings {
+        font-size: 0.8em;
+        position: absolute;
+        padding: 2px;
+        border-radius: 3px;
+        cursor: pointer;
+        z-index: @theme-editor-toolbar__z-index - 1;
+        top: 5px;
+        left: 5px;
+        display: none;
+    }
+
+    // Selected Element Styles
+    .theme-editor-selected {
+        &-border {
+            outline: 3px solid @theme-editor-toolbar__selected-border-color;
+        }
+
+        &-mask {
+            background: linear-gradient(
+                to bottom right,
+                @theme-editor-toolbar__mask-stripe-color 0%,
+                @theme-editor-toolbar__mask-stripe-color 15%,
+                @theme-editor-toolbar__indicator-color 15%,
+                @theme-editor-toolbar__indicator-color 30%,
+                @theme-editor-toolbar__mask-stripe-color 30%,
+                @theme-editor-toolbar__mask-stripe-color 45%,
+                @theme-editor-toolbar__indicator-color 45%,
+                @theme-editor-toolbar__indicator-color 60%,
+                @theme-editor-toolbar__mask-stripe-color 60%,
+                @theme-editor-toolbar__mask-stripe-color 75%,
+                @theme-editor-toolbar__indicator-color 75%,
+                @theme-editor-toolbar__indicator-color 90%,
+                @theme-editor-toolbar__mask-stripe-color 90%,
+                @theme-editor-toolbar__mask-stripe-color 100%
+            ) !important;
+        }
+    }
+
+    // Keyframes
+    @keyframes saving-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+@media only screen and (max-width: 768px) {
+    // Мобільні стилі якщо потрібно
+}
+
+//
+//  Desktop
+//  _____________________________________________
+@media only screen and (min-width: 769px) {
+    // Десктопні стилі якщо потрібно
+}

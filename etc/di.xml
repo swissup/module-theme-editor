@@ -1,6 +1,21 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Swissup\ThemeEditor\Api\AccessTokenInterface" type="Swissup\ThemeEditor\Model\Data\AccessToken" />
+    <type name="Magento\Framework\GraphQl\Query\Resolver\QueryObject">
+        <arguments>
+            <argument name="resolvers" xsi:type="array">
+                <item name="getThemeEditorProperties" xsi:type="string">Swissup\ThemeEditor\Model\Resolver\GetThemeEditorProperties</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntity\Factory">
+        <arguments>
+            <argument name="resolvers" xsi:type="array">
+                <item name="updateThemeEditorPropertyValues" xsi:type="string">Swissup\ThemeEditor\Model\Resolver\UpdateThemeEditorPropertyValues</item>
+            </argument>
+        </arguments>
+    </type>
     <type name="Magento\Framework\View\Model\Layout\Merge">
         <plugin name="swissup_themeeditor" type="Swissup\ThemeEditor\Plugin\Framework\LayoutMerge" sortOrder="5"/>
     </type>
@@ -52,6 +67,36 @@
             <argument name="data" xsi:type="array">
                 <item name="themeCollectionFactory" xsi:type="object">Magento\Theme\Model\ResourceModel\Theme\CollectionFactory</item>
             </argument>
+        </arguments>
+    </type>
+    <virtualType name="graphqlConfigScope" type="Magento\Framework\Config\Scope">
+        <arguments>
+            <argument name="defaultScope" xsi:type="string">adminhtml</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="graphqlConfigStructureData" type="\Magento\Config\Model\Config\Structure\Data">
+        <arguments>
+            <argument name="configScope" xsi:type="object">graphqlConfigScope</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="graphqlConfigStructure" type="Magento\Config\Model\Config\Structure">
+        <arguments>
+            <argument name="structureData" xsi:type="object">graphqlConfigStructureData</argument>
+        </arguments>
+    </virtualType>
+    <type name="Swissup\ThemeEditor\Model\Resolver\GetThemeEditorProperties">
+        <arguments>
+            <argument name="configStructure" xsi:type="object">graphqlConfigStructure</argument>
+        </arguments>
+    </type>
+    <virtualType name="graphqlCssGenerator" type="Swissup\ThemeEditor\Model\Css">
+        <arguments>
+            <argument name="configStructure" xsi:type="object">graphqlConfigStructure</argument>
+        </arguments>
+    </virtualType>
+    <type name="Swissup\ThemeEditor\Model\Resolver\UpdateThemeEditorPropertyValues">
+        <arguments>
+            <argument name="cssModel" xsi:type="object">graphqlCssGenerator</argument>
         </arguments>
     </type>
 </config>

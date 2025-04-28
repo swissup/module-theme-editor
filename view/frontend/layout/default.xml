@@ -3,5 +3,12 @@
         <referenceContainer name='after.body.start'>
             <block class="Swissup\ThemeEditor\Block\Html\Head" name="theme-editor-backend-css" as="backend-css" />
         </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="theme_editor_toolbar" template="Swissup_ThemeEditor::theme-editor-toolbar.phtml" before="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Swissup\ThemeEditor\ViewModel\ThemeEditorHighlight</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>
