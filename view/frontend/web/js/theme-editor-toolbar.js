@@ -12,6 +12,8 @@ define([
     'use strict';
 
     let configSettings;
+    const TOOLBAR_ACTIVE_STORAGE_KEY = 'themeEditorToolbarActive';
+    let propertiesLoaded = false;
 
     const handleMouseEnter = function() {
         const targetId = $(this).data('target-id');
@@ -95,16 +97,21 @@ define([
     };
 
     const loadProperties = () => {
+        if (propertiesLoaded) {
+            return;
+        }
+
         const storeViewCode = configSettings.storeViewCode || 'default';
         const { configSectionName, accessToken } = configSettings;
         const query = getGraphQlQuery(configSectionName, accessToken);
 
-        graphqlRequest({ query, storeViewCode })
+        return graphqlRequest({ query, storeViewCode })
             .then(response => {
                 const properties = response?.body?.data?.getThemeEditorProperties
                     || response?.data?.getThemeEditorProperties;
                 highlighter(properties);
                 propertyChooser.init($('#theme-editor-choose-current'), properties);
+                propertiesLoaded = true;
             })
             .catch(error => {
                 console.error('Помилка завантаження властивостей:', error);
@@ -112,16 +119,29 @@ define([
             });
     };
 
-    const initToggler = () => {
+    const initToggler = async () => {
         const toggler = $('#theme-editor-highligh-toggler');
-        toggler.click(function() {
+        const savedState = localStorage.getItem(TOOLBAR_ACTIVE_STORAGE_KEY);
+
+        if (savedState === 'active') {
+            toggler.addClass('active');
+            $('#theme-editor-toolbar .toolbar-content').show();
+            await loadProperties();
+            $('.theme-editor-settings').show();
+        } else {
+            $('.theme-editor-settings').hide();
+            $('#theme-editor-toolbar .toolbar-content').hide();
+        }
+
+        toggler.click(async function () {
             $(this).toggleClass('active');
             const isVisible = $(this).hasClass('active');
-            $('.theme-editor-settings').toggle(isVisible);
             $('#theme-editor-toolbar .toolbar-content').toggle(isVisible);
-            if (isVisible) {
-                loadProperties();
+            localStorage.setItem(TOOLBAR_ACTIVE_STORAGE_KEY, isVisible ? 'active' : 'inactive');
+            if (isVisible && !propertiesLoaded) {
+                await loadProperties();
             }
+            $('.theme-editor-settings').toggle(isVisible);
         });
     };
 

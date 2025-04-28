@@ -15,7 +15,6 @@ define([
         $(element).removeClass('theme-editor-selected-mask');
     };
 
-    // let hasNotSaveChanges = false;
     const settingsElementClass = 'theme-editor-settings';
 
     const debounce = function (func, delay) {
@@ -40,7 +39,7 @@ define([
         $listContainer.empty();
 
         if (!properties || properties.length === 0) {
-            $listContainer.append('<li>No properties to display.</li>'); // Повідомлення, якщо властивості відсутні
+            $listContainer.append('<li>No properties to display.</li>');
             return;
         }
 
@@ -104,11 +103,6 @@ define([
     });
 
     const component = function (config) {
-        console.log(config);
-
-        // const selectors = config.selectors;
-        const settingsElementClass = 'theme-editor-settings';
-
         $.each(config, function (i, settings) {
             const { key, selector } = settings;
             const elements = $(selector);
@@ -122,8 +116,8 @@ define([
                     // $(this).attr('data-theme-editor', JSON.stringify(themeEditorData));
                     // $this.css('outline', `2px dashed ${borderColor}`);
 
-                    const uniqueId = `theme-editor-target-${index}`; // Створюємо унікальний ID для цільового елемента
-                    $this.attr('data-theme-editor-id', uniqueId); // Додаємо data атрибут до цільового елемента
+                    const uniqueId = `theme-editor-target-${index}`;
+                    $this.attr('data-theme-editor-id', uniqueId);
 
                     const $settingsElement = $('<span></span>')
                         .addClass(settingsElementClass)
@@ -133,9 +127,8 @@ define([
                         .attr('data-target-config-id', key)
                         .attr('data-target-selector', selector)
                         .attr('title', `<${key}> - $('${selector}')`)
-                        .appendTo('body'); // Додаємо на рівень body
+                        .appendTo('body');
 
-                    // Функція для оновлення позиції елемента налаштування
                     const updateSettingsPosition = () => {
                         const rect = $this[0].getBoundingClientRect();
                         $settingsElement.css({

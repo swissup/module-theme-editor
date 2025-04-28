@@ -1,8 +1,21 @@
 define([
-    'jquery',
-    'Swissup_ThemeEditor/js/theme-editor-highlighter'
+    'jquery'
 ], function ($, highlighter) {
     'use strict';
+
+    const SELECTED_PROPERTY_STORAGE_KEY = 'themeEditorSelectedProperty';
+
+    const saveSelectedProperty = (propertyValue) => {
+        localStorage.setItem(SELECTED_PROPERTY_STORAGE_KEY, propertyValue);
+    };
+
+    const loadSavedProperty = ($select) => {
+        const savedValue = localStorage.getItem(SELECTED_PROPERTY_STORAGE_KEY);
+        if (savedValue) {
+            $select.val(savedValue);
+            $select.trigger('change');
+        }
+    };
 
     const init = ($select, properties) => {
         if (!$select.length) {
@@ -60,12 +73,15 @@ define([
             const targetSelector = $selectedOption.data('target-selector');
             const targetConfigId = $selectedOption.data('target-config-id');
 
-            if (typeof highlighter.onChangeConfig === 'function') {
-                require(['Swissup_ThemeEditor/js/theme-editor-highlighter'], function (highlighter) {
-                    highlighter.onChangeConfig($selectedOption);
-                });
-            }
+            // if (typeof highlighter.onChangeConfig === 'function') {
+            require(['Swissup_ThemeEditor/js/theme-editor-highlighter'], function (highlighter) {
+                highlighter.onChangeConfig($selectedOption);
+            });
+            // }
+            saveSelectedProperty($(this).val());
         });
+
+        loadSavedProperty($select);
     };
 
     return {
