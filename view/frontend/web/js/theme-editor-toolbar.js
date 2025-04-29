@@ -44,8 +44,10 @@ define([
             const $li = $(this);
             const propertySettings = $li.data('target-property-settings');
             const { path, value } = propertySettings;
-            const newValue = $li.find('input[type="text"]').val();
-            propertyValues.push({ path, value: newValue });
+            const newValue = $li.find('input').val();
+            if (newValue !== undefined) {
+                propertyValues.push({ path, value: newValue });
+            }
         });
 
         if (propertyValues.length === 0) {

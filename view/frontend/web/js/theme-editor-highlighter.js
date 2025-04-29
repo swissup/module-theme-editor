@@ -29,8 +29,10 @@ define([
 
     const onChangePropertyInput = debounce(function() {
         const propertySettings = $(this).closest('li').data('target-property-settings');
-        const { selector, property } = propertySettings;
+        const { selector, property, value } = propertySettings;
         $(`${selector}`).css(property, $(this).val());
+
+        $(this).closest('li').find('i').text(`${property}:${value} => ${$(this).val()};`);
         // hasNotSaveChanges = true;
     }, 300);
 
@@ -45,16 +47,18 @@ define([
 
         properties.forEach(propertySettings => {
             const $listItem = $('<li>');
+            const { id, label, property, value } = propertySettings;
+            const inputType = property?.includes('color') || property?.includes('-bg') ? 'color' : 'text';
             $listItem.attr('data-target-property-settings', JSON.stringify(propertySettings));
             $listItem.html(`
-                <label title="Id: ${propertySettings.id}">${propertySettings.label}</label>
-                <i>${propertySettings.property}:${propertySettings.value};</i>
-                <input name="value" type="text" value="${propertySettings.value}">
+                <label title="Id: ${id}">${label}</label>
+                <i>${property}:${value};</i>
+                <input name="value" type="${inputType}" value="${value}">
             `);
             $listContainer.append($listItem);
         });
 
-        $('#theme-editor-current-settings-selector-properties li input[type="text"]').off().on('input', function(){
+        $('#theme-editor-current-settings-selector-properties li input').off().on('input', function(){
             onChangePropertyInput.call(this);
         });
     };
