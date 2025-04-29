@@ -130,6 +130,41 @@
                 animation: none;
             }
         }
+
+        .loading-indicator {
+            position: relative;
+            /* Додайте стилі для відображення завантаження */
+            opacity: 0.7; /* Зробіть елемент трохи прозорим */
+            cursor: wait; /* Змініть курсор на очікування */
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -10px;
+                border: 2px solid #ccc;
+                border-top-color: #333;
+                border-radius: 50%;
+                animation: rotate 1s linear infinite;
+            }
+            &[disabled] {
+                /* Додаткові стилі для вимкненого стану */
+                opacity: 0.5;
+            }
+        }
+
+        /* Додаткова візуалізація (наприклад, спінер) */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     }
 
     // Theme Editor Settings

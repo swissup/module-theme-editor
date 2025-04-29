@@ -5,10 +5,11 @@ define([
     'Swissup_ThemeEditor/js/get-graphql-query',
     'Swissup_ThemeEditor/js/get-graphql-mutation',
     'Swissup_ThemeEditor/js/ui/error-message',
+    'Swissup_ThemeEditor/js/ui/loading-indicator',
     'Swissup_ThemeEditor/js/ui/saving-indicator',
     'Swissup_ThemeEditor/js/ui/property-chooser',
     'domReady!'
-], function ($, highlighter, graphqlRequest, getGraphQlQuery, getGraphQlMutation, errorMessage, savingIndicator, propertyChooser) {
+], function ($, highlighter, graphqlRequest, getGraphQlQuery, getGraphQlMutation, errorMessage, loadingIndicator, savingIndicator, propertyChooser) {
     'use strict';
 
     let configSettings;
@@ -103,6 +104,10 @@ define([
             return;
         }
 
+        const toolbarContent = $('#theme-editor-toolbar div.toolbar-content');
+        loadingIndicator.add(toolbarContent);
+        propertiesLoaded = false;
+
         const storeViewCode = configSettings.storeViewCode || 'default';
         const { configSectionName, accessToken } = configSettings;
         const query = getGraphQlQuery(configSectionName, accessToken);
@@ -114,10 +119,12 @@ define([
                 highlighter(properties);
                 propertyChooser.init($('#theme-editor-choose-current'), properties);
                 propertiesLoaded = true;
+                loadingIndicator.remove(toolbarContent);
             })
             .catch(error => {
                 console.error('Помилка завантаження властивостей:', error);
                 errorMessage.show('Не вдалося завантажити властивості.');
+                loadingIndicator.remove(toolbarContent);
             });
     };
 
