@@ -8,6 +8,7 @@ define([
     'Swissup_ThemeEditor/js/ui/loading-indicator',
     'Swissup_ThemeEditor/js/ui/saving-indicator',
     'Swissup_ThemeEditor/js/ui/property-chooser',
+    'Swissup_ThemeEditor/js/ui/draggable-toolbar',
     'domReady!'
 ], function ($, highlighter, graphqlRequest, getGraphQlQuery, getGraphQlMutation, errorMessage, loadingIndicator, savingIndicator, propertyChooser) {
     'use strict';
