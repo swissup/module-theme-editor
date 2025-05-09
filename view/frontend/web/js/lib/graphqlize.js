@@ -28,6 +28,7 @@ define([
         //https://zinoui.com/blog/jquery-ajax-headers
         // $.ajax($.extend({}, options, {
         return $.extend({}, options, {
+            global: false,
             headers: headers,
             url: url,
             contentType: 'application/json',
