@@ -47,8 +47,8 @@ class GetThemeEditorProperties implements ResolverInterface
         Field $field,
         $context,
         ResolveInfo $info,
-        array $value = null,
-        array $args = null
+        ?array $value = null,
+        ?array $args = null
     ) {
         $accessToken = $args['accessToken'] ?? null;
         if (!$this->isLoggedIn($accessToken)) {
