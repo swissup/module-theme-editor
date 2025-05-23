@@ -48,7 +48,8 @@ define([
         properties.forEach(propertySettings => {
             const $listItem = $('<li>');
             const { id, label, property, value } = propertySettings;
-            const inputType = property?.includes('color') || property?.includes('-bg') ? 'color' : 'text';
+            const inputType = (property?.includes('color') || property?.includes('-bg'))
+                && !value.includes('rgb') ? 'color' : 'text';
             $listItem.attr('data-target-property-settings', JSON.stringify(propertySettings));
             $listItem.html(`
                 <label title="Id: ${id}">${label}</label>

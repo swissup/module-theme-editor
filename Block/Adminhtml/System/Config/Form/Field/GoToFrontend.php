@@ -32,10 +32,8 @@ class GoToFrontend extends \Magento\Config\Block\System\Config\Form\Field
      */
     protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
-        /** @var \Magento\Backend\Block\Widget\Button $buttonBlock  */
-        $buttonBlock = $this->getForm()->getLayout()->createBlock(\Magento\Backend\Block\Widget\Button::class);
-//        $websiteId = (int) $buttonBlock->getRequest()->getParam('website');
-        $storeId = $buttonBlock->getRequest()->getParam('store');
+//        $websiteId = (int) $this->getRequest()->getParam('website');
+        $storeId = $this->getRequest()->getParam('store');
         $store = $this->storeManager->getStore($storeId);
 
         $baseUrl = $this->urlBuilder->getBaseUrl([
@@ -51,14 +49,16 @@ class GoToFrontend extends \Magento\Config\Block\System\Config\Form\Field
         $html = '<a href="' . $url . '" target="_blank">' . $url . '</a>';
 
         return $html;
-
-        $data = [
-            'id' => 'go to',
-            'label' => __('Go to frontend'),
-            'onclick' => "setLocation('" . $url . "')",
-        ];
-
-        $html = $buttonBlock->setData($data)->toHtml();
-        return $html;
+//
+//        /** @var \Magento\Backend\Block\Widget\Button $buttonBlock  */
+//        $buttonBlock = $this->getForm()->getLayout()->createBlock(\Magento\Backend\Block\Widget\Button::class);
+//        $data = [
+//            'id' => 'go to',
+//            'label' => __('Go to frontend'),
+//            'onclick' => "setLocation('" . $url . "')",
+//        ];
+//
+//        $html = $buttonBlock->setData($data)->toHtml();
+//        return $html;
     }
 }
