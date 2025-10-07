@@ -5,13 +5,13 @@
 ?>
 <style>
     ._header {
-        max-width: <?= $headerWidth ? ($headerWidth . '%') : 'none' ?>;
+        max-width: <?= /* @noEscape */ $headerWidth ? ($headerWidth . '%') : 'none' ?>;
     }
     ._columns {
-        max-width: <?= $columnsWidth ?>%;
+        max-width: <?= /* @noEscape */ $columnsWidth ?>%;
     }
 
     ._footer {
-        max-width: <?= $footerWidth ? ($footerWidth . '%') : 'none' ?>;
+        max-width: <?= /* @noEscape */ $footerWidth ? ($footerWidth . '%') : 'none' ?>;
     }
 </style>

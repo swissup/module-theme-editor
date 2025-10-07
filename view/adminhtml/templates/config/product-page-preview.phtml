@@ -1,4 +1,5 @@
 <?php
+    /** @var \Magento\Framework\Escaper $escaper */
     $element = $block->getElement();
 ?>
 
@@ -8,7 +9,7 @@
             <div class="_header-wrapper _watermark" title="Header"></div>
         </div>
         <div class="_content">
-            <div class="_columns <?= $block->getPageLayout() ?>">
+            <div class="_columns <?= $escaper->escapeHtmlAttr($block->getPageLayout()) ?>">
                 <div class="_main">
                     <div class="_info-main">
                         <div class="_name _watermark" title="Product Name"></div>
@@ -152,7 +153,7 @@ require([
         function update() {
             var value = $(pageLayout).val() ?
                 $(pageLayout).val().replace('themeeditor_page', '') :
-                '<?= $block->getPageLayout() ?>';
+                '<?= $escaper->escapeJs($block->getPageLayout()) ?>';
 
             $('._columns', preview).attr('class', '_columns ' + value);
         }
@@ -172,7 +173,7 @@ require([
          * Preview updater
          */
         function update() {
-            var value = $(tabsPosition).val() ? $(tabsPosition).val() : '<?= $block->getTabsPosition() ?>';
+            var value = $(tabsPosition).val() ? $(tabsPosition).val() : '<?= $escaper->escapeJs($block->getTabsPosition()) ?>';
 
             preview.attr('data-tabs-position', value);
         }
@@ -189,7 +190,7 @@ require([
          * Preview updater
          */
         function update() {
-            var value = $(tabsLayout).val() ? $(tabsLayout).val() : '<?= $block->getTabsLayout() ?>';
+            var value = $(tabsLayout).val() ? $(tabsLayout).val() : '<?= $escaper->escapeJs($block->getTabsLayout()) ?>';
 
             preview.attr('data-tabs', value);
         }
@@ -211,7 +212,7 @@ require([
         function update() {
             var value = $(imagePosition).val() !== 'theme' ?
                 $(imagePosition).val() :
-                '<?= $block->getImagePosition() ?>';
+                '<?= $escaper->escapeJs($block->getImagePosition()) ?>';
 
             preview.attr('data-image-position', value);
         }
@@ -231,7 +232,7 @@ require([
          * Preview updater
          */
         function update() {
-            var value = $(tocartPosition).val() ? $(tocartPosition).val() : '<?= $block->getTocartPosition() ?>';
+            var value = $(tocartPosition).val() ? $(tocartPosition).val() : '<?= $escaper->escapeJs($block->getTocartPosition()) ?>';
 
             preview.attr('data-tocart-position', value);
         }

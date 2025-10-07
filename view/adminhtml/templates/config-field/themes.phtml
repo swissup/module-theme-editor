@@ -18,7 +18,7 @@
                 "selected": "<?= $block->escapeJs(__('Selected theme: <strong>{{itemName}}</strong> <small><a href="#">Change</a></small>')) ?>",
                 "no": "<?= $block->escapeJs(__('Please select theme below')) ?>"
             },
-            "images": <?= json_encode($images) ?>
+            "images": <?= /* @noEscape */ json_encode($images) ?>
         }
     }
 }

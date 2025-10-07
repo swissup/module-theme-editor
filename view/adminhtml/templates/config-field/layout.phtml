@@ -1,7 +1,8 @@
 <?php
+    /** @var \Magento\Framework\Escaper $escaper */
     $element = $block->getElement();
 ?>
-<div class="header-config-layout-wrapper" data-mage-init='{"Swissup_ThemeEditor/js/header/layout": <?= $block->getOptions();?>}'>
+<div class="header-config-layout-wrapper" data-mage-init='{"Swissup_ThemeEditor/js/header/layout": <?= /* @noEscape */ $block->getOptions();?>}'>
 <div data-role="spinner" class="admin__data-grid-loading-mask">
     <div class="spinner">
         <span></span><span></span><span></span><span></span>
@@ -20,7 +21,7 @@
             </div>
             <!-- /ko -->
             <div class="settings-dropdown">
-                <div class="title"><?= __('Column Settings') ?></div>
+                <div class="title"><?= $escaper->escapeHtml(__('Column Settings')) ?></div>
                 <div class="settings">
                     <div class="option-wrapper">
                         <div class="option-label">

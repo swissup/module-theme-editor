@@ -31,7 +31,7 @@ if ($viewModel->isEnabled()):
 <script type="text/x-magento-init">
 {
     "*": {
-        "Swissup_ThemeEditor/js/theme-editor-toolbar": <?= $settings; ?>
+        "Swissup_ThemeEditor/js/theme-editor-toolbar": <?= /* @noEscape */ $settings; ?>
     }
 }
 </script>

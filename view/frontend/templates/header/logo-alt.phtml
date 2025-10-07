@@ -1,9 +1,6 @@
 <?php
-// @codingStandardsIgnoreFile
-
-/**
- * @var \Swissup\ThemeEditorArgentoLuxury\Block\Html\Header\LogoAlt $block
- */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Swissup\ThemeEditorArgentoLuxury\Block\Html\Header\LogoAlt $block */
 ?>
 
 <?php
@@ -17,10 +14,10 @@
 ?>
 
 <?php if ($block->getLogoSrc()):?>
-    <img src="<?= /* @escapeNotVerified */ $block->getLogoSrc() ?>"
-         alt="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
+    <img src="<?= $escaper->escapeUrl($block->getLogoSrc()) ?>"
+         alt="<?= $escaper->escapeHtmlAttr($block->getLogoAlt()) ?>"
          class="logo-alt"
-         <?= $logoWidth ? 'width="' . $logoWidth . '"' : '' ?>
-         <?= $logoHeight ? 'height="' . $logoHeight . '"' : '' ?>
+         <?= /* @noEscape */ $logoWidth ? 'width="' . $logoWidth . '"' : '' ?>
+         <?= /* @noEscape */ $logoHeight ? 'height="' . $logoHeight . '"' : '' ?>
     />
 <?php endif; ?>
