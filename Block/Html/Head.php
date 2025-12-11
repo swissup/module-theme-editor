@@ -102,11 +102,10 @@ class Head extends \Magento\Framework\View\Element\Template implements
 
         foreach ($args as $_args) {
             $filePath = $this->cssModel->getFilePath($_args[0], $_args[1], $_args[2]);
-
-            if (file_exists($mediaDir . $filePath)) {
+            if ($this->getMediaDirectory()->isExist($filePath)) {
                 $url = $this->_urlBuilder->getBaseUrl(
                     ['_type' => UrlInterface::URL_TYPE_MEDIA]
-                ) . $filePath . '?version=' . filemtime($mediaDir . $filePath);
+                ) . $filePath . '?version=' . $this->getMediaDirectory()->stat($filePath)['mtime'];
                 $objectBackendCss = new \Magento\Framework\DataObject([
                     'url' => $url,
                     'media_dir' => $mediaDir,
