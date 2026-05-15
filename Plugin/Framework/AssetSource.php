@@ -46,11 +46,10 @@ class AssetSource
             . $asset->getContext()->getThemePath()
         );
 
-        $result = str_replace(
-            self::PLACEHOLDER,
-            $this->helper->getLessStyles($theme),
-            $result
-        );
+        $less = $this->helper->getLessStyles($theme);
+        if ($less) {
+            $result = str_replace(self::PLACEHOLDER, $less, $result);
+        }
 
         return $result;
     }
