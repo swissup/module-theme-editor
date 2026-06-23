@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Framework\View\Layout\ScheduledStructure">
-        <plugin name="swissup-theme-editor-layout-scheduled-structure"
-                type="Swissup\ThemeEditor\Plugin\Framework\LayoutScheduledStructure" sortOrder="1"/>
-    </type>
     <!-- Less in Backend config -->
     <type name="Magento\Framework\View\Asset\Source">
         <plugin name="swissup_theme_editor" type="Swissup\ThemeEditor\Plugin\Framework\AssetSource" />

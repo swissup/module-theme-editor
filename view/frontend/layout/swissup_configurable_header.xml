@@ -41,7 +41,5 @@
                 </arguments>
             </block>
         </referenceContainer>
-
-        <referenceContainer name="header.container" remove="true"/>
     </body>
 </page>
